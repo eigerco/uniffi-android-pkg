@@ -67,7 +67,7 @@ publishing {
             artifact("$buildDir/outputs/aar/lib-release.aar")
             pom {
                 groupId = "uniffi"
-                artifactId = "zcash"
+                artifactId = "zcash-android"
                 version = "0.0.0"
                 description = "The librustzcash Android FFI binding"
                 url = "https://github.com/eigerco/uniffi-android-pkg"
