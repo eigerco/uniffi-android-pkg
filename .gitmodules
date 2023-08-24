@@ -1,0 +1,3 @@
+[submodule "uniffi-zcash-lib"]
+	path = uniffi-zcash-lib
+	url = git@github.com:eigerco/uniffi-zcash-lib.git
