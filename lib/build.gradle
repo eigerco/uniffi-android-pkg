@@ -69,7 +69,7 @@ publishing {
             pom {
                 groupId = "uniffi"
                 artifactId = "zcash-android"
-                version = "0.0.0"
+                version = "1.0.0"
                 description = "The librustzcash Android FFI binding"
                 url = "https://github.com/eigerco/uniffi-android-pkg"
                 licenses {
@@ -86,10 +86,7 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/eigerco/uniffi-android-pkg")
 //            isAllowInsecureProtocol = true
-            credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
-            }
+            credentials(PasswordCredentials)
         }
     }
 }
