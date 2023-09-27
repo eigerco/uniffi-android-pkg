@@ -7,6 +7,7 @@ plugins {
 android {
     namespace 'uniffi.zcash'
     compileSdk 33
+    ndkVersion "26.0.10792818"
 
     defaultConfig {
         minSdk 26
