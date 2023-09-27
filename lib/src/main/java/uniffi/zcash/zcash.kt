@@ -4435,11 +4435,11 @@ class SecpSecretKey(
 ) : FFIObject(pointer), SecpSecretKeyInterface {
 
     constructor(`data`: List<UByte>) :
-            this(
-                rustCallWithError(ZcashException) { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_secpsecretkey_new(FfiConverterSequenceUByte.lower(`data`), _status)
-                },
-            )
+        this(
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_secpsecretkey_new(FfiConverterSequenceUByte.lower(`data`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -4752,7 +4752,7 @@ class ZcashAccountPrivKey(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `deriveExternalSecretKey`(`childIndex`: UInt): SecpSecretKey =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -4768,7 +4768,7 @@ class ZcashAccountPrivKey(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `deriveInternalSecretKey`(`childIndex`: UInt): SecpSecretKey =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -4877,11 +4877,11 @@ class ZcashAccountPubKey(
 ) : FFIObject(pointer), ZcashAccountPubKeyInterface {
 
     constructor(`data`: List<UByte>) :
-            this(
-                rustCallWithError(ZcashException) { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashaccountpubkey_new(FfiConverterSequenceUByte.lower(`data`), _status)
-                },
-            )
+        this(
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashaccountpubkey_new(FfiConverterSequenceUByte.lower(`data`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -4899,7 +4899,7 @@ class ZcashAccountPubKey(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `deriveExternalIvk`(): ZcashExternalIvk =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -4915,7 +4915,7 @@ class ZcashAccountPubKey(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `deriveInternalIvk`(): ZcashInternalIvk =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -5016,11 +5016,11 @@ class ZcashAddressMetadata(
 ) : FFIObject(pointer), ZcashAddressMetadataInterface {
 
     constructor(`account`: ZcashAccountId, `diversifierIndex`: ZcashDiversifierIndex) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashaddressmetadata_new(FfiConverterTypeZcashAccountId.lower(`account`), FfiConverterTypeZcashDiversifierIndex.lower(`diversifierIndex`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashaddressmetadata_new(FfiConverterTypeZcashAccountId.lower(`account`), FfiConverterTypeZcashDiversifierIndex.lower(`diversifierIndex`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -5095,11 +5095,11 @@ class ZcashAmount(
 ) : FFIObject(pointer), ZcashAmountInterface {
 
     constructor(`amount`: Long) :
-            this(
-                rustCallWithError(ZcashException) { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashamount_new(FfiConverterLong.lower(`amount`), _status)
-                },
-            )
+        this(
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashamount_new(FfiConverterLong.lower(`amount`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -5256,7 +5256,7 @@ class ZcashBackendScan(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `scanCachedBlocks`(`params`: ZcashConsensusParameters, `zDbCache`: ZcashFsBlockDb, `zDbData`: ZcashWalletDb, `height`: ZcashBlockHeight, `limit`: UInt) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -5427,11 +5427,11 @@ class ZcashBlockHeight(
 ) : FFIObject(pointer), ZcashBlockHeightInterface {
 
     constructor(`v`: UInt) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashblockheight_new(FfiConverterUInt.lower(`v`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashblockheight_new(FfiConverterUInt.lower(`v`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -5568,7 +5568,7 @@ class ZcashChain(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `initBlockmetaDb`(`blocksDir`: String) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -5629,7 +5629,7 @@ class ZcashCommitmentTree(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `append`(`node`: ZcashSaplingNode) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -6045,11 +6045,11 @@ class ZcashDiversifier(
 ) : FFIObject(pointer), ZcashDiversifierInterface {
 
     constructor(`bytes`: List<UByte>) :
-            this(
-                rustCallWithError(ZcashException) { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashdiversifier_new(FfiConverterSequenceUByte.lower(`bytes`), _status)
-                },
-            )
+        this(
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashdiversifier_new(FfiConverterSequenceUByte.lower(`bytes`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -6117,11 +6117,11 @@ class ZcashDiversifierIndex(
 ) : FFIObject(pointer), ZcashDiversifierIndexInterface {
 
     constructor() :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashdiversifierindex_new(_status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashdiversifierindex_new(_status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -6139,7 +6139,7 @@ class ZcashDiversifierIndex(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `increment`() =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -6166,7 +6166,7 @@ class ZcashDiversifierIndex(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `toU32`(): UInt =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -6232,11 +6232,11 @@ class ZcashDustOutputPolicy(
 ) : FFIObject(pointer), ZcashDustOutputPolicyInterface {
 
     constructor(`action`: ZcashDustAction, `dustThreshold`: ZcashAmount?) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashdustoutputpolicy_new(FfiConverterTypeZcashDustAction.lower(`action`), FfiConverterOptionalTypeZcashAmount.lower(`dustThreshold`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashdustoutputpolicy_new(FfiConverterTypeZcashDustAction.lower(`action`), FfiConverterOptionalTypeZcashAmount.lower(`dustThreshold`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -6458,7 +6458,7 @@ class ZcashExtendedFullViewingKey(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `deriveChild`(`i`: ZcashChildIndex): ZcashExtendedFullViewingKey =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -6605,7 +6605,7 @@ class ZcashExtendedPrivKey(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `derivePrivateKey`(`keyIndex`: ZcashKeyIndex): ZcashExtendedPrivKey =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -6894,7 +6894,7 @@ class ZcashExternalIvk(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `deriveAddress`(`childIndex`: UInt): ZcashTransparentAddress =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -7165,11 +7165,11 @@ class ZcashFixedSingleOutputChangeStrategy(
 ) : FFIObject(pointer), ZcashFixedSingleOutputChangeStrategyInterface {
 
     constructor(`feeRule`: ZcashFixedFeeRule) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashfixedsingleoutputchangestrategy_new(FfiConverterTypeZcashFixedFeeRule.lower(`feeRule`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashfixedsingleoutputchangestrategy_new(FfiConverterTypeZcashFixedFeeRule.lower(`feeRule`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -7240,7 +7240,7 @@ class ZcashFsBlockDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `findBlock`(`height`: ZcashBlockHeight): ZcashBlockMeta? =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -7256,7 +7256,7 @@ class ZcashFsBlockDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `getMaxCachedHeight`(): ZcashBlockHeight? =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -7272,7 +7272,7 @@ class ZcashFsBlockDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `writeBlockMetadata`(`blockMeta`: List<ZcashBlockMeta>) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -7494,7 +7494,7 @@ class ZcashIncrementalWitness(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `append`(`node`: ZcashSaplingNode) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -7884,11 +7884,11 @@ class ZcashLocalTxProver(
 ) : FFIObject(pointer), ZcashLocalTxProverInterface {
 
     constructor(`spendPath`: String, `outputPath`: String) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashlocaltxprover_new(FfiConverterString.lower(`spendPath`), FfiConverterString.lower(`outputPath`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashlocaltxprover_new(FfiConverterString.lower(`spendPath`), FfiConverterString.lower(`outputPath`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -7951,11 +7951,11 @@ class ZcashMainGreedyInputSelector(
 ) : FFIObject(pointer), ZcashMainGreedyInputSelectorInterface {
 
     constructor(`changeStrategy`: ZcashFixedSingleOutputChangeStrategy, `dustOutputPolicy`: ZcashDustOutputPolicy) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashmaingreedyinputselector_new(FfiConverterTypeZcashFixedSingleOutputChangeStrategy.lower(`changeStrategy`), FfiConverterTypeZcashDustOutputPolicy.lower(`dustOutputPolicy`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashmaingreedyinputselector_new(FfiConverterTypeZcashFixedSingleOutputChangeStrategy.lower(`changeStrategy`), FfiConverterTypeZcashDustOutputPolicy.lower(`dustOutputPolicy`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -8004,11 +8004,11 @@ class ZcashMemoBytes(
 ) : FFIObject(pointer), ZcashMemoBytesInterface {
 
     constructor(`data`: List<UByte>) :
-            this(
-                rustCallWithError(ZcashException) { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashmemobytes_new(FfiConverterSequenceUByte.lower(`data`), _status)
-                },
-            )
+        this(
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashmemobytes_new(FfiConverterSequenceUByte.lower(`data`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -8160,11 +8160,11 @@ class ZcashNoteId(
 ) : FFIObject(pointer), ZcashNoteIdInterface {
 
     constructor(`txid`: ZcashTxId, `zsp`: ZcashShieldedProtocol, `outputIndex`: UShort) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashnoteid_new(FfiConverterTypeZcashTxId.lower(`txid`), FfiConverterTypeZcashShieldedProtocol.lower(`zsp`), FfiConverterUShort.lower(`outputIndex`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashnoteid_new(FfiConverterTypeZcashTxId.lower(`txid`), FfiConverterTypeZcashShieldedProtocol.lower(`zsp`), FfiConverterUShort.lower(`outputIndex`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -8530,7 +8530,7 @@ class ZcashOrchardBundle(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `decryptOutputWithKey`(`actionIdx`: ULong, `ivk`: ZcashOrchardIncomingViewingKey): ZcashOrchardDecryptOutput =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -8573,7 +8573,7 @@ class ZcashOrchardBundle(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `recoverOutputWithOvk`(`actionIdx`: ULong, `ovk`: ZcashOrchardOutgoingViewingKey): ZcashOrchardDecryptOutput =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -8616,7 +8616,7 @@ class ZcashOrchardBundle(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `verifyProof`(`key`: ZcashVerifyingKey) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -9855,11 +9855,11 @@ class ZcashOrchardTransactionBuilder(
 ) : FFIObject(pointer), ZcashOrchardTransactionBuilderInterface {
 
     constructor(`parameters`: ZcashConsensusParameters, `targetHeight`: ZcashBlockHeight, `expiryHeight`: ZcashBlockHeight, `anchor`: ZcashAnchor, `flags`: ZcashOrchardFlags) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashorchardtransactionbuilder_new(FfiConverterTypeZcashConsensusParameters.lower(`parameters`), FfiConverterTypeZcashBlockHeight.lower(`targetHeight`), FfiConverterTypeZcashBlockHeight.lower(`expiryHeight`), FfiConverterTypeZcashAnchor.lower(`anchor`), FfiConverterTypeZcashOrchardFlags.lower(`flags`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashorchardtransactionbuilder_new(FfiConverterTypeZcashConsensusParameters.lower(`parameters`), FfiConverterTypeZcashBlockHeight.lower(`targetHeight`), FfiConverterTypeZcashBlockHeight.lower(`expiryHeight`), FfiConverterTypeZcashAnchor.lower(`anchor`), FfiConverterTypeZcashOrchardFlags.lower(`flags`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -9877,7 +9877,7 @@ class ZcashOrchardTransactionBuilder(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `addRecipient`(`ovk`: ZcashOrchardOutgoingViewingKey?, `recipient`: ZcashOrchardAddress, `value`: ZcashOrchardNoteValue, `memo`: List<UByte>?) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -9907,7 +9907,7 @@ class ZcashOrchardTransactionBuilder(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `build`(`keys`: List<ZcashOrchardSpendingKey>, `sighash`: List<UByte>): ZcashTransaction =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -10011,11 +10011,11 @@ class ZcashOutPoint(
 ) : FFIObject(pointer), ZcashOutPointInterface {
 
     constructor(`hash`: List<UByte>, `n`: UInt) :
-            this(
-                rustCallWithError(ZcashException) { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashoutpoint_new(FfiConverterSequenceUByte.lower(`hash`), FfiConverterUInt.lower(`n`), _status)
-                },
-            )
+        this(
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashoutpoint_new(FfiConverterSequenceUByte.lower(`hash`), FfiConverterUInt.lower(`n`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -10157,7 +10157,7 @@ class ZcashPaymentAddress(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `createNote`(`value`: ULong, `rseed`: ZcashRseed): ZcashSaplingNote =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -10330,11 +10330,11 @@ class ZcashProvingKey(
 ) : FFIObject(pointer), ZcashProvingKeyInterface {
 
     constructor() :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashprovingkey_new(_status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashprovingkey_new(_status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -10385,11 +10385,11 @@ class ZcashRatio(
 ) : FFIObject(pointer), ZcashRatioInterface {
 
     constructor(`numerator`: ULong, `denominator`: ULong) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashratio_new(FfiConverterULong.lower(`numerator`), FfiConverterULong.lower(`denominator`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashratio_new(FfiConverterULong.lower(`numerator`), FfiConverterULong.lower(`denominator`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -10686,11 +10686,11 @@ class ZcashSaplingExtractedNoteCommitment(
 ) : FFIObject(pointer), ZcashSaplingExtractedNoteCommitmentInterface {
 
     constructor(`data`: List<UByte>) :
-            this(
-                rustCallWithError(ZcashException) { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashsaplingextractednotecommitment_new(FfiConverterSequenceUByte.lower(`data`), _status)
-                },
-            )
+        this(
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashsaplingextractednotecommitment_new(FfiConverterSequenceUByte.lower(`data`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -10902,11 +10902,11 @@ class ZcashSaplingMetadata(
 ) : FFIObject(pointer), ZcashSaplingMetadataInterface {
 
     constructor() :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashsaplingmetadata_new(_status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashsaplingmetadata_new(_status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -11336,7 +11336,7 @@ class ZcashSaplingPublicKey(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `toBytes`(): List<UByte> =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -11676,7 +11676,7 @@ class ZcashScript(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `toBytes`(): List<UByte> =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -11730,11 +11730,11 @@ class ZcashTestGreedyInputSelector(
 ) : FFIObject(pointer), ZcashTestGreedyInputSelectorInterface {
 
     constructor(`changeStrategy`: ZcashFixedSingleOutputChangeStrategy, `dustOutputPolicy`: ZcashDustOutputPolicy) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashtestgreedyinputselector_new(FfiConverterTypeZcashFixedSingleOutputChangeStrategy.lower(`changeStrategy`), FfiConverterTypeZcashDustOutputPolicy.lower(`dustOutputPolicy`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashtestgreedyinputselector_new(FfiConverterTypeZcashFixedSingleOutputChangeStrategy.lower(`changeStrategy`), FfiConverterTypeZcashDustOutputPolicy.lower(`dustOutputPolicy`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -11880,7 +11880,7 @@ class ZcashTransaction(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `toBytes`(): List<UByte> =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -11985,11 +11985,11 @@ class ZcashTransactionBuilder(
 ) : FFIObject(pointer), ZcashTransactionBuilderInterface {
 
     constructor(`parameters`: ZcashConsensusParameters, `blockHeight`: ZcashBlockHeight) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashtransactionbuilder_new(FfiConverterTypeZcashConsensusParameters.lower(`parameters`), FfiConverterTypeZcashBlockHeight.lower(`blockHeight`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashtransactionbuilder_new(FfiConverterTypeZcashConsensusParameters.lower(`parameters`), FfiConverterTypeZcashBlockHeight.lower(`blockHeight`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -12060,7 +12060,7 @@ class ZcashTransactionBuilder(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `build`(`prover`: ZcashLocalTxProver, `feeRule`: ZcashFeeRules): ZcashTransactionAndSaplingMetadata =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -12110,11 +12110,11 @@ class ZcashTransactionRequest(
 ) : FFIObject(pointer), ZcashTransactionRequestInterface {
 
     constructor(`payments`: List<ZcashPayment>) :
-            this(
-                rustCallWithError(ZcashZip321Exception) { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashtransactionrequest_new(FfiConverterSequenceTypeZcashPayment.lower(`payments`), _status)
-                },
-            )
+        this(
+            rustCallWithError(ZcashZip321Exception) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashtransactionrequest_new(FfiConverterSequenceTypeZcashPayment.lower(`payments`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -12454,7 +12454,7 @@ class ZcashTxId(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `toBytes`(): List<UByte> =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -12527,7 +12527,7 @@ class ZcashTxIn(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `toBytes`(): List<UByte> =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -12581,11 +12581,11 @@ class ZcashTxOut(
 ) : FFIObject(pointer), ZcashTxOutInterface {
 
     constructor(`value`: ZcashAmount, `scriptPubkey`: ZcashScript) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashtxout_new(FfiConverterTypeZcashAmount.lower(`value`), FfiConverterTypeZcashScript.lower(`scriptPubkey`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashtxout_new(FfiConverterTypeZcashAmount.lower(`value`), FfiConverterTypeZcashScript.lower(`scriptPubkey`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -12629,7 +12629,7 @@ class ZcashTxOut(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `toBytes`(): List<UByte> =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -12797,7 +12797,7 @@ class ZcashTxVersion(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `toBytes`(): List<UByte> =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -12880,11 +12880,11 @@ class ZcashUnifiedAddress(
 ) : FFIObject(pointer), ZcashUnifiedAddressInterface {
 
     constructor(`orchard`: ZcashOrchardAddress?, `sapling`: ZcashPaymentAddress?, `transparent`: ZcashTransparentAddress?) :
-            this(
-                rustCallWithError(ZcashException) { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashunifiedaddress_new(FfiConverterOptionalTypeZcashOrchardAddress.lower(`orchard`), FfiConverterOptionalTypeZcashPaymentAddress.lower(`sapling`), FfiConverterOptionalTypeZcashTransparentAddress.lower(`transparent`), _status)
-                },
-            )
+        this(
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashunifiedaddress_new(FfiConverterOptionalTypeZcashOrchardAddress.lower(`orchard`), FfiConverterOptionalTypeZcashPaymentAddress.lower(`sapling`), FfiConverterOptionalTypeZcashTransparentAddress.lower(`transparent`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -13007,11 +13007,11 @@ class ZcashUnifiedFullViewingKey(
 ) : FFIObject(pointer), ZcashUnifiedFullViewingKeyInterface {
 
     constructor(`transparent`: ZcashAccountPubKey?, `sapling`: ZcashDiversifiableFullViewingKey?, `orchard`: ZcashOrchardFullViewingKey?) :
-            this(
-                rustCallWithError(ZcashException) { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashunifiedfullviewingkey_new(FfiConverterOptionalTypeZcashAccountPubKey.lower(`transparent`), FfiConverterOptionalTypeZcashDiversifiableFullViewingKey.lower(`sapling`), FfiConverterOptionalTypeZcashOrchardFullViewingKey.lower(`orchard`), _status)
-                },
-            )
+        this(
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashunifiedfullviewingkey_new(FfiConverterOptionalTypeZcashAccountPubKey.lower(`transparent`), FfiConverterOptionalTypeZcashDiversifiableFullViewingKey.lower(`sapling`), FfiConverterOptionalTypeZcashOrchardFullViewingKey.lower(`orchard`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -13294,11 +13294,11 @@ class ZcashVerifyingKey(
 ) : FFIObject(pointer), ZcashVerifyingKeyInterface {
 
     constructor() :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashverifyingkey_new(_status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashverifyingkey_new(_status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -13437,7 +13437,7 @@ class ZcashWallet(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `initWalletDb`(`zwdb`: ZcashWalletDb, `seed`: List<UByte>, `params`: ZcashConsensusParameters) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13533,7 +13533,7 @@ class ZcashWalletDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `getAccountForUfvk`(`zufvk`: ZcashUnifiedFullViewingKey): ZcashAccountId? =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13549,7 +13549,7 @@ class ZcashWalletDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `getCurrentAddress`(`aid`: ZcashAccountId): ZcashUnifiedAddress? =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13565,7 +13565,7 @@ class ZcashWalletDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `getMinUnspentHeight`(): ZcashBlockHeight? =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13581,7 +13581,7 @@ class ZcashWalletDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `getTransparentReceivers`(`aid`: ZcashAccountId): Map<String, ZcashAddressMetadata> =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13597,7 +13597,7 @@ class ZcashWalletDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `getUnspentTransparentOutputs`(`zta`: ZcashTransparentAddress, `zbh`: ZcashBlockHeight, `zop`: List<ZcashOutPoint>): List<ZcashWalletTransparentOutput> =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13615,7 +13615,7 @@ class ZcashWalletDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `getWalletSummary`(`minConfirmations`: UInt): ZcashWalletSummary? =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13631,7 +13631,7 @@ class ZcashWalletDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `putReceivedTransparentUtxo`(`output`: ZcashWalletTransparentOutput): Long =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13647,7 +13647,7 @@ class ZcashWalletDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `putSaplingSubtreeRoots`(`startIndex`: ULong, `roots`: List<ZcashCommitmentTreeRoot>) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13662,7 +13662,7 @@ class ZcashWalletDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `storeDecryptedTx`(`dTx`: ZcashDecryptedTransaction) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13676,7 +13676,7 @@ class ZcashWalletDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `suggestScanRanges`(): List<ZcashScanRange> =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13692,7 +13692,7 @@ class ZcashWalletDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `truncateToHeight`(`blockHeight`: UInt) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13706,7 +13706,7 @@ class ZcashWalletDb(
 
     @Throws(
         ZcashException::class,
-    )
+        )
     override fun `updateChainTip`(`tipHeight`: UInt) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13769,11 +13769,11 @@ class ZcashWalletSummary(
 ) : FFIObject(pointer), ZcashWalletSummaryInterface {
 
     constructor(`accountBalances`: Map<String, ZcashAccountBalance>, `chainTipHeight`: ZcashBlockHeight, `fullyScannedHeight`: ZcashBlockHeight, `scanProgress`: ZcashRatio?) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashwalletsummary_new(FfiConverterMapStringTypeZcashAccountBalance.lower(`accountBalances`), FfiConverterTypeZcashBlockHeight.lower(`chainTipHeight`), FfiConverterTypeZcashBlockHeight.lower(`fullyScannedHeight`), FfiConverterOptionalTypeZcashRatio.lower(`scanProgress`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashwalletsummary_new(FfiConverterMapStringTypeZcashAccountBalance.lower(`accountBalances`), FfiConverterTypeZcashBlockHeight.lower(`chainTipHeight`), FfiConverterTypeZcashBlockHeight.lower(`fullyScannedHeight`), FfiConverterOptionalTypeZcashRatio.lower(`scanProgress`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -14089,11 +14089,11 @@ class ZcashZip317SingleOutputChangeStrategy(
 ) : FFIObject(pointer), ZcashZip317SingleOutputChangeStrategyInterface {
 
     constructor(`feeRule`: ZcashZip317FeeRule) :
-            this(
-                rustCall() { _status ->
-                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashzip317singleoutputchangestrategy_new(FfiConverterTypeZcashZip317FeeRule.lower(`feeRule`), _status)
-                },
-            )
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashzip317singleoutputchangestrategy_new(FfiConverterTypeZcashZip317FeeRule.lower(`feeRule`), _status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -14144,8 +14144,8 @@ public object FfiConverterTypeZcashAccountId : FfiConverterRustBuffer<ZcashAccou
     }
 
     override fun allocationSize(value: ZcashAccountId) = (
-            FfiConverterUInt.allocationSize(value.`id`)
-            )
+        FfiConverterUInt.allocationSize(value.`id`)
+        )
 
     override fun write(value: ZcashAccountId, buf: ByteBuffer) {
         FfiConverterUInt.write(value.`id`, buf)
@@ -14172,8 +14172,8 @@ public object FfiConverterTypeZcashAuthPath : FfiConverterRustBuffer<ZcashAuthPa
     }
 
     override fun allocationSize(value: ZcashAuthPath) = (
-            FfiConverterTypeZcashSaplingNode.allocationSize(value.`node`)
-            )
+        FfiConverterTypeZcashSaplingNode.allocationSize(value.`node`)
+        )
 
     override fun write(value: ZcashAuthPath, buf: ByteBuffer) {
         FfiConverterTypeZcashSaplingNode.write(value.`node`, buf)
@@ -14203,9 +14203,9 @@ public object FfiConverterTypeZcashDiversifierIndexAndPaymentAddress : FfiConver
     }
 
     override fun allocationSize(value: ZcashDiversifierIndexAndPaymentAddress) = (
-            FfiConverterTypeZcashDiversifierIndex.allocationSize(value.`diversifierIndex`) +
-                    FfiConverterTypeZcashPaymentAddress.allocationSize(value.`address`)
-            )
+        FfiConverterTypeZcashDiversifierIndex.allocationSize(value.`diversifierIndex`) +
+            FfiConverterTypeZcashPaymentAddress.allocationSize(value.`address`)
+        )
 
     override fun write(value: ZcashDiversifierIndexAndPaymentAddress, buf: ByteBuffer) {
         FfiConverterTypeZcashDiversifierIndex.write(value.`diversifierIndex`, buf)
@@ -14236,9 +14236,9 @@ public object FfiConverterTypeZcashDiversifierIndexAndScope : FfiConverterRustBu
     }
 
     override fun allocationSize(value: ZcashDiversifierIndexAndScope) = (
-            FfiConverterTypeZcashDiversifierIndex.allocationSize(value.`diversifierIndex`) +
-                    FfiConverterTypeZcashScope.allocationSize(value.`scope`)
-            )
+        FfiConverterTypeZcashDiversifierIndex.allocationSize(value.`diversifierIndex`) +
+            FfiConverterTypeZcashScope.allocationSize(value.`scope`)
+        )
 
     override fun write(value: ZcashDiversifierIndexAndScope, buf: ByteBuffer) {
         FfiConverterTypeZcashDiversifierIndex.write(value.`diversifierIndex`, buf)
@@ -14269,9 +14269,9 @@ public object FfiConverterTypeZcashInternalOvkExternalOvk : FfiConverterRustBuff
     }
 
     override fun allocationSize(value: ZcashInternalOvkExternalOvk) = (
-            FfiConverterTypeZcashInternalOvk.allocationSize(value.`internalOvk`) +
-                    FfiConverterTypeZcashExternalOvk.allocationSize(value.`externalOvk`)
-            )
+        FfiConverterTypeZcashInternalOvk.allocationSize(value.`internalOvk`) +
+            FfiConverterTypeZcashExternalOvk.allocationSize(value.`externalOvk`)
+        )
 
     override fun write(value: ZcashInternalOvkExternalOvk, buf: ByteBuffer) {
         FfiConverterTypeZcashInternalOvk.write(value.`internalOvk`, buf)
@@ -14305,10 +14305,10 @@ public object FfiConverterTypeZcashOrchardDecryptOutput : FfiConverterRustBuffer
     }
 
     override fun allocationSize(value: ZcashOrchardDecryptOutput) = (
-            FfiConverterTypeZcashOrchardNote.allocationSize(value.`note`) +
-                    FfiConverterTypeZcashOrchardAddress.allocationSize(value.`address`) +
-                    FfiConverterSequenceUByte.allocationSize(value.`data`)
-            )
+        FfiConverterTypeZcashOrchardNote.allocationSize(value.`note`) +
+            FfiConverterTypeZcashOrchardAddress.allocationSize(value.`address`) +
+            FfiConverterSequenceUByte.allocationSize(value.`data`)
+        )
 
     override fun write(value: ZcashOrchardDecryptOutput, buf: ByteBuffer) {
         FfiConverterTypeZcashOrchardNote.write(value.`note`, buf)
@@ -14349,12 +14349,12 @@ public object FfiConverterTypeZcashOrchardDecryptOutputForIncomingKeys : FfiConv
     }
 
     override fun allocationSize(value: ZcashOrchardDecryptOutputForIncomingKeys) = (
-            FfiConverterULong.allocationSize(value.`idx`) +
-                    FfiConverterTypeZcashOrchardIncomingViewingKey.allocationSize(value.`key`) +
-                    FfiConverterTypeZcashOrchardNote.allocationSize(value.`note`) +
-                    FfiConverterTypeZcashOrchardAddress.allocationSize(value.`address`) +
-                    FfiConverterSequenceUByte.allocationSize(value.`data`)
-            )
+        FfiConverterULong.allocationSize(value.`idx`) +
+            FfiConverterTypeZcashOrchardIncomingViewingKey.allocationSize(value.`key`) +
+            FfiConverterTypeZcashOrchardNote.allocationSize(value.`note`) +
+            FfiConverterTypeZcashOrchardAddress.allocationSize(value.`address`) +
+            FfiConverterSequenceUByte.allocationSize(value.`data`)
+        )
 
     override fun write(value: ZcashOrchardDecryptOutputForIncomingKeys, buf: ByteBuffer) {
         FfiConverterULong.write(value.`idx`, buf)
@@ -14397,12 +14397,12 @@ public object FfiConverterTypeZcashOrchardDecryptOutputForOutgoingKeys : FfiConv
     }
 
     override fun allocationSize(value: ZcashOrchardDecryptOutputForOutgoingKeys) = (
-            FfiConverterULong.allocationSize(value.`idx`) +
-                    FfiConverterTypeZcashOrchardOutgoingViewingKey.allocationSize(value.`key`) +
-                    FfiConverterTypeZcashOrchardNote.allocationSize(value.`note`) +
-                    FfiConverterTypeZcashOrchardAddress.allocationSize(value.`address`) +
-                    FfiConverterSequenceUByte.allocationSize(value.`data`)
-            )
+        FfiConverterULong.allocationSize(value.`idx`) +
+            FfiConverterTypeZcashOrchardOutgoingViewingKey.allocationSize(value.`key`) +
+            FfiConverterTypeZcashOrchardNote.allocationSize(value.`note`) +
+            FfiConverterTypeZcashOrchardAddress.allocationSize(value.`address`) +
+            FfiConverterSequenceUByte.allocationSize(value.`data`)
+        )
 
     override fun write(value: ZcashOrchardDecryptOutputForOutgoingKeys, buf: ByteBuffer) {
         FfiConverterULong.write(value.`idx`, buf)
@@ -14429,10 +14429,10 @@ public object FfiConverterTypeZcashOrchardTransmittedNoteCiphertext : FfiConvert
     }
 
     override fun allocationSize(value: ZcashOrchardTransmittedNoteCiphertext) = (
-            FfiConverterSequenceUByte.allocationSize(value.`epkBytes`) +
-                    FfiConverterSequenceUByte.allocationSize(value.`encCiphertext`) +
-                    FfiConverterSequenceUByte.allocationSize(value.`outCiphertext`)
-            )
+        FfiConverterSequenceUByte.allocationSize(value.`epkBytes`) +
+            FfiConverterSequenceUByte.allocationSize(value.`encCiphertext`) +
+            FfiConverterSequenceUByte.allocationSize(value.`outCiphertext`)
+        )
 
     override fun write(value: ZcashOrchardTransmittedNoteCiphertext, buf: ByteBuffer) {
         FfiConverterSequenceUByte.write(value.`epkBytes`, buf)
@@ -14476,13 +14476,13 @@ public object FfiConverterTypeZcashPayment : FfiConverterRustBuffer<ZcashPayment
     }
 
     override fun allocationSize(value: ZcashPayment) = (
-            FfiConverterTypeZcashRecipientAddress.allocationSize(value.`recipientAddress`) +
-                    FfiConverterTypeZcashAmount.allocationSize(value.`amount`) +
-                    FfiConverterOptionalTypeZcashMemoBytes.allocationSize(value.`memo`) +
-                    FfiConverterOptionalString.allocationSize(value.`label`) +
-                    FfiConverterOptionalString.allocationSize(value.`message`) +
-                    FfiConverterSequenceTypeZcashPaymentParam.allocationSize(value.`otherParams`)
-            )
+        FfiConverterTypeZcashRecipientAddress.allocationSize(value.`recipientAddress`) +
+            FfiConverterTypeZcashAmount.allocationSize(value.`amount`) +
+            FfiConverterOptionalTypeZcashMemoBytes.allocationSize(value.`memo`) +
+            FfiConverterOptionalString.allocationSize(value.`label`) +
+            FfiConverterOptionalString.allocationSize(value.`message`) +
+            FfiConverterSequenceTypeZcashPaymentParam.allocationSize(value.`otherParams`)
+        )
 
     override fun write(value: ZcashPayment, buf: ByteBuffer) {
         FfiConverterTypeZcashRecipientAddress.write(value.`recipientAddress`, buf)
@@ -14508,9 +14508,9 @@ public object FfiConverterTypeZcashPaymentParam : FfiConverterRustBuffer<ZcashPa
     }
 
     override fun allocationSize(value: ZcashPaymentParam) = (
-            FfiConverterString.allocationSize(value.`key`) +
-                    FfiConverterString.allocationSize(value.`value`)
-            )
+        FfiConverterString.allocationSize(value.`key`) +
+            FfiConverterString.allocationSize(value.`value`)
+        )
 
     override fun write(value: ZcashPaymentParam, buf: ByteBuffer) {
         FfiConverterString.write(value.`key`, buf)
@@ -14541,9 +14541,9 @@ public object FfiConverterTypeZcashTransactionAndSaplingMetadata : FfiConverterR
     }
 
     override fun allocationSize(value: ZcashTransactionAndSaplingMetadata) = (
-            FfiConverterTypeZcashTransaction.allocationSize(value.`transaction`) +
-                    FfiConverterTypeZcashSaplingMetadata.allocationSize(value.`saplingMetadata`)
-            )
+        FfiConverterTypeZcashTransaction.allocationSize(value.`transaction`) +
+            FfiConverterTypeZcashSaplingMetadata.allocationSize(value.`saplingMetadata`)
+        )
 
     override fun write(value: ZcashTransactionAndSaplingMetadata, buf: ByteBuffer) {
         FfiConverterTypeZcashTransaction.write(value.`transaction`, buf)
@@ -14574,9 +14574,9 @@ public object FfiConverterTypeZcashTransparentAddressAndIndex : FfiConverterRust
     }
 
     override fun allocationSize(value: ZcashTransparentAddressAndIndex) = (
-            FfiConverterTypeZcashTransparentAddress.allocationSize(value.`transparentAddress`) +
-                    FfiConverterUInt.allocationSize(value.`index`)
-            )
+        FfiConverterTypeZcashTransparentAddress.allocationSize(value.`transparentAddress`) +
+            FfiConverterUInt.allocationSize(value.`index`)
+        )
 
     override fun write(value: ZcashTransparentAddressAndIndex, buf: ByteBuffer) {
         FfiConverterTypeZcashTransparentAddress.write(value.`transparentAddress`, buf)
@@ -14607,9 +14607,9 @@ public object FfiConverterTypeZcashUnifiedAddressAndDiversifierIndex : FfiConver
     }
 
     override fun allocationSize(value: ZcashUnifiedAddressAndDiversifierIndex) = (
-            FfiConverterTypeZcashUnifiedAddress.allocationSize(value.`address`) +
-                    FfiConverterTypeZcashDiversifierIndex.allocationSize(value.`diversifierIndex`)
-            )
+        FfiConverterTypeZcashUnifiedAddress.allocationSize(value.`address`) +
+            FfiConverterTypeZcashDiversifierIndex.allocationSize(value.`diversifierIndex`)
+        )
 
     override fun write(value: ZcashUnifiedAddressAndDiversifierIndex, buf: ByteBuffer) {
         FfiConverterTypeZcashUnifiedAddress.write(value.`address`, buf)
@@ -14668,16 +14668,16 @@ public object FfiConverterTypeZcashChildIndex : FfiConverterRustBuffer<ZcashChil
         is ZcashChildIndex.NonHardened -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4 +
-                            FfiConverterUInt.allocationSize(value.`v`)
-                    )
+                4 +
+                    FfiConverterUInt.allocationSize(value.`v`)
+                )
         }
         is ZcashChildIndex.Hardened -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4 +
-                            FfiConverterUInt.allocationSize(value.`v`)
-                    )
+                4 +
+                    FfiConverterUInt.allocationSize(value.`v`)
+                )
         }
     }
 
@@ -14934,31 +14934,31 @@ public object FfiConverterTypeZcashFeeRules : FfiConverterRustBuffer<ZcashFeeRul
         is ZcashFeeRules.FixedStandard -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4
-                    )
+                4
+                )
         }
         is ZcashFeeRules.FixedNonStandard -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4 +
-                            FfiConverterULong.allocationSize(value.`amount`)
-                    )
+                4 +
+                    FfiConverterULong.allocationSize(value.`amount`)
+                )
         }
         is ZcashFeeRules.Zip317Standard -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4
-                    )
+                4
+                )
         }
         is ZcashFeeRules.Zip317NonStandard -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4 +
-                            FfiConverterULong.allocationSize(value.`marginalFee`) +
-                            FfiConverterULong.allocationSize(value.`graceActions`) +
-                            FfiConverterULong.allocationSize(value.`p2pkhStandardInputSize`) +
-                            FfiConverterULong.allocationSize(value.`p2pkhStandardOutputSize`)
-                    )
+                4 +
+                    FfiConverterULong.allocationSize(value.`marginalFee`) +
+                    FfiConverterULong.allocationSize(value.`graceActions`) +
+                    FfiConverterULong.allocationSize(value.`p2pkhStandardInputSize`) +
+                    FfiConverterULong.allocationSize(value.`p2pkhStandardOutputSize`)
+                )
         }
     }
 
@@ -15074,21 +15074,21 @@ public object FfiConverterTypeZcashOvkPolicy : FfiConverterRustBuffer<ZcashOvkPo
         is ZcashOvkPolicy.Sender -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4
-                    )
+                4
+                )
         }
         is ZcashOvkPolicy.Custom -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4 +
-                            FfiConverterSequenceUByte.allocationSize(value.`bytes`)
-                    )
+                4 +
+                    FfiConverterSequenceUByte.allocationSize(value.`bytes`)
+                )
         }
         is ZcashOvkPolicy.Discard -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4
-                    )
+                4
+                )
         }
     }
 
@@ -15137,16 +15137,16 @@ public object FfiConverterTypeZcashRseed : FfiConverterRustBuffer<ZcashRseed> {
         is ZcashRseed.BeforeZip212 -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4 +
-                            FfiConverterSequenceUByte.allocationSize(value.`frData`)
-                    )
+                4 +
+                    FfiConverterSequenceUByte.allocationSize(value.`frData`)
+                )
         }
         is ZcashRseed.AfterZip212 -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4 +
-                            FfiConverterSequenceUByte.allocationSize(value.`data`)
-                    )
+                4 +
+                    FfiConverterSequenceUByte.allocationSize(value.`data`)
+                )
         }
     }
 
@@ -15258,27 +15258,27 @@ public object FfiConverterTypeZcashTxVersionSelection : FfiConverterRustBuffer<Z
         is ZcashTxVersionSelection.Sprout -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4 +
-                            FfiConverterUInt.allocationSize(value.`v`)
-                    )
+                4 +
+                    FfiConverterUInt.allocationSize(value.`v`)
+                )
         }
         is ZcashTxVersionSelection.Overwinter -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4
-                    )
+                4
+                )
         }
         is ZcashTxVersionSelection.Sapling -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4
-                    )
+                4
+                )
         }
         is ZcashTxVersionSelection.Zip225 -> {
             // Add the size for the Int that specifies the variant plus the size needed for all fields
             (
-                    4
-                    )
+                4
+                )
         }
     }
 
@@ -15305,102 +15305,118 @@ public object FfiConverterTypeZcashTxVersionSelection : FfiConverterRustBuffer<Z
     }
 }
 
-sealed class ZcashWalletMigrationError {
-    object SeedRequired : ZcashWalletMigrationError()
+sealed class ZcashWalletMigrationException : Exception() {
+    // Each variant is a nested class
 
-    data class CorruptedData(
+    class SeedRequired() : ZcashWalletMigrationException() {
+        override val message
+            get() = ""
+    }
+
+    class CorruptedData(
         val `v`: String,
-    ) : ZcashWalletMigrationError()
-    data class DbError(
+    ) : ZcashWalletMigrationException() {
+        override val message
+            get() = "v=${ `v` }"
+    }
+
+    class DbException(
         val `v`: String,
-    ) : ZcashWalletMigrationError()
-    data class BalanceError(
+    ) : ZcashWalletMigrationException() {
+        override val message
+            get() = "v=${ `v` }"
+    }
+
+    class BalanceException(
         val `v`: String,
-    ) : ZcashWalletMigrationError()
-    data class CommitmentTreeError(
+    ) : ZcashWalletMigrationException() {
+        override val message
+            get() = "v=${ `v` }"
+    }
+
+    class CommitmentTreeException(
         val `v`: String,
-    ) : ZcashWalletMigrationError()
+    ) : ZcashWalletMigrationException() {
+        override val message
+            get() = "v=${ `v` }"
+    }
+
+    companion object ErrorHandler : CallStatusErrorHandler<ZcashWalletMigrationException> {
+        override fun lift(error_buf: RustBuffer.ByValue): ZcashWalletMigrationException = FfiConverterTypeZcashWalletMigrationError.lift(error_buf)
+    }
 }
 
-public object FfiConverterTypeZcashWalletMigrationError : FfiConverterRustBuffer<ZcashWalletMigrationError> {
-    override fun read(buf: ByteBuffer): ZcashWalletMigrationError {
+public object FfiConverterTypeZcashWalletMigrationError : FfiConverterRustBuffer<ZcashWalletMigrationException> {
+    override fun read(buf: ByteBuffer): ZcashWalletMigrationException {
         return when (buf.getInt()) {
-            1 -> ZcashWalletMigrationError.SeedRequired
-            2 -> ZcashWalletMigrationError.CorruptedData(
+            1 -> ZcashWalletMigrationException.SeedRequired()
+            2 -> ZcashWalletMigrationException.CorruptedData(
                 FfiConverterString.read(buf),
             )
-            3 -> ZcashWalletMigrationError.DbError(
+            3 -> ZcashWalletMigrationException.DbException(
                 FfiConverterString.read(buf),
             )
-            4 -> ZcashWalletMigrationError.BalanceError(
+            4 -> ZcashWalletMigrationException.BalanceException(
                 FfiConverterString.read(buf),
             )
-            5 -> ZcashWalletMigrationError.CommitmentTreeError(
+            5 -> ZcashWalletMigrationException.CommitmentTreeException(
                 FfiConverterString.read(buf),
             )
-            else -> throw RuntimeException("invalid enum value, something is very wrong!!")
+            else -> throw RuntimeException("invalid error enum value, something is very wrong!!")
         }
     }
 
-    override fun allocationSize(value: ZcashWalletMigrationError) = when (value) {
-        is ZcashWalletMigrationError.SeedRequired -> {
-            // Add the size for the Int that specifies the variant plus the size needed for all fields
-            (
-                    4
-                    )
-        }
-        is ZcashWalletMigrationError.CorruptedData -> {
-            // Add the size for the Int that specifies the variant plus the size needed for all fields
-            (
-                    4 +
-                            FfiConverterString.allocationSize(value.`v`)
-                    )
-        }
-        is ZcashWalletMigrationError.DbError -> {
-            // Add the size for the Int that specifies the variant plus the size needed for all fields
-            (
-                    4 +
-                            FfiConverterString.allocationSize(value.`v`)
-                    )
-        }
-        is ZcashWalletMigrationError.BalanceError -> {
-            // Add the size for the Int that specifies the variant plus the size needed for all fields
-            (
-                    4 +
-                            FfiConverterString.allocationSize(value.`v`)
-                    )
-        }
-        is ZcashWalletMigrationError.CommitmentTreeError -> {
-            // Add the size for the Int that specifies the variant plus the size needed for all fields
-            (
-                    4 +
-                            FfiConverterString.allocationSize(value.`v`)
-                    )
+    override fun allocationSize(value: ZcashWalletMigrationException): Int {
+        return when (value) {
+            is ZcashWalletMigrationException.SeedRequired -> (
+                // Add the size for the Int that specifies the variant plus the size needed for all fields
+                4
+                )
+            is ZcashWalletMigrationException.CorruptedData -> (
+                // Add the size for the Int that specifies the variant plus the size needed for all fields
+                4 +
+                    FfiConverterString.allocationSize(value.`v`)
+                )
+            is ZcashWalletMigrationException.DbException -> (
+                // Add the size for the Int that specifies the variant plus the size needed for all fields
+                4 +
+                    FfiConverterString.allocationSize(value.`v`)
+                )
+            is ZcashWalletMigrationException.BalanceException -> (
+                // Add the size for the Int that specifies the variant plus the size needed for all fields
+                4 +
+                    FfiConverterString.allocationSize(value.`v`)
+                )
+            is ZcashWalletMigrationException.CommitmentTreeException -> (
+                // Add the size for the Int that specifies the variant plus the size needed for all fields
+                4 +
+                    FfiConverterString.allocationSize(value.`v`)
+                )
         }
     }
 
-    override fun write(value: ZcashWalletMigrationError, buf: ByteBuffer) {
+    override fun write(value: ZcashWalletMigrationException, buf: ByteBuffer) {
         when (value) {
-            is ZcashWalletMigrationError.SeedRequired -> {
+            is ZcashWalletMigrationException.SeedRequired -> {
                 buf.putInt(1)
                 Unit
             }
-            is ZcashWalletMigrationError.CorruptedData -> {
+            is ZcashWalletMigrationException.CorruptedData -> {
                 buf.putInt(2)
                 FfiConverterString.write(value.`v`, buf)
                 Unit
             }
-            is ZcashWalletMigrationError.DbError -> {
+            is ZcashWalletMigrationException.DbException -> {
                 buf.putInt(3)
                 FfiConverterString.write(value.`v`, buf)
                 Unit
             }
-            is ZcashWalletMigrationError.BalanceError -> {
+            is ZcashWalletMigrationException.BalanceException -> {
                 buf.putInt(4)
                 FfiConverterString.write(value.`v`, buf)
                 Unit
             }
-            is ZcashWalletMigrationError.CommitmentTreeError -> {
+            is ZcashWalletMigrationException.CommitmentTreeException -> {
                 buf.putInt(5)
                 FfiConverterString.write(value.`v`, buf)
                 Unit
@@ -15409,89 +15425,104 @@ public object FfiConverterTypeZcashWalletMigrationError : FfiConverterRustBuffer
     }
 }
 
-sealed class ZcashZip321Error {
-    data class TooManyPayments(
+sealed class ZcashZip321Exception : Exception() {
+    // Each variant is a nested class
+
+    class TooManyPayments(
         val `v`: UInt,
-    ) : ZcashZip321Error()
-    data class TransparentMemo(
+    ) : ZcashZip321Exception() {
+        override val message
+            get() = "v=${ `v` }"
+    }
+
+    class TransparentMemo(
         val `v`: UInt,
-    ) : ZcashZip321Error()
-    data class RecipientMissing(
+    ) : ZcashZip321Exception() {
+        override val message
+            get() = "v=${ `v` }"
+    }
+
+    class RecipientMissing(
         val `v`: UInt,
-    ) : ZcashZip321Error()
-    data class ParseError(
+    ) : ZcashZip321Exception() {
+        override val message
+            get() = "v=${ `v` }"
+    }
+
+    class ParseException(
         val `v`: String,
-    ) : ZcashZip321Error()
+    ) : ZcashZip321Exception() {
+        override val message
+            get() = "v=${ `v` }"
+    }
+
+    companion object ErrorHandler : CallStatusErrorHandler<ZcashZip321Exception> {
+        override fun lift(error_buf: RustBuffer.ByValue): ZcashZip321Exception = FfiConverterTypeZcashZip321Error.lift(error_buf)
+    }
 }
 
-public object FfiConverterTypeZcashZip321Error : FfiConverterRustBuffer<ZcashZip321Error> {
-    override fun read(buf: ByteBuffer): ZcashZip321Error {
+public object FfiConverterTypeZcashZip321Error : FfiConverterRustBuffer<ZcashZip321Exception> {
+    override fun read(buf: ByteBuffer): ZcashZip321Exception {
         return when (buf.getInt()) {
-            1 -> ZcashZip321Error.TooManyPayments(
+            1 -> ZcashZip321Exception.TooManyPayments(
                 FfiConverterUInt.read(buf),
             )
-            2 -> ZcashZip321Error.TransparentMemo(
+            2 -> ZcashZip321Exception.TransparentMemo(
                 FfiConverterUInt.read(buf),
             )
-            3 -> ZcashZip321Error.RecipientMissing(
+            3 -> ZcashZip321Exception.RecipientMissing(
                 FfiConverterUInt.read(buf),
             )
-            4 -> ZcashZip321Error.ParseError(
+            4 -> ZcashZip321Exception.ParseException(
                 FfiConverterString.read(buf),
             )
-            else -> throw RuntimeException("invalid enum value, something is very wrong!!")
+            else -> throw RuntimeException("invalid error enum value, something is very wrong!!")
         }
     }
 
-    override fun allocationSize(value: ZcashZip321Error) = when (value) {
-        is ZcashZip321Error.TooManyPayments -> {
-            // Add the size for the Int that specifies the variant plus the size needed for all fields
-            (
-                    4 +
-                            FfiConverterUInt.allocationSize(value.`v`)
-                    )
-        }
-        is ZcashZip321Error.TransparentMemo -> {
-            // Add the size for the Int that specifies the variant plus the size needed for all fields
-            (
-                    4 +
-                            FfiConverterUInt.allocationSize(value.`v`)
-                    )
-        }
-        is ZcashZip321Error.RecipientMissing -> {
-            // Add the size for the Int that specifies the variant plus the size needed for all fields
-            (
-                    4 +
-                            FfiConverterUInt.allocationSize(value.`v`)
-                    )
-        }
-        is ZcashZip321Error.ParseError -> {
-            // Add the size for the Int that specifies the variant plus the size needed for all fields
-            (
-                    4 +
-                            FfiConverterString.allocationSize(value.`v`)
-                    )
+    override fun allocationSize(value: ZcashZip321Exception): Int {
+        return when (value) {
+            is ZcashZip321Exception.TooManyPayments -> (
+                // Add the size for the Int that specifies the variant plus the size needed for all fields
+                4 +
+                    FfiConverterUInt.allocationSize(value.`v`)
+                )
+            is ZcashZip321Exception.TransparentMemo -> (
+                // Add the size for the Int that specifies the variant plus the size needed for all fields
+                4 +
+                    FfiConverterUInt.allocationSize(value.`v`)
+                )
+            is ZcashZip321Exception.RecipientMissing -> (
+                // Add the size for the Int that specifies the variant plus the size needed for all fields
+                4 +
+                    FfiConverterUInt.allocationSize(value.`v`)
+                )
+            is ZcashZip321Exception.ParseException -> (
+                // Add the size for the Int that specifies the variant plus the size needed for all fields
+                4 +
+                    FfiConverterString.allocationSize(value.`v`)
+                )
         }
     }
 
-    override fun write(value: ZcashZip321Error, buf: ByteBuffer) {
+    override fun write(value: ZcashZip321Exception, buf: ByteBuffer) {
         when (value) {
-            is ZcashZip321Error.TooManyPayments -> {
+            is ZcashZip321Exception.TooManyPayments -> {
                 buf.putInt(1)
                 FfiConverterUInt.write(value.`v`, buf)
                 Unit
             }
-            is ZcashZip321Error.TransparentMemo -> {
+            is ZcashZip321Exception.TransparentMemo -> {
                 buf.putInt(2)
                 FfiConverterUInt.write(value.`v`, buf)
                 Unit
             }
-            is ZcashZip321Error.RecipientMissing -> {
+            is ZcashZip321Exception.RecipientMissing -> {
                 buf.putInt(3)
                 FfiConverterUInt.write(value.`v`, buf)
                 Unit
             }
-            is ZcashZip321Error.ParseError -> {
+            is ZcashZip321Exception.ParseException -> {
                 buf.putInt(4)
                 FfiConverterString.write(value.`v`, buf)
                 Unit
@@ -16773,7 +16804,7 @@ public object FfiConverterMapStringTypeZcashAccountBalance : FfiConverterRustBuf
         val spaceForMapSize = 4
         val spaceForChildren = value.map { (k, v) ->
             FfiConverterString.allocationSize(k) +
-                    FfiConverterTypeZcashAccountBalance.allocationSize(v)
+                FfiConverterTypeZcashAccountBalance.allocationSize(v)
         }.sum()
         return spaceForMapSize + spaceForChildren
     }
@@ -16807,7 +16838,7 @@ public object FfiConverterMapStringTypeZcashAddressMetadata : FfiConverterRustBu
         val spaceForMapSize = 4
         val spaceForChildren = value.map { (k, v) ->
             FfiConverterString.allocationSize(k) +
-                    FfiConverterTypeZcashAddressMetadata.allocationSize(v)
+                FfiConverterTypeZcashAddressMetadata.allocationSize(v)
         }.sum()
         return spaceForMapSize + spaceForChildren
     }
