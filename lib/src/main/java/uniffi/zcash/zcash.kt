@@ -425,6 +425,42 @@ internal interface _UniFFILib : Library {
         `key`: RustBuffer.ByValue,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_free_walletdefault(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_method_walletdefault_decrypt_and_store_transaction(
+        `ptr`: Pointer,
+        `params`: RustBuffer.ByValue,
+        `zDbData`: Pointer,
+        `tx`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_method_walletdefault_shield_transparent_funds(
+        `ptr`: Pointer,
+        `zDbData`: Pointer,
+        `params`: RustBuffer.ByValue,
+        `prover`: Pointer,
+        `inputSelector`: Pointer,
+        `shieldingThreshold`: Long,
+        `usk`: Pointer,
+        `fromAddrs`: RustBuffer.ByValue,
+        `memo`: Pointer,
+        `minConfirmations`: Int,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_walletdefault_spend(
+        `ptr`: Pointer,
+        `zDbData`: Pointer,
+        `params`: RustBuffer.ByValue,
+        `prover`: Pointer,
+        `inputSelector`: Pointer,
+        `usk`: Pointer,
+        `request`: Pointer,
+        `ovkPolicy`: RustBuffer.ByValue,
+        `minConfirmations`: Int,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
     fun uniffi_uniffi_zcash_fn_free_zcashaccountbalance(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
@@ -2543,6 +2579,9 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_method_testsupport_get_as_u64(): Short
     fun uniffi_uniffi_zcash_checksum_method_testsupport_get_as_u64_array(): Short
     fun uniffi_uniffi_zcash_checksum_method_testsupport_get_as_u8_array(): Short
+    fun uniffi_uniffi_zcash_checksum_method_walletdefault_decrypt_and_store_transaction(): Short
+    fun uniffi_uniffi_zcash_checksum_method_walletdefault_shield_transparent_funds(): Short
+    fun uniffi_uniffi_zcash_checksum_method_walletdefault_spend(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashaccountbalance_sapling_spendable_value(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashaccountbalance_total(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashaccountprivkey_derive_external_secret_key(): Short
@@ -2976,6 +3015,15 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_testsupport_get_as_u8_array() != 33558.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_decrypt_and_store_transaction() != 5174.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_shield_transparent_funds() != 18814.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_spend() != 27078.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashaccountbalance_sapling_spendable_value() != 62416.toShort()) {
@@ -4629,6 +4677,107 @@ public object FfiConverterTypeTestSupport : FfiConverter<TestSupport, Pointer> {
     override fun allocationSize(value: TestSupport) = 8
 
     override fun write(value: TestSupport, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
+public interface WalletDefaultInterface {
+
+    @Throws(ZcashException::class)
+    fun `decryptAndStoreTransaction`(`params`: ZcashConsensusParameters, `zDbData`: ZcashWalletDb, `tx`: ZcashTransaction)
+
+    @Throws(ZcashException::class)
+    fun `shieldTransparentFunds`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId
+
+    @Throws(ZcashException::class)
+    fun `spend`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId
+}
+
+class WalletDefault(
+    pointer: Pointer,
+) : FFIObject(pointer), WalletDefaultInterface {
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_walletdefault(this.pointer, status)
+        }
+    }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `decryptAndStoreTransaction`(`params`: ZcashConsensusParameters, `zDbData`: ZcashWalletDb, `tx`: ZcashTransaction) =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_decrypt_and_store_transaction(
+                    it,
+                    FfiConverterTypeZcashConsensusParameters.lower(`params`),
+                    FfiConverterTypeZcashWalletDb.lower(`zDbData`),
+                    FfiConverterTypeZcashTransaction.lower(`tx`),
+                    _status,
+                )
+            }
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `shieldTransparentFunds`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_shield_transparent_funds(
+                    it,
+                    FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashGreedyInputSelector.lower(`inputSelector`), FfiConverterULong.lower(`shieldingThreshold`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterSequenceTypeZcashTransparentAddress.lower(`fromAddrs`), FfiConverterTypeZcashMemoBytes.lower(`memo`), FfiConverterUInt.lower(`minConfirmations`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashTxId.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `spend`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_spend(
+                    it,
+                    FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashGreedyInputSelector.lower(`inputSelector`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterTypeZcashTransactionRequest.lower(`request`), FfiConverterTypeZcashOvkPolicy.lower(`ovkPolicy`), FfiConverterUInt.lower(`minConfirmations`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashTxId.lift(it)
+        }
+}
+
+public object FfiConverterTypeWalletDefault : FfiConverter<WalletDefault, Pointer> {
+    override fun lower(value: WalletDefault): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): WalletDefault {
+        return WalletDefault(value)
+    }
+
+    override fun read(buf: ByteBuffer): WalletDefault {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: WalletDefault) = 8
+
+    override fun write(value: WalletDefault, buf: ByteBuffer) {
         // The Rust code always expects pointers written as 8 bytes,
         // and will fail to compile if they don't fit.
         buf.putLong(Pointer.nativeValue(lower(value)))
@@ -16585,6 +16734,28 @@ public object FfiConverterSequenceTypeZcashScanRange : FfiConverterRustBuffer<Li
         buf.putInt(value.size)
         value.forEach {
             FfiConverterTypeZcashScanRange.write(it, buf)
+        }
+    }
+}
+
+public object FfiConverterSequenceTypeZcashTransparentAddress : FfiConverterRustBuffer<List<ZcashTransparentAddress>> {
+    override fun read(buf: ByteBuffer): List<ZcashTransparentAddress> {
+        val len = buf.getInt()
+        return List<ZcashTransparentAddress>(len) {
+            FfiConverterTypeZcashTransparentAddress.read(buf)
+        }
+    }
+
+    override fun allocationSize(value: List<ZcashTransparentAddress>): Int {
+        val sizeForLength = 4
+        val sizeForItems = value.map { FfiConverterTypeZcashTransparentAddress.allocationSize(it) }.sum()
+        return sizeForLength + sizeForItems
+    }
+
+    override fun write(value: List<ZcashTransparentAddress>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        value.forEach {
+            FfiConverterTypeZcashTransparentAddress.write(it, buf)
         }
     }
 }
