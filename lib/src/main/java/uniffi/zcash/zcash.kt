@@ -429,6 +429,9 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Unit
+    fun uniffi_uniffi_zcash_fn_constructor_walletdefault_new(
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
     fun uniffi_uniffi_zcash_fn_method_walletdefault_decrypt_and_store_transaction(
         `ptr`: Pointer,
         `params`: RustBuffer.ByValue,
@@ -436,7 +439,7 @@ internal interface _UniFFILib : Library {
         `tx`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Unit
-    fun uniffi_uniffi_zcash_fn_method_walletdefault_shield_transparent_funds(
+    fun uniffi_uniffi_zcash_fn_method_walletdefault_shield_transparent_funds_main(
         `ptr`: Pointer,
         `zDbData`: Pointer,
         `params`: RustBuffer.ByValue,
@@ -449,7 +452,32 @@ internal interface _UniFFILib : Library {
         `minConfirmations`: Int,
         _uniffi_out_err: RustCallStatus,
     ): Pointer
-    fun uniffi_uniffi_zcash_fn_method_walletdefault_spend(
+    fun uniffi_uniffi_zcash_fn_method_walletdefault_shield_transparent_funds_test(
+        `ptr`: Pointer,
+        `zDbData`: Pointer,
+        `params`: RustBuffer.ByValue,
+        `prover`: Pointer,
+        `inputSelector`: Pointer,
+        `shieldingThreshold`: Long,
+        `usk`: Pointer,
+        `fromAddrs`: RustBuffer.ByValue,
+        `memo`: Pointer,
+        `minConfirmations`: Int,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_walletdefault_spend_main(
+        `ptr`: Pointer,
+        `zDbData`: Pointer,
+        `params`: RustBuffer.ByValue,
+        `prover`: Pointer,
+        `inputSelector`: Pointer,
+        `usk`: Pointer,
+        `request`: Pointer,
+        `ovkPolicy`: RustBuffer.ByValue,
+        `minConfirmations`: Int,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_walletdefault_spend_test(
         `ptr`: Pointer,
         `zDbData`: Pointer,
         `params`: RustBuffer.ByValue,
@@ -592,11 +620,14 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Unit
+    fun uniffi_uniffi_zcash_fn_constructor_zcashbackendscan_new(
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
     fun uniffi_uniffi_zcash_fn_method_zcashbackendscan_scan_cached_blocks(
         `ptr`: Pointer,
         `params`: RustBuffer.ByValue,
-        `zDbCache`: Pointer,
-        `zDbData`: Pointer,
+        `fsblockdbRoot`: RustBuffer.ByValue,
+        `dbDataPath`: RustBuffer.ByValue,
         `height`: Pointer,
         `limit`: Int,
         _uniffi_out_err: RustCallStatus,
@@ -645,6 +676,16 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Unit
+    fun uniffi_uniffi_zcash_fn_constructor_zcashchain_new(
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashchain_get_nearest_rewind_height(
+        `ptr`: Pointer,
+        `dbData`: RustBuffer.ByValue,
+        `height`: Int,
+        `params`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): Int
     fun uniffi_uniffi_zcash_fn_method_zcashchain_init_blockmeta_db(
         `ptr`: Pointer,
         `blocksDir`: RustBuffer.ByValue,
@@ -1058,10 +1099,6 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Pointer
-    fun uniffi_uniffi_zcash_fn_free_zcashgreedyinputselector(
-        `ptr`: Pointer,
-        _uniffi_out_err: RustCallStatus,
-    ): Unit
     fun uniffi_uniffi_zcash_fn_free_zcashincrementalwitness(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
@@ -2329,6 +2366,18 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Unit
+    fun uniffi_uniffi_zcash_fn_constructor_zcashwallet_new(
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashwallet_create_account(
+        `ptr`: Pointer,
+        `zwdb`: Pointer,
+        `seed`: RustBuffer.ByValue,
+        `recoverUntil`: Int,
+        `treestateBytes`: RustBuffer.ByValue,
+        `params`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
     fun uniffi_uniffi_zcash_fn_method_zcashwallet_init_wallet_db(
         `ptr`: Pointer,
         `zwdb`: Pointer,
@@ -2580,8 +2629,10 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_method_testsupport_get_as_u64_array(): Short
     fun uniffi_uniffi_zcash_checksum_method_testsupport_get_as_u8_array(): Short
     fun uniffi_uniffi_zcash_checksum_method_walletdefault_decrypt_and_store_transaction(): Short
-    fun uniffi_uniffi_zcash_checksum_method_walletdefault_shield_transparent_funds(): Short
-    fun uniffi_uniffi_zcash_checksum_method_walletdefault_spend(): Short
+    fun uniffi_uniffi_zcash_checksum_method_walletdefault_shield_transparent_funds_main(): Short
+    fun uniffi_uniffi_zcash_checksum_method_walletdefault_shield_transparent_funds_test(): Short
+    fun uniffi_uniffi_zcash_checksum_method_walletdefault_spend_main(): Short
+    fun uniffi_uniffi_zcash_checksum_method_walletdefault_spend_test(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashaccountbalance_sapling_spendable_value(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashaccountbalance_total(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashaccountprivkey_derive_external_secret_key(): Short
@@ -2602,6 +2653,7 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_method_zcashbalance_total(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashblockheight_value(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashblockmeta_block_file_path(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashchain_get_nearest_rewind_height(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashchain_init_blockmeta_db(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashcommitmenttree_append(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashcommitmenttreeroot_root_hash(): Short
@@ -2805,6 +2857,7 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_method_zcashunifiedspendingkey_transparent(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashviewingkey_ivk(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashviewingkey_to_payment_address(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwallet_create_account(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwallet_init_wallet_db(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_account_for_ufvk(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_current_address(): Short
@@ -2831,6 +2884,7 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_method_zcashzip317feerule_marginal_fee(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_secpsecretkey_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_testsupport_from_csv_file(): Short
+    fun uniffi_uniffi_zcash_checksum_constructor_walletdefault_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashaccountbalance_zero(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashaccountprivkey_from_bytes(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashaccountprivkey_from_extended_privkey(): Short
@@ -2840,9 +2894,11 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_constructor_zcashamount_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashamount_zero(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashanchor_from_bytes(): Short
+    fun uniffi_uniffi_zcash_checksum_constructor_zcashbackendscan_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashbalance_zero(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashblockhash_from_slice(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashblockheight_new(): Short
+    fun uniffi_uniffi_zcash_checksum_constructor_zcashchain_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashcommitmenttree_empty(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashcommitmenttreeroot_from_parts(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashdiversifiablefullviewingkey_from_bytes(): Short
@@ -2945,6 +3001,7 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_constructor_zcashunifiedspendingkey_from_bytes(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashunifiedspendingkey_from_seed(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashverifyingkey_new(): Short
+    fun uniffi_uniffi_zcash_checksum_constructor_zcashwallet_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashwalletdb_for_path(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashwalletsummary_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashwallettransparentoutput_from_parts(): Short
@@ -3020,10 +3077,16 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_decrypt_and_store_transaction() != 5174.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_shield_transparent_funds() != 18814.toShort()) {
+    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_shield_transparent_funds_main() != 58703.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_spend() != 27078.toShort()) {
+    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_shield_transparent_funds_test() != 1382.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_spend_main() != 61631.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_spend_test() != 59620.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashaccountbalance_sapling_spendable_value() != 62416.toShort()) {
@@ -3074,7 +3137,7 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashanchor_to_bytes() != 60719.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_method_zcashbackendscan_scan_cached_blocks() != 43893.toShort()) {
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashbackendscan_scan_cached_blocks() != 53945.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashbalance_total() != 19876.toShort()) {
@@ -3084,6 +3147,9 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashblockmeta_block_file_path() != 47636.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashchain_get_nearest_rewind_height() != 36643.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashchain_init_blockmeta_db() != 26933.toShort()) {
@@ -3695,6 +3761,9 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashviewingkey_to_payment_address() != 36128.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwallet_create_account() != 8484.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashwallet_init_wallet_db() != 11523.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
@@ -3773,6 +3842,9 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_constructor_testsupport_from_csv_file() != 33828.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
+    if (lib.uniffi_uniffi_zcash_checksum_constructor_walletdefault_new() != 53190.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashaccountbalance_zero() != 33487.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
@@ -3800,6 +3872,9 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashanchor_from_bytes() != 1309.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
+    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashbackendscan_new() != 56451.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashbalance_zero() != 29923.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
@@ -3807,6 +3882,9 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashblockheight_new() != 45578.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashchain_new() != 30725.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashcommitmenttree_empty() != 623.toShort()) {
@@ -4113,6 +4191,9 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashverifyingkey_new() != 26863.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashwallet_new() != 32928.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashwalletdb_for_path() != 43172.toShort()) {
@@ -4689,15 +4770,28 @@ public interface WalletDefaultInterface {
     fun `decryptAndStoreTransaction`(`params`: ZcashConsensusParameters, `zDbData`: ZcashWalletDb, `tx`: ZcashTransaction)
 
     @Throws(ZcashException::class)
-    fun `shieldTransparentFunds`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId
+    fun `shieldTransparentFundsMain`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashMainGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId
 
     @Throws(ZcashException::class)
-    fun `spend`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId
+    fun `shieldTransparentFundsTest`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashTestGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId
+
+    @Throws(ZcashException::class)
+    fun `spendMain`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashMainGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId
+
+    @Throws(ZcashException::class)
+    fun `spendTest`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashTestGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId
 }
 
 class WalletDefault(
     pointer: Pointer,
 ) : FFIObject(pointer), WalletDefaultInterface {
+
+    constructor() :
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_walletdefault_new(_status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -4732,12 +4826,12 @@ class WalletDefault(
     @Throws(
         ZcashException::class,
         )
-    override fun `shieldTransparentFunds`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId =
+    override fun `shieldTransparentFundsMain`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashMainGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_shield_transparent_funds(
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_shield_transparent_funds_main(
                     it,
-                    FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashGreedyInputSelector.lower(`inputSelector`), FfiConverterULong.lower(`shieldingThreshold`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterSequenceTypeZcashTransparentAddress.lower(`fromAddrs`), FfiConverterTypeZcashMemoBytes.lower(`memo`), FfiConverterUInt.lower(`minConfirmations`),
+                    FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashMainGreedyInputSelector.lower(`inputSelector`), FfiConverterULong.lower(`shieldingThreshold`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterSequenceTypeZcashTransparentAddress.lower(`fromAddrs`), FfiConverterTypeZcashMemoBytes.lower(`memo`), FfiConverterUInt.lower(`minConfirmations`),
                     _status,
                 )
             }
@@ -4748,12 +4842,44 @@ class WalletDefault(
     @Throws(
         ZcashException::class,
         )
-    override fun `spend`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId =
+    override fun `shieldTransparentFundsTest`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashTestGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_spend(
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_shield_transparent_funds_test(
                     it,
-                    FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashGreedyInputSelector.lower(`inputSelector`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterTypeZcashTransactionRequest.lower(`request`), FfiConverterTypeZcashOvkPolicy.lower(`ovkPolicy`), FfiConverterUInt.lower(`minConfirmations`),
+                    FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashTestGreedyInputSelector.lower(`inputSelector`), FfiConverterULong.lower(`shieldingThreshold`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterSequenceTypeZcashTransparentAddress.lower(`fromAddrs`), FfiConverterTypeZcashMemoBytes.lower(`memo`), FfiConverterUInt.lower(`minConfirmations`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashTxId.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `spendMain`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashMainGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_spend_main(
+                    it,
+                    FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashMainGreedyInputSelector.lower(`inputSelector`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterTypeZcashTransactionRequest.lower(`request`), FfiConverterTypeZcashOvkPolicy.lower(`ovkPolicy`), FfiConverterUInt.lower(`minConfirmations`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashTxId.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `spendTest`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashTestGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_spend_test(
+                    it,
+                    FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashTestGreedyInputSelector.lower(`inputSelector`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterTypeZcashTransactionRequest.lower(`request`), FfiConverterTypeZcashOvkPolicy.lower(`ovkPolicy`), FfiConverterUInt.lower(`minConfirmations`),
                     _status,
                 )
             }
@@ -5382,12 +5508,19 @@ public object FfiConverterTypeZcashAnchor : FfiConverter<ZcashAnchor, Pointer> {
 public interface ZcashBackendScanInterface {
 
     @Throws(ZcashException::class)
-    fun `scanCachedBlocks`(`params`: ZcashConsensusParameters, `zDbCache`: ZcashFsBlockDb, `zDbData`: ZcashWalletDb, `height`: ZcashBlockHeight, `limit`: UInt)
+    fun `scanCachedBlocks`(`params`: ZcashConsensusParameters, `fsblockdbRoot`: String, `dbDataPath`: String, `height`: ZcashBlockHeight, `limit`: UInt)
 }
 
 class ZcashBackendScan(
     pointer: Pointer,
 ) : FFIObject(pointer), ZcashBackendScanInterface {
+
+    constructor() :
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashbackendscan_new(_status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -5406,14 +5539,14 @@ class ZcashBackendScan(
     @Throws(
         ZcashException::class,
         )
-    override fun `scanCachedBlocks`(`params`: ZcashConsensusParameters, `zDbCache`: ZcashFsBlockDb, `zDbData`: ZcashWalletDb, `height`: ZcashBlockHeight, `limit`: UInt) =
+    override fun `scanCachedBlocks`(`params`: ZcashConsensusParameters, `fsblockdbRoot`: String, `dbDataPath`: String, `height`: ZcashBlockHeight, `limit`: UInt) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
                 _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashbackendscan_scan_cached_blocks(
                     it,
                     FfiConverterTypeZcashConsensusParameters.lower(`params`),
-                    FfiConverterTypeZcashFsBlockDb.lower(`zDbCache`),
-                    FfiConverterTypeZcashWalletDb.lower(`zDbData`),
+                    FfiConverterString.lower(`fsblockdbRoot`),
+                    FfiConverterString.lower(`dbDataPath`),
                     FfiConverterTypeZcashBlockHeight.lower(`height`),
                     FfiConverterUInt.lower(`limit`),
                     _status,
@@ -5694,12 +5827,22 @@ public object FfiConverterTypeZcashBlockMeta : FfiConverter<ZcashBlockMeta, Poin
 public interface ZcashChainInterface {
 
     @Throws(ZcashException::class)
+    fun `getNearestRewindHeight`(`dbData`: String, `height`: UInt, `params`: ZcashConsensusParameters): UInt
+
+    @Throws(ZcashException::class)
     fun `initBlockmetaDb`(`blocksDir`: String)
 }
 
 class ZcashChain(
     pointer: Pointer,
 ) : FFIObject(pointer), ZcashChainInterface {
+
+    constructor() :
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashchain_new(_status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -5714,6 +5857,24 @@ class ZcashChain(
             _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashchain(this.pointer, status)
         }
     }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `getNearestRewindHeight`(`dbData`: String, `height`: UInt, `params`: ZcashConsensusParameters): UInt =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashchain_get_nearest_rewind_height(
+                    it,
+                    FfiConverterString.lower(`dbData`),
+                    FfiConverterUInt.lower(`height`),
+                    FfiConverterTypeZcashConsensusParameters.lower(`params`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterUInt.lift(it)
+        }
 
     @Throws(
         ZcashException::class,
@@ -7566,49 +7727,6 @@ public object FfiConverterTypeZcashFullViewingKey : FfiConverter<ZcashFullViewin
     override fun allocationSize(value: ZcashFullViewingKey) = 8
 
     override fun write(value: ZcashFullViewingKey, buf: ByteBuffer) {
-        // The Rust code always expects pointers written as 8 bytes,
-        // and will fail to compile if they don't fit.
-        buf.putLong(Pointer.nativeValue(lower(value)))
-    }
-}
-
-public interface ZcashGreedyInputSelectorInterface
-
-class ZcashGreedyInputSelector(
-    pointer: Pointer,
-) : FFIObject(pointer), ZcashGreedyInputSelectorInterface {
-
-    /**
-     * Disconnect the object from the underlying Rust object.
-     *
-     * It can be called more than once, but once called, interacting with the object
-     * causes an `IllegalStateException`.
-     *
-     * Clients **must** call this method once done with the object, or cause a memory leak.
-     */
-    protected override fun freeRustArcPtr() {
-        rustCall() { status ->
-            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashgreedyinputselector(this.pointer, status)
-        }
-    }
-}
-
-public object FfiConverterTypeZcashGreedyInputSelector : FfiConverter<ZcashGreedyInputSelector, Pointer> {
-    override fun lower(value: ZcashGreedyInputSelector): Pointer = value.callWithPointer { it }
-
-    override fun lift(value: Pointer): ZcashGreedyInputSelector {
-        return ZcashGreedyInputSelector(value)
-    }
-
-    override fun read(buf: ByteBuffer): ZcashGreedyInputSelector {
-        // The Rust code always writes pointers as 8 bytes, and will
-        // fail to compile if they don't fit.
-        return lift(Pointer(buf.getLong()))
-    }
-
-    override fun allocationSize(value: ZcashGreedyInputSelector) = 8
-
-    override fun write(value: ZcashGreedyInputSelector, buf: ByteBuffer) {
         // The Rust code always expects pointers written as 8 bytes,
         // and will fail to compile if they don't fit.
         buf.putLong(Pointer.nativeValue(lower(value)))
@@ -13563,12 +13681,22 @@ public object FfiConverterTypeZcashViewingKey : FfiConverter<ZcashViewingKey, Po
 public interface ZcashWalletInterface {
 
     @Throws(ZcashException::class)
+    fun `createAccount`(`zwdb`: ZcashWalletDb, `seed`: List<UByte>, `recoverUntil`: UInt, `treestateBytes`: List<UByte>, `params`: ZcashConsensusParameters): ZcashUnifiedSpendingKey
+
+    @Throws(ZcashException::class)
     fun `initWalletDb`(`zwdb`: ZcashWalletDb, `seed`: List<UByte>, `params`: ZcashConsensusParameters)
 }
 
 class ZcashWallet(
     pointer: Pointer,
 ) : FFIObject(pointer), ZcashWalletInterface {
+
+    constructor() :
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashwallet_new(_status)
+            },
+        )
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -13583,6 +13711,26 @@ class ZcashWallet(
             _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashwallet(this.pointer, status)
         }
     }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `createAccount`(`zwdb`: ZcashWalletDb, `seed`: List<UByte>, `recoverUntil`: UInt, `treestateBytes`: List<UByte>, `params`: ZcashConsensusParameters): ZcashUnifiedSpendingKey =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwallet_create_account(
+                    it,
+                    FfiConverterTypeZcashWalletDb.lower(`zwdb`),
+                    FfiConverterSequenceUByte.lower(`seed`),
+                    FfiConverterUInt.lower(`recoverUntil`),
+                    FfiConverterSequenceUByte.lower(`treestateBytes`),
+                    FfiConverterTypeZcashConsensusParameters.lower(`params`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashUnifiedSpendingKey.lift(it)
+        }
 
     @Throws(
         ZcashException::class,
