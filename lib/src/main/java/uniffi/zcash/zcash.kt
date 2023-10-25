@@ -376,6 +376,18 @@ internal interface _UniFFILib : Library {
         }
     }
 
+    fun uniffi_uniffi_zcash_fn_free_merkletreefrontier(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_free_merkletreeposition(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_free_merkletreeretention(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
     fun uniffi_uniffi_zcash_fn_free_secpsecretkey(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
@@ -425,70 +437,10 @@ internal interface _UniFFILib : Library {
         `key`: RustBuffer.ByValue,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
-    fun uniffi_uniffi_zcash_fn_free_walletdefault(
+    fun uniffi_uniffi_zcash_fn_free_timeoffsetdatetime(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Unit
-    fun uniffi_uniffi_zcash_fn_constructor_walletdefault_new(
-        _uniffi_out_err: RustCallStatus,
-    ): Pointer
-    fun uniffi_uniffi_zcash_fn_method_walletdefault_decrypt_and_store_transaction(
-        `ptr`: Pointer,
-        `params`: RustBuffer.ByValue,
-        `zDbData`: Pointer,
-        `tx`: Pointer,
-        _uniffi_out_err: RustCallStatus,
-    ): Unit
-    fun uniffi_uniffi_zcash_fn_method_walletdefault_shield_transparent_funds_main(
-        `ptr`: Pointer,
-        `zDbData`: Pointer,
-        `params`: RustBuffer.ByValue,
-        `prover`: Pointer,
-        `inputSelector`: Pointer,
-        `shieldingThreshold`: Long,
-        `usk`: Pointer,
-        `fromAddrs`: RustBuffer.ByValue,
-        `memo`: Pointer,
-        `minConfirmations`: Int,
-        _uniffi_out_err: RustCallStatus,
-    ): Pointer
-    fun uniffi_uniffi_zcash_fn_method_walletdefault_shield_transparent_funds_test(
-        `ptr`: Pointer,
-        `zDbData`: Pointer,
-        `params`: RustBuffer.ByValue,
-        `prover`: Pointer,
-        `inputSelector`: Pointer,
-        `shieldingThreshold`: Long,
-        `usk`: Pointer,
-        `fromAddrs`: RustBuffer.ByValue,
-        `memo`: Pointer,
-        `minConfirmations`: Int,
-        _uniffi_out_err: RustCallStatus,
-    ): Pointer
-    fun uniffi_uniffi_zcash_fn_method_walletdefault_spend_main(
-        `ptr`: Pointer,
-        `zDbData`: Pointer,
-        `params`: RustBuffer.ByValue,
-        `prover`: Pointer,
-        `inputSelector`: Pointer,
-        `usk`: Pointer,
-        `request`: Pointer,
-        `ovkPolicy`: RustBuffer.ByValue,
-        `minConfirmations`: Int,
-        _uniffi_out_err: RustCallStatus,
-    ): Pointer
-    fun uniffi_uniffi_zcash_fn_method_walletdefault_spend_test(
-        `ptr`: Pointer,
-        `zDbData`: Pointer,
-        `params`: RustBuffer.ByValue,
-        `prover`: Pointer,
-        `inputSelector`: Pointer,
-        `usk`: Pointer,
-        `request`: Pointer,
-        `ovkPolicy`: RustBuffer.ByValue,
-        `minConfirmations`: Int,
-        _uniffi_out_err: RustCallStatus,
-    ): Pointer
     fun uniffi_uniffi_zcash_fn_free_zcashaccountbalance(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
@@ -501,6 +453,31 @@ internal interface _UniFFILib : Library {
         _uniffi_out_err: RustCallStatus,
     ): Pointer
     fun uniffi_uniffi_zcash_fn_method_zcashaccountbalance_total(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashaccountbalance_unshielded(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_free_zcashaccountbirthday(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_constructor_zcashaccountbirthday_from_treestate(
+        `treestate`: Pointer,
+        `recoverUntil`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashaccountbirthday_height(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashaccountbirthday_recover_until(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashaccountbirthday_sapling_frontier(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Pointer
@@ -616,22 +593,6 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
-    fun uniffi_uniffi_zcash_fn_free_zcashbackendscan(
-        `ptr`: Pointer,
-        _uniffi_out_err: RustCallStatus,
-    ): Unit
-    fun uniffi_uniffi_zcash_fn_constructor_zcashbackendscan_new(
-        _uniffi_out_err: RustCallStatus,
-    ): Pointer
-    fun uniffi_uniffi_zcash_fn_method_zcashbackendscan_scan_cached_blocks(
-        `ptr`: Pointer,
-        `params`: RustBuffer.ByValue,
-        `fsblockdbRoot`: RustBuffer.ByValue,
-        `dbDataPath`: RustBuffer.ByValue,
-        `height`: Pointer,
-        `limit`: Int,
-        _uniffi_out_err: RustCallStatus,
-    ): Unit
     fun uniffi_uniffi_zcash_fn_free_zcashbalance(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
@@ -667,30 +628,41 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Unit
+    fun uniffi_uniffi_zcash_fn_constructor_zcashblockmeta_new(
+        `height`: Pointer,
+        `blockHash`: Pointer,
+        `blockTime`: Int,
+        `saplingOutputsCount`: Int,
+        `orchardActionsCount`: Int,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
     fun uniffi_uniffi_zcash_fn_method_zcashblockmeta_block_file_path(
         `ptr`: Pointer,
         `blocksDir`: RustBuffer.ByValue,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
-    fun uniffi_uniffi_zcash_fn_free_zcashchain(
+    fun uniffi_uniffi_zcash_fn_free_zcashblockmetadata(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Unit
-    fun uniffi_uniffi_zcash_fn_constructor_zcashchain_new(
+    fun uniffi_uniffi_zcash_fn_constructor_zcashblockmetadata_from_parts(
+        `blockHeight`: Pointer,
+        `blockHash`: Pointer,
+        `saplingTreeSize`: Int,
         _uniffi_out_err: RustCallStatus,
     ): Pointer
-    fun uniffi_uniffi_zcash_fn_method_zcashchain_get_nearest_rewind_height(
+    fun uniffi_uniffi_zcash_fn_method_zcashblockmetadata_block_hash(
         `ptr`: Pointer,
-        `dbData`: RustBuffer.ByValue,
-        `height`: Int,
-        `params`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashblockmetadata_block_height(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashblockmetadata_sapling_tree_size(
+        `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Int
-    fun uniffi_uniffi_zcash_fn_method_zcashchain_init_blockmeta_db(
-        `ptr`: Pointer,
-        `blocksDir`: RustBuffer.ByValue,
-        _uniffi_out_err: RustCallStatus,
-    ): Unit
     fun uniffi_uniffi_zcash_fn_free_zcashcommitmenttree(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
@@ -720,6 +692,30 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Pointer
+    fun uniffi_uniffi_zcash_fn_free_zcashdecryptedoutput(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_method_zcashdecryptedoutput_account(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashdecryptedoutput_index(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Long
+    fun uniffi_uniffi_zcash_fn_method_zcashdecryptedoutput_memo(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashdecryptedoutput_note(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashdecryptedoutput_transfer_type(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
     fun uniffi_uniffi_zcash_fn_free_zcashdecryptedtransaction(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
@@ -1730,6 +1726,30 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Long
+    fun uniffi_uniffi_zcash_fn_free_zcashreceivednoteid(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_free_zcashreceivedsaplingnote(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_method_zcashreceivedsaplingnote_diversifier(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashreceivedsaplingnote_internal_note_id(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashreceivedsaplingnote_note_commitment_tree_position(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashreceivedsaplingnote_value(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
     fun uniffi_uniffi_zcash_fn_free_zcashrecipientaddress(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
@@ -1950,6 +1970,46 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_free_zcashscannedblock(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_constructor_zcashscannedblock_from_parts(
+        `metadata`: Pointer,
+        `blockTime`: Int,
+        `transactions`: RustBuffer.ByValue,
+        `saplingNullifierMap`: RustBuffer.ByValue,
+        `saplingCommitments`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashscannedblock_block_hash(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashscannedblock_block_time(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Int
+    fun uniffi_uniffi_zcash_fn_method_zcashscannedblock_height(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashscannedblock_metadata(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashscannedblock_sapling_commitments(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashscannedblock_sapling_nullifier_map(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashscannedblock_transactions(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
     fun uniffi_uniffi_zcash_fn_free_zcashscript(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
@@ -1962,6 +2022,38 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_free_zcashsenttransactionoutput(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_constructor_zcashsenttransactionoutput_from_parts(
+        `outputIndex`: Int,
+        `recipient`: RustBuffer.ByValue,
+        `value`: Pointer,
+        `memo`: RustBuffer.ByValue,
+        `saplingChangeTo`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashsenttransactionoutput_memo(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashsenttransactionoutput_output_index(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Int
+    fun uniffi_uniffi_zcash_fn_method_zcashsenttransactionoutput_recipient(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashsenttransactionoutput_sapling_change_to(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashsenttransactionoutput_value(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
     fun uniffi_uniffi_zcash_fn_free_zcashtestgreedyinputselector(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
@@ -2139,6 +2231,19 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_free_zcashtreestate(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_constructor_zcashtreestate_new(
+        `network`: RustBuffer.ByValue,
+        `height`: Long,
+        `hash`: RustBuffer.ByValue,
+        `time`: Int,
+        `saplingTree`: RustBuffer.ByValue,
+        `orchardTree`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
     fun uniffi_uniffi_zcash_fn_free_zcashtxid(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
@@ -2362,29 +2467,6 @@ internal interface _UniFFILib : Library {
         `diversifier`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
-    fun uniffi_uniffi_zcash_fn_free_zcashwallet(
-        `ptr`: Pointer,
-        _uniffi_out_err: RustCallStatus,
-    ): Unit
-    fun uniffi_uniffi_zcash_fn_constructor_zcashwallet_new(
-        _uniffi_out_err: RustCallStatus,
-    ): Pointer
-    fun uniffi_uniffi_zcash_fn_method_zcashwallet_create_account(
-        `ptr`: Pointer,
-        `zwdb`: Pointer,
-        `seed`: RustBuffer.ByValue,
-        `recoverUntil`: Int,
-        `treestateBytes`: RustBuffer.ByValue,
-        `params`: RustBuffer.ByValue,
-        _uniffi_out_err: RustCallStatus,
-    ): Pointer
-    fun uniffi_uniffi_zcash_fn_method_zcashwallet_init_wallet_db(
-        `ptr`: Pointer,
-        `zwdb`: Pointer,
-        `seed`: RustBuffer.ByValue,
-        `params`: RustBuffer.ByValue,
-        _uniffi_out_err: RustCallStatus,
-    ): Unit
     fun uniffi_uniffi_zcash_fn_free_zcashwalletdb(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
@@ -2394,9 +2476,42 @@ internal interface _UniFFILib : Library {
         `params`: RustBuffer.ByValue,
         _uniffi_out_err: RustCallStatus,
     ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_block_fully_scanned(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_block_max_scanned(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_block_metadata(
+        `ptr`: Pointer,
+        `height`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_chain_height(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_create_account(
+        `ptr`: Pointer,
+        `seed`: RustBuffer.ByValue,
+        `birthday`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_account_birthday(
+        `ptr`: Pointer,
+        `account`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
     fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_account_for_ufvk(
         `ptr`: Pointer,
         `zufvk`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_block_hash(
+        `ptr`: Pointer,
+        `height`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
     fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_current_address(
@@ -2404,13 +2519,64 @@ internal interface _UniFFILib : Library {
         `aid`: RustBuffer.ByValue,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_max_height_hash(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_memo(
+        `ptr`: Pointer,
+        `idNote`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
     fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_min_unspent_height(
         `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_next_available_address(
+        `ptr`: Pointer,
+        `account`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_sapling_nullifiers(
+        `ptr`: Pointer,
+        `query`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_spendable_sapling_notes(
+        `ptr`: Pointer,
+        `account`: RustBuffer.ByValue,
+        `anchorHeight`: Pointer,
+        `exclude`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_target_and_anchor_heights(
+        `ptr`: Pointer,
+        `minConfirmations`: Int,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_transaction(
+        `ptr`: Pointer,
+        `txid`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_transparent_balances(
+        `ptr`: Pointer,
+        `account`: RustBuffer.ByValue,
+        `maxHeight`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
     fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_transparent_receivers(
         `ptr`: Pointer,
         `aid`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_tx_height(
+        `ptr`: Pointer,
+        `txid`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_unified_full_viewing_keys(
+        `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
     fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_unspent_transparent_outputs(
@@ -2420,11 +2586,31 @@ internal interface _UniFFILib : Library {
         `zop`: RustBuffer.ByValue,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_wallet_birthday(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
     fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_wallet_summary(
         `ptr`: Pointer,
         `minConfirmations`: Int,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_init(
+        `ptr`: Pointer,
+        `seed`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_is_valid_account_extfvk(
+        `ptr`: Pointer,
+        `account`: RustBuffer.ByValue,
+        `extfvk`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Byte
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_put_blocks(
+        `ptr`: Pointer,
+        `blocks`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
     fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_put_received_transparent_utxo(
         `ptr`: Pointer,
         `output`: Pointer,
@@ -2436,9 +2622,22 @@ internal interface _UniFFILib : Library {
         `roots`: RustBuffer.ByValue,
         _uniffi_out_err: RustCallStatus,
     ): Unit
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_select_spendable_sapling_notes(
+        `ptr`: Pointer,
+        `account`: RustBuffer.ByValue,
+        `targetValue`: Pointer,
+        `anchorHeight`: Pointer,
+        `exclude`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
     fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_store_decrypted_tx(
         `ptr`: Pointer,
         `dTx`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_store_sent_tx(
+        `ptr`: Pointer,
+        `sentTx`: RustBuffer.ByValue,
         _uniffi_out_err: RustCallStatus,
     ): Unit
     fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_suggest_scan_ranges(
@@ -2453,6 +2652,14 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_fn_method_zcashwalletdb_update_chain_tip(
         `ptr`: Pointer,
         `tipHeight`: Int,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_free_zcashwalletsaplingoutput(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_free_zcashwalletsaplingspend(
+        `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Unit
     fun uniffi_uniffi_zcash_fn_free_zcashwalletsummary(
@@ -2516,6 +2723,17 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Pointer
+    fun uniffi_uniffi_zcash_fn_free_zcashwallettx(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_constructor_zcashwallettx_new(
+        `txid`: Pointer,
+        `index`: Int,
+        `saplingSpends`: RustBuffer.ByValue,
+        `saplingOutputs`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
     fun uniffi_uniffi_zcash_fn_free_zcashzip317feerule(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
@@ -2563,6 +2781,19 @@ internal interface _UniFFILib : Library {
         `s`: RustBuffer.ByValue,
         _uniffi_out_err: RustCallStatus,
     ): Pointer
+    fun uniffi_uniffi_zcash_fn_func_decrypt_and_store_transaction(
+        `params`: RustBuffer.ByValue,
+        `zDbData`: Pointer,
+        `tx`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_func_decrypt_transaction(
+        `params`: RustBuffer.ByValue,
+        `height`: Pointer,
+        `tx`: Pointer,
+        `ufvks`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
     fun uniffi_uniffi_zcash_fn_func_encode_extended_full_viewing_key(
         `hrp`: RustBuffer.ByValue,
         `extfvk`: Pointer,
@@ -2594,6 +2825,60 @@ internal interface _UniFFILib : Library {
         `addr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_func_scan_cached_blocks(
+        `params`: RustBuffer.ByValue,
+        `fsblockdbRoot`: RustBuffer.ByValue,
+        `dbDataPath`: RustBuffer.ByValue,
+        `height`: Pointer,
+        `limit`: Int,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
+    fun uniffi_uniffi_zcash_fn_func_shield_transparent_funds_main(
+        `zDbData`: Pointer,
+        `params`: RustBuffer.ByValue,
+        `prover`: Pointer,
+        `inputSelector`: Pointer,
+        `shieldingThreshold`: Long,
+        `usk`: Pointer,
+        `fromAddrs`: RustBuffer.ByValue,
+        `memo`: Pointer,
+        `minConfirmations`: Int,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_func_shield_transparent_funds_test(
+        `zDbData`: Pointer,
+        `params`: RustBuffer.ByValue,
+        `prover`: Pointer,
+        `inputSelector`: Pointer,
+        `shieldingThreshold`: Long,
+        `usk`: Pointer,
+        `fromAddrs`: RustBuffer.ByValue,
+        `memo`: Pointer,
+        `minConfirmations`: Int,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_func_spend_main(
+        `zDbData`: Pointer,
+        `params`: RustBuffer.ByValue,
+        `prover`: Pointer,
+        `inputSelector`: Pointer,
+        `usk`: Pointer,
+        `request`: Pointer,
+        `ovkPolicy`: RustBuffer.ByValue,
+        `minConfirmations`: Int,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
+    fun uniffi_uniffi_zcash_fn_func_spend_test(
+        `zDbData`: Pointer,
+        `params`: RustBuffer.ByValue,
+        `prover`: Pointer,
+        `inputSelector`: Pointer,
+        `usk`: Pointer,
+        `request`: Pointer,
+        `ovkPolicy`: RustBuffer.ByValue,
+        `minConfirmations`: Int,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
     fun ffi_uniffi_zcash_rustbuffer_alloc(
         `size`: Int,
         _uniffi_out_err: RustCallStatus,
@@ -2615,12 +2900,19 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_func_decode_extended_spending_key(): Short
     fun uniffi_uniffi_zcash_checksum_func_decode_payment_address(): Short
     fun uniffi_uniffi_zcash_checksum_func_decode_transparent_address(): Short
+    fun uniffi_uniffi_zcash_checksum_func_decrypt_and_store_transaction(): Short
+    fun uniffi_uniffi_zcash_checksum_func_decrypt_transaction(): Short
     fun uniffi_uniffi_zcash_checksum_func_encode_extended_full_viewing_key(): Short
     fun uniffi_uniffi_zcash_checksum_func_encode_extended_spending_key(): Short
     fun uniffi_uniffi_zcash_checksum_func_encode_payment_address(): Short
     fun uniffi_uniffi_zcash_checksum_func_encode_payment_address_p(): Short
     fun uniffi_uniffi_zcash_checksum_func_encode_transparent_address(): Short
     fun uniffi_uniffi_zcash_checksum_func_encode_transparent_address_p(): Short
+    fun uniffi_uniffi_zcash_checksum_func_scan_cached_blocks(): Short
+    fun uniffi_uniffi_zcash_checksum_func_shield_transparent_funds_main(): Short
+    fun uniffi_uniffi_zcash_checksum_func_shield_transparent_funds_test(): Short
+    fun uniffi_uniffi_zcash_checksum_func_spend_main(): Short
+    fun uniffi_uniffi_zcash_checksum_func_spend_test(): Short
     fun uniffi_uniffi_zcash_checksum_method_secpsecretkey_serialize_secret(): Short
     fun uniffi_uniffi_zcash_checksum_method_testsupport_get_as_string(): Short
     fun uniffi_uniffi_zcash_checksum_method_testsupport_get_as_u32(): Short
@@ -2628,13 +2920,12 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_method_testsupport_get_as_u64(): Short
     fun uniffi_uniffi_zcash_checksum_method_testsupport_get_as_u64_array(): Short
     fun uniffi_uniffi_zcash_checksum_method_testsupport_get_as_u8_array(): Short
-    fun uniffi_uniffi_zcash_checksum_method_walletdefault_decrypt_and_store_transaction(): Short
-    fun uniffi_uniffi_zcash_checksum_method_walletdefault_shield_transparent_funds_main(): Short
-    fun uniffi_uniffi_zcash_checksum_method_walletdefault_shield_transparent_funds_test(): Short
-    fun uniffi_uniffi_zcash_checksum_method_walletdefault_spend_main(): Short
-    fun uniffi_uniffi_zcash_checksum_method_walletdefault_spend_test(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashaccountbalance_sapling_spendable_value(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashaccountbalance_total(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashaccountbalance_unshielded(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashaccountbirthday_height(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashaccountbirthday_recover_until(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashaccountbirthday_sapling_frontier(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashaccountprivkey_derive_external_secret_key(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashaccountprivkey_derive_internal_secret_key(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashaccountprivkey_to_account_pubkey(): Short
@@ -2649,15 +2940,20 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_method_zcashaddressmetadata_diversifier_index(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashamount_value(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashanchor_to_bytes(): Short
-    fun uniffi_uniffi_zcash_checksum_method_zcashbackendscan_scan_cached_blocks(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashbalance_total(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashblockheight_value(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashblockmeta_block_file_path(): Short
-    fun uniffi_uniffi_zcash_checksum_method_zcashchain_get_nearest_rewind_height(): Short
-    fun uniffi_uniffi_zcash_checksum_method_zcashchain_init_blockmeta_db(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashblockmetadata_block_hash(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashblockmetadata_block_height(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashblockmetadata_sapling_tree_size(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashcommitmenttree_append(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashcommitmenttreeroot_root_hash(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashcommitmenttreeroot_subtree_end_height(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashdecryptedoutput_account(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashdecryptedoutput_index(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashdecryptedoutput_memo(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashdecryptedoutput_note(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashdecryptedoutput_transfer_type(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashdiversifiablefullviewingkey_address(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashdiversifiablefullviewingkey_change_address(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashdiversifiablefullviewingkey_decrypt_diversifier(): Short
@@ -2773,6 +3069,10 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_method_zcashproofgenerationkey_to_viewing_key(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashratio_denominator(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashratio_numerator(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashreceivedsaplingnote_diversifier(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashreceivedsaplingnote_internal_note_id(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashreceivedsaplingnote_note_commitment_tree_position(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashreceivedsaplingnote_value(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashrecipientaddress_encode(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashsaplingbundle_shielded_outputs(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashsaplingbundle_shielded_spends(): Short
@@ -2800,7 +3100,19 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_method_zcashscanrange_is_empty(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashscanrange_len(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashscanrange_priority(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashscannedblock_block_hash(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashscannedblock_block_time(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashscannedblock_height(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashscannedblock_metadata(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashscannedblock_sapling_commitments(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashscannedblock_sapling_nullifier_map(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashscannedblock_transactions(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashscript_to_bytes(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashsenttransactionoutput_memo(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashsenttransactionoutput_output_index(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashsenttransactionoutput_recipient(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashsenttransactionoutput_sapling_change_to(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashsenttransactionoutput_value(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashtransaction_consensus_branch_id(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashtransaction_expiry_height(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashtransaction_lock_time(): Short
@@ -2857,17 +3169,38 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_method_zcashunifiedspendingkey_transparent(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashviewingkey_ivk(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashviewingkey_to_payment_address(): Short
-    fun uniffi_uniffi_zcash_checksum_method_zcashwallet_create_account(): Short
-    fun uniffi_uniffi_zcash_checksum_method_zcashwallet_init_wallet_db(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_block_fully_scanned(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_block_max_scanned(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_block_metadata(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_chain_height(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_create_account(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_account_birthday(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_account_for_ufvk(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_block_hash(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_current_address(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_max_height_hash(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_memo(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_min_unspent_height(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_next_available_address(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_sapling_nullifiers(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_spendable_sapling_notes(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_target_and_anchor_heights(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_transaction(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_transparent_balances(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_transparent_receivers(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_tx_height(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_unified_full_viewing_keys(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_unspent_transparent_outputs(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_wallet_birthday(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_wallet_summary(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_init(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_is_valid_account_extfvk(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_put_blocks(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_put_received_transparent_utxo(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_put_sapling_subtree_roots(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_select_spendable_sapling_notes(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_store_decrypted_tx(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_store_sent_tx(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_suggest_scan_ranges(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_truncate_to_height(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashwalletdb_update_chain_tip(): Short
@@ -2884,8 +3217,8 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_method_zcashzip317feerule_marginal_fee(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_secpsecretkey_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_testsupport_from_csv_file(): Short
-    fun uniffi_uniffi_zcash_checksum_constructor_walletdefault_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashaccountbalance_zero(): Short
+    fun uniffi_uniffi_zcash_checksum_constructor_zcashaccountbirthday_from_treestate(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashaccountprivkey_from_bytes(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashaccountprivkey_from_extended_privkey(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashaccountprivkey_from_seed(): Short
@@ -2894,11 +3227,11 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_constructor_zcashamount_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashamount_zero(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashanchor_from_bytes(): Short
-    fun uniffi_uniffi_zcash_checksum_constructor_zcashbackendscan_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashbalance_zero(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashblockhash_from_slice(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashblockheight_new(): Short
-    fun uniffi_uniffi_zcash_checksum_constructor_zcashchain_new(): Short
+    fun uniffi_uniffi_zcash_checksum_constructor_zcashblockmeta_new(): Short
+    fun uniffi_uniffi_zcash_checksum_constructor_zcashblockmetadata_from_parts(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashcommitmenttree_empty(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashcommitmenttreeroot_from_parts(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashdiversifiablefullviewingkey_from_bytes(): Short
@@ -2980,7 +3313,9 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_constructor_zcashsaplingnote_from_parts(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashsaplingnotevalue_from_raw(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashscanrange_from_parts(): Short
+    fun uniffi_uniffi_zcash_checksum_constructor_zcashscannedblock_from_parts(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashscript_from_bytes(): Short
+    fun uniffi_uniffi_zcash_checksum_constructor_zcashsenttransactionoutput_from_parts(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtestgreedyinputselector_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtransaction_from_bytes(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtransactionbuilder_new(): Short
@@ -2990,6 +3325,7 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtransparentaddress_decode(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtransparentaddress_from_public_key(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtransparentaddress_from_script(): Short
+    fun uniffi_uniffi_zcash_checksum_constructor_zcashtreestate_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtxid_from_bytes(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtxout_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtxversion_from_bytes(): Short
@@ -3001,10 +3337,10 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_constructor_zcashunifiedspendingkey_from_bytes(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashunifiedspendingkey_from_seed(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashverifyingkey_new(): Short
-    fun uniffi_uniffi_zcash_checksum_constructor_zcashwallet_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashwalletdb_for_path(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashwalletsummary_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashwallettransparentoutput_from_parts(): Short
+    fun uniffi_uniffi_zcash_checksum_constructor_zcashwallettx_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashzip317feerule_non_standard(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashzip317feerule_standard(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashzip317singleoutputchangestrategy_new(): Short
@@ -3035,6 +3371,12 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_func_decode_transparent_address() != 14315.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
+    if (lib.uniffi_uniffi_zcash_checksum_func_decrypt_and_store_transaction() != 19730.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_func_decrypt_transaction() != 36024.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
     if (lib.uniffi_uniffi_zcash_checksum_func_encode_extended_full_viewing_key() != 9529.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
@@ -3051,6 +3393,21 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_func_encode_transparent_address_p() != 44460.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_func_scan_cached_blocks() != 35281.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_func_shield_transparent_funds_main() != 62384.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_func_shield_transparent_funds_test() != 38760.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_func_spend_main() != 2496.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_func_spend_test() != 60172.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_secpsecretkey_serialize_secret() != 54704.toShort()) {
@@ -3074,25 +3431,22 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_method_testsupport_get_as_u8_array() != 33558.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_decrypt_and_store_transaction() != 5174.toShort()) {
-        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
-    }
-    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_shield_transparent_funds_main() != 58703.toShort()) {
-        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
-    }
-    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_shield_transparent_funds_test() != 1382.toShort()) {
-        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
-    }
-    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_spend_main() != 61631.toShort()) {
-        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
-    }
-    if (lib.uniffi_uniffi_zcash_checksum_method_walletdefault_spend_test() != 59620.toShort()) {
-        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
-    }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashaccountbalance_sapling_spendable_value() != 62416.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashaccountbalance_total() != 46654.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashaccountbalance_unshielded() != 51730.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashaccountbirthday_height() != 13020.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashaccountbirthday_recover_until() != 29885.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashaccountbirthday_sapling_frontier() != 20585.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashaccountprivkey_derive_external_secret_key() != 23016.toShort()) {
@@ -3137,9 +3491,6 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashanchor_to_bytes() != 60719.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_method_zcashbackendscan_scan_cached_blocks() != 53945.toShort()) {
-        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
-    }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashbalance_total() != 19876.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
@@ -3149,10 +3500,13 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashblockmeta_block_file_path() != 47636.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_method_zcashchain_get_nearest_rewind_height() != 36643.toShort()) {
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashblockmetadata_block_hash() != 43310.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_method_zcashchain_init_blockmeta_db() != 26933.toShort()) {
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashblockmetadata_block_height() != 45627.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashblockmetadata_sapling_tree_size() != 35477.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashcommitmenttree_append() != 9731.toShort()) {
@@ -3162,6 +3516,21 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashcommitmenttreeroot_subtree_end_height() != 42288.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashdecryptedoutput_account() != 46420.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashdecryptedoutput_index() != 47662.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashdecryptedoutput_memo() != 60659.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashdecryptedoutput_note() != 1564.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashdecryptedoutput_transfer_type() != 60998.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashdiversifiablefullviewingkey_address() != 56872.toShort()) {
@@ -3509,6 +3878,18 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashratio_numerator() != 13950.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashreceivedsaplingnote_diversifier() != 38012.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashreceivedsaplingnote_internal_note_id() != 60026.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashreceivedsaplingnote_note_commitment_tree_position() != 2095.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashreceivedsaplingnote_value() != 45731.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashrecipientaddress_encode() != 6086.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
@@ -3590,7 +3971,43 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashscanrange_priority() != 8375.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashscannedblock_block_hash() != 40407.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashscannedblock_block_time() != 20298.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashscannedblock_height() != 2205.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashscannedblock_metadata() != 36584.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashscannedblock_sapling_commitments() != 58796.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashscannedblock_sapling_nullifier_map() != 45180.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashscannedblock_transactions() != 55439.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashscript_to_bytes() != 23762.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashsenttransactionoutput_memo() != 54233.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashsenttransactionoutput_output_index() != 31214.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashsenttransactionoutput_recipient() != 22353.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashsenttransactionoutput_sapling_change_to() != 33437.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashsenttransactionoutput_value() != 23595.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashtransaction_consensus_branch_id() != 18318.toShort()) {
@@ -3761,28 +4178,85 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashviewingkey_to_payment_address() != 36128.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwallet_create_account() != 8484.toShort()) {
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_block_fully_scanned() != 17616.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwallet_init_wallet_db() != 11523.toShort()) {
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_block_max_scanned() != 16403.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_block_metadata() != 63726.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_chain_height() != 32301.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_create_account() != 39567.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_account_birthday() != 36042.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_account_for_ufvk() != 16427.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_block_hash() != 5968.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_current_address() != 6512.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_max_height_hash() != 32097.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_memo() != 60807.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_min_unspent_height() != 44311.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_next_available_address() != 832.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_sapling_nullifiers() != 34710.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_spendable_sapling_notes() != 55091.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_target_and_anchor_heights() != 32171.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_transaction() != 36828.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_transparent_balances() != 29772.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_transparent_receivers() != 44783.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_tx_height() != 32698.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_unified_full_viewing_keys() != 3950.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_unspent_transparent_outputs() != 63544.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_wallet_birthday() != 20677.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_wallet_summary() != 7833.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_init() != 50500.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_is_valid_account_extfvk() != 30457.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_put_blocks() != 41884.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_put_received_transparent_utxo() != 7966.toShort()) {
@@ -3791,7 +4265,13 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_put_sapling_subtree_roots() != 59990.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_select_spendable_sapling_notes() != 11902.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_store_decrypted_tx() != 39162.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_store_sent_tx() != 50042.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_suggest_scan_ranges() != 13781.toShort()) {
@@ -3842,10 +4322,10 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_constructor_testsupport_from_csv_file() != 33828.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_constructor_walletdefault_new() != 53190.toShort()) {
+    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashaccountbalance_zero() != 33487.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashaccountbalance_zero() != 33487.toShort()) {
+    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashaccountbirthday_from_treestate() != 15382.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashaccountprivkey_from_bytes() != 26651.toShort()) {
@@ -3872,9 +4352,6 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashanchor_from_bytes() != 1309.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashbackendscan_new() != 56451.toShort()) {
-        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
-    }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashbalance_zero() != 29923.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
@@ -3884,7 +4361,10 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashblockheight_new() != 45578.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashchain_new() != 30725.toShort()) {
+    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashblockmeta_new() != 6192.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashblockmetadata_from_parts() != 35064.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashcommitmenttree_empty() != 623.toShort()) {
@@ -4130,7 +4610,13 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashscanrange_from_parts() != 14720.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
+    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashscannedblock_from_parts() != 4873.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashscript_from_bytes() != 8889.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashsenttransactionoutput_from_parts() != 48100.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashtestgreedyinputselector_new() != 45241.toShort()) {
@@ -4158,6 +4644,9 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashtransparentaddress_from_script() != 29163.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashtreestate_new() != 64658.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashtxid_from_bytes() != 481.toShort()) {
@@ -4193,9 +4682,6 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashverifyingkey_new() != 26863.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashwallet_new() != 32928.toShort()) {
-        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
-    }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashwalletdb_for_path() != 43172.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
@@ -4203,6 +4689,9 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashwallettransparentoutput_from_parts() != 12073.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashwallettx_new() != 63654.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashzip317feerule_non_standard() != 29630.toShort()) {
@@ -4554,6 +5043,135 @@ abstract class FFIObject(
     }
 }
 
+public interface MerkleTreeFrontierInterface
+
+class MerkleTreeFrontier(
+    pointer: Pointer,
+) : FFIObject(pointer), MerkleTreeFrontierInterface {
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_merkletreefrontier(this.pointer, status)
+        }
+    }
+}
+
+public object FfiConverterTypeMerkleTreeFrontier : FfiConverter<MerkleTreeFrontier, Pointer> {
+    override fun lower(value: MerkleTreeFrontier): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): MerkleTreeFrontier {
+        return MerkleTreeFrontier(value)
+    }
+
+    override fun read(buf: ByteBuffer): MerkleTreeFrontier {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: MerkleTreeFrontier) = 8
+
+    override fun write(value: MerkleTreeFrontier, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
+public interface MerkleTreePositionInterface
+
+class MerkleTreePosition(
+    pointer: Pointer,
+) : FFIObject(pointer), MerkleTreePositionInterface {
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_merkletreeposition(this.pointer, status)
+        }
+    }
+}
+
+public object FfiConverterTypeMerkleTreePosition : FfiConverter<MerkleTreePosition, Pointer> {
+    override fun lower(value: MerkleTreePosition): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): MerkleTreePosition {
+        return MerkleTreePosition(value)
+    }
+
+    override fun read(buf: ByteBuffer): MerkleTreePosition {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: MerkleTreePosition) = 8
+
+    override fun write(value: MerkleTreePosition, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
+public interface MerkleTreeRetentionInterface
+
+class MerkleTreeRetention(
+    pointer: Pointer,
+) : FFIObject(pointer), MerkleTreeRetentionInterface {
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_merkletreeretention(this.pointer, status)
+        }
+    }
+}
+
+public object FfiConverterTypeMerkleTreeRetention : FfiConverter<MerkleTreeRetention, Pointer> {
+    override fun lower(value: MerkleTreeRetention): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): MerkleTreeRetention {
+        return MerkleTreeRetention(value)
+    }
+
+    override fun read(buf: ByteBuffer): MerkleTreeRetention {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: MerkleTreeRetention) = 8
+
+    override fun write(value: MerkleTreeRetention, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
 public interface SecpSecretKeyInterface {
 
     fun `serializeSecret`(): List<UByte>
@@ -4764,34 +5382,11 @@ public object FfiConverterTypeTestSupport : FfiConverter<TestSupport, Pointer> {
     }
 }
 
-public interface WalletDefaultInterface {
+public interface TimeOffsetDateTimeInterface
 
-    @Throws(ZcashException::class)
-    fun `decryptAndStoreTransaction`(`params`: ZcashConsensusParameters, `zDbData`: ZcashWalletDb, `tx`: ZcashTransaction)
-
-    @Throws(ZcashException::class)
-    fun `shieldTransparentFundsMain`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashMainGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId
-
-    @Throws(ZcashException::class)
-    fun `shieldTransparentFundsTest`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashTestGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId
-
-    @Throws(ZcashException::class)
-    fun `spendMain`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashMainGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId
-
-    @Throws(ZcashException::class)
-    fun `spendTest`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashTestGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId
-}
-
-class WalletDefault(
+class TimeOffsetDateTime(
     pointer: Pointer,
-) : FFIObject(pointer), WalletDefaultInterface {
-
-    constructor() :
-        this(
-            rustCall() { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_walletdefault_new(_status)
-            },
-        )
+) : FFIObject(pointer), TimeOffsetDateTimeInterface {
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -4803,107 +5398,27 @@ class WalletDefault(
      */
     protected override fun freeRustArcPtr() {
         rustCall() { status ->
-            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_walletdefault(this.pointer, status)
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_timeoffsetdatetime(this.pointer, status)
         }
     }
-
-    @Throws(
-        ZcashException::class,
-        )
-    override fun `decryptAndStoreTransaction`(`params`: ZcashConsensusParameters, `zDbData`: ZcashWalletDb, `tx`: ZcashTransaction) =
-        callWithPointer {
-            rustCallWithError(ZcashException) { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_decrypt_and_store_transaction(
-                    it,
-                    FfiConverterTypeZcashConsensusParameters.lower(`params`),
-                    FfiConverterTypeZcashWalletDb.lower(`zDbData`),
-                    FfiConverterTypeZcashTransaction.lower(`tx`),
-                    _status,
-                )
-            }
-        }
-
-    @Throws(
-        ZcashException::class,
-        )
-    override fun `shieldTransparentFundsMain`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashMainGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId =
-        callWithPointer {
-            rustCallWithError(ZcashException) { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_shield_transparent_funds_main(
-                    it,
-                    FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashMainGreedyInputSelector.lower(`inputSelector`), FfiConverterULong.lower(`shieldingThreshold`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterSequenceTypeZcashTransparentAddress.lower(`fromAddrs`), FfiConverterTypeZcashMemoBytes.lower(`memo`), FfiConverterUInt.lower(`minConfirmations`),
-                    _status,
-                )
-            }
-        }.let {
-            FfiConverterTypeZcashTxId.lift(it)
-        }
-
-    @Throws(
-        ZcashException::class,
-        )
-    override fun `shieldTransparentFundsTest`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashTestGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId =
-        callWithPointer {
-            rustCallWithError(ZcashException) { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_shield_transparent_funds_test(
-                    it,
-                    FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashTestGreedyInputSelector.lower(`inputSelector`), FfiConverterULong.lower(`shieldingThreshold`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterSequenceTypeZcashTransparentAddress.lower(`fromAddrs`), FfiConverterTypeZcashMemoBytes.lower(`memo`), FfiConverterUInt.lower(`minConfirmations`),
-                    _status,
-                )
-            }
-        }.let {
-            FfiConverterTypeZcashTxId.lift(it)
-        }
-
-    @Throws(
-        ZcashException::class,
-        )
-    override fun `spendMain`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashMainGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId =
-        callWithPointer {
-            rustCallWithError(ZcashException) { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_spend_main(
-                    it,
-                    FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashMainGreedyInputSelector.lower(`inputSelector`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterTypeZcashTransactionRequest.lower(`request`), FfiConverterTypeZcashOvkPolicy.lower(`ovkPolicy`), FfiConverterUInt.lower(`minConfirmations`),
-                    _status,
-                )
-            }
-        }.let {
-            FfiConverterTypeZcashTxId.lift(it)
-        }
-
-    @Throws(
-        ZcashException::class,
-        )
-    override fun `spendTest`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashTestGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId =
-        callWithPointer {
-            rustCallWithError(ZcashException) { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_walletdefault_spend_test(
-                    it,
-                    FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashTestGreedyInputSelector.lower(`inputSelector`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterTypeZcashTransactionRequest.lower(`request`), FfiConverterTypeZcashOvkPolicy.lower(`ovkPolicy`), FfiConverterUInt.lower(`minConfirmations`),
-                    _status,
-                )
-            }
-        }.let {
-            FfiConverterTypeZcashTxId.lift(it)
-        }
 }
 
-public object FfiConverterTypeWalletDefault : FfiConverter<WalletDefault, Pointer> {
-    override fun lower(value: WalletDefault): Pointer = value.callWithPointer { it }
+public object FfiConverterTypeTimeOffsetDateTime : FfiConverter<TimeOffsetDateTime, Pointer> {
+    override fun lower(value: TimeOffsetDateTime): Pointer = value.callWithPointer { it }
 
-    override fun lift(value: Pointer): WalletDefault {
-        return WalletDefault(value)
+    override fun lift(value: Pointer): TimeOffsetDateTime {
+        return TimeOffsetDateTime(value)
     }
 
-    override fun read(buf: ByteBuffer): WalletDefault {
+    override fun read(buf: ByteBuffer): TimeOffsetDateTime {
         // The Rust code always writes pointers as 8 bytes, and will
         // fail to compile if they don't fit.
         return lift(Pointer(buf.getLong()))
     }
 
-    override fun allocationSize(value: WalletDefault) = 8
+    override fun allocationSize(value: TimeOffsetDateTime) = 8
 
-    override fun write(value: WalletDefault, buf: ByteBuffer) {
+    override fun write(value: TimeOffsetDateTime, buf: ByteBuffer) {
         // The Rust code always expects pointers written as 8 bytes,
         // and will fail to compile if they don't fit.
         buf.putLong(Pointer.nativeValue(lower(value)))
@@ -4915,6 +5430,8 @@ public interface ZcashAccountBalanceInterface {
     fun `saplingSpendableValue`(): ZcashNonNegativeAmount
 
     fun `total`(): ZcashNonNegativeAmount
+
+    fun `unshielded`(): ZcashNonNegativeAmount
 }
 
 class ZcashAccountBalance(
@@ -4961,6 +5478,19 @@ class ZcashAccountBalance(
             FfiConverterTypeZcashNonNegativeAmount.lift(it)
         }
 
+    override fun `unshielded`(): ZcashNonNegativeAmount =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashaccountbalance_unshielded(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashNonNegativeAmount.lift(it)
+        }
+
     companion object {
 
         fun `zero`(): ZcashAccountBalance =
@@ -4988,6 +5518,105 @@ public object FfiConverterTypeZcashAccountBalance : FfiConverter<ZcashAccountBal
     override fun allocationSize(value: ZcashAccountBalance) = 8
 
     override fun write(value: ZcashAccountBalance, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
+public interface ZcashAccountBirthdayInterface {
+
+    fun `height`(): ZcashBlockHeight
+
+    fun `recoverUntil`(): ZcashBlockHeight?
+
+    fun `saplingFrontier`(): MerkleTreeFrontier
+}
+
+class ZcashAccountBirthday(
+    pointer: Pointer,
+) : FFIObject(pointer), ZcashAccountBirthdayInterface {
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashaccountbirthday(this.pointer, status)
+        }
+    }
+
+    override fun `height`(): ZcashBlockHeight =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashaccountbirthday_height(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashBlockHeight.lift(it)
+        }
+
+    override fun `recoverUntil`(): ZcashBlockHeight? =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashaccountbirthday_recover_until(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterOptionalTypeZcashBlockHeight.lift(it)
+        }
+
+    override fun `saplingFrontier`(): MerkleTreeFrontier =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashaccountbirthday_sapling_frontier(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeMerkleTreeFrontier.lift(it)
+        }
+
+    companion object {
+
+        fun `fromTreestate`(`treestate`: ZcashTreeState, `recoverUntil`: ZcashBlockHeight?): ZcashAccountBirthday =
+            ZcashAccountBirthday(
+                rustCallWithError(ZcashException) { _status ->
+                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashaccountbirthday_from_treestate(FfiConverterTypeZcashTreeState.lower(`treestate`), FfiConverterOptionalTypeZcashBlockHeight.lower(`recoverUntil`), _status)
+                },
+            )
+    }
+}
+
+public object FfiConverterTypeZcashAccountBirthday : FfiConverter<ZcashAccountBirthday, Pointer> {
+    override fun lower(value: ZcashAccountBirthday): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): ZcashAccountBirthday {
+        return ZcashAccountBirthday(value)
+    }
+
+    override fun read(buf: ByteBuffer): ZcashAccountBirthday {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: ZcashAccountBirthday) = 8
+
+    override fun write(value: ZcashAccountBirthday, buf: ByteBuffer) {
         // The Rust code always expects pointers written as 8 bytes,
         // and will fail to compile if they don't fit.
         buf.putLong(Pointer.nativeValue(lower(value)))
@@ -5505,78 +6134,6 @@ public object FfiConverterTypeZcashAnchor : FfiConverter<ZcashAnchor, Pointer> {
     }
 }
 
-public interface ZcashBackendScanInterface {
-
-    @Throws(ZcashException::class)
-    fun `scanCachedBlocks`(`params`: ZcashConsensusParameters, `fsblockdbRoot`: String, `dbDataPath`: String, `height`: ZcashBlockHeight, `limit`: UInt)
-}
-
-class ZcashBackendScan(
-    pointer: Pointer,
-) : FFIObject(pointer), ZcashBackendScanInterface {
-
-    constructor() :
-        this(
-            rustCall() { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashbackendscan_new(_status)
-            },
-        )
-
-    /**
-     * Disconnect the object from the underlying Rust object.
-     *
-     * It can be called more than once, but once called, interacting with the object
-     * causes an `IllegalStateException`.
-     *
-     * Clients **must** call this method once done with the object, or cause a memory leak.
-     */
-    protected override fun freeRustArcPtr() {
-        rustCall() { status ->
-            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashbackendscan(this.pointer, status)
-        }
-    }
-
-    @Throws(
-        ZcashException::class,
-        )
-    override fun `scanCachedBlocks`(`params`: ZcashConsensusParameters, `fsblockdbRoot`: String, `dbDataPath`: String, `height`: ZcashBlockHeight, `limit`: UInt) =
-        callWithPointer {
-            rustCallWithError(ZcashException) { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashbackendscan_scan_cached_blocks(
-                    it,
-                    FfiConverterTypeZcashConsensusParameters.lower(`params`),
-                    FfiConverterString.lower(`fsblockdbRoot`),
-                    FfiConverterString.lower(`dbDataPath`),
-                    FfiConverterTypeZcashBlockHeight.lower(`height`),
-                    FfiConverterUInt.lower(`limit`),
-                    _status,
-                )
-            }
-        }
-}
-
-public object FfiConverterTypeZcashBackendScan : FfiConverter<ZcashBackendScan, Pointer> {
-    override fun lower(value: ZcashBackendScan): Pointer = value.callWithPointer { it }
-
-    override fun lift(value: Pointer): ZcashBackendScan {
-        return ZcashBackendScan(value)
-    }
-
-    override fun read(buf: ByteBuffer): ZcashBackendScan {
-        // The Rust code always writes pointers as 8 bytes, and will
-        // fail to compile if they don't fit.
-        return lift(Pointer(buf.getLong()))
-    }
-
-    override fun allocationSize(value: ZcashBackendScan) = 8
-
-    override fun write(value: ZcashBackendScan, buf: ByteBuffer) {
-        // The Rust code always expects pointers written as 8 bytes,
-        // and will fail to compile if they don't fit.
-        buf.putLong(Pointer.nativeValue(lower(value)))
-    }
-}
-
 public interface ZcashBalanceInterface {
 
     fun `total`(): ZcashNonNegativeAmount
@@ -5774,6 +6331,13 @@ class ZcashBlockMeta(
     pointer: Pointer,
 ) : FFIObject(pointer), ZcashBlockMetaInterface {
 
+    constructor(`height`: ZcashBlockHeight, `blockHash`: ZcashBlockHash, `blockTime`: UInt, `saplingOutputsCount`: UInt, `orchardActionsCount`: UInt) :
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashblockmeta_new(FfiConverterTypeZcashBlockHeight.lower(`height`), FfiConverterTypeZcashBlockHash.lower(`blockHash`), FfiConverterUInt.lower(`blockTime`), FfiConverterUInt.lower(`saplingOutputsCount`), FfiConverterUInt.lower(`orchardActionsCount`), _status)
+            },
+        )
+
     /**
      * Disconnect the object from the underlying Rust object.
      *
@@ -5824,25 +6388,18 @@ public object FfiConverterTypeZcashBlockMeta : FfiConverter<ZcashBlockMeta, Poin
     }
 }
 
-public interface ZcashChainInterface {
+public interface ZcashBlockMetadataInterface {
 
-    @Throws(ZcashException::class)
-    fun `getNearestRewindHeight`(`dbData`: String, `height`: UInt, `params`: ZcashConsensusParameters): UInt
+    fun `blockHash`(): ZcashBlockHash
 
-    @Throws(ZcashException::class)
-    fun `initBlockmetaDb`(`blocksDir`: String)
+    fun `blockHeight`(): ZcashBlockHeight
+
+    fun `saplingTreeSize`(): UInt
 }
 
-class ZcashChain(
+class ZcashBlockMetadata(
     pointer: Pointer,
-) : FFIObject(pointer), ZcashChainInterface {
-
-    constructor() :
-        this(
-            rustCall() { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashchain_new(_status)
-            },
-        )
+) : FFIObject(pointer), ZcashBlockMetadataInterface {
 
     /**
      * Disconnect the object from the underlying Rust object.
@@ -5854,21 +6411,42 @@ class ZcashChain(
      */
     protected override fun freeRustArcPtr() {
         rustCall() { status ->
-            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashchain(this.pointer, status)
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashblockmetadata(this.pointer, status)
         }
     }
 
-    @Throws(
-        ZcashException::class,
-        )
-    override fun `getNearestRewindHeight`(`dbData`: String, `height`: UInt, `params`: ZcashConsensusParameters): UInt =
+    override fun `blockHash`(): ZcashBlockHash =
         callWithPointer {
-            rustCallWithError(ZcashException) { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashchain_get_nearest_rewind_height(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashblockmetadata_block_hash(
                     it,
-                    FfiConverterString.lower(`dbData`),
-                    FfiConverterUInt.lower(`height`),
-                    FfiConverterTypeZcashConsensusParameters.lower(`params`),
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashBlockHash.lift(it)
+        }
+
+    override fun `blockHeight`(): ZcashBlockHeight =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashblockmetadata_block_height(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashBlockHeight.lift(it)
+        }
+
+    override fun `saplingTreeSize`(): UInt =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashblockmetadata_sapling_tree_size(
+                    it,
+
                     _status,
                 )
             }
@@ -5876,37 +6454,33 @@ class ZcashChain(
             FfiConverterUInt.lift(it)
         }
 
-    @Throws(
-        ZcashException::class,
-        )
-    override fun `initBlockmetaDb`(`blocksDir`: String) =
-        callWithPointer {
-            rustCallWithError(ZcashException) { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashchain_init_blockmeta_db(
-                    it,
-                    FfiConverterString.lower(`blocksDir`),
-                    _status,
-                )
-            }
-        }
+    companion object {
+
+        fun `fromParts`(`blockHeight`: ZcashBlockHeight, `blockHash`: ZcashBlockHash, `saplingTreeSize`: UInt): ZcashBlockMetadata =
+            ZcashBlockMetadata(
+                rustCall() { _status ->
+                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashblockmetadata_from_parts(FfiConverterTypeZcashBlockHeight.lower(`blockHeight`), FfiConverterTypeZcashBlockHash.lower(`blockHash`), FfiConverterUInt.lower(`saplingTreeSize`), _status)
+                },
+            )
+    }
 }
 
-public object FfiConverterTypeZcashChain : FfiConverter<ZcashChain, Pointer> {
-    override fun lower(value: ZcashChain): Pointer = value.callWithPointer { it }
+public object FfiConverterTypeZcashBlockMetadata : FfiConverter<ZcashBlockMetadata, Pointer> {
+    override fun lower(value: ZcashBlockMetadata): Pointer = value.callWithPointer { it }
 
-    override fun lift(value: Pointer): ZcashChain {
-        return ZcashChain(value)
+    override fun lift(value: Pointer): ZcashBlockMetadata {
+        return ZcashBlockMetadata(value)
     }
 
-    override fun read(buf: ByteBuffer): ZcashChain {
+    override fun read(buf: ByteBuffer): ZcashBlockMetadata {
         // The Rust code always writes pointers as 8 bytes, and will
         // fail to compile if they don't fit.
         return lift(Pointer(buf.getLong()))
     }
 
-    override fun allocationSize(value: ZcashChain) = 8
+    override fun allocationSize(value: ZcashBlockMetadata) = 8
 
-    override fun write(value: ZcashChain, buf: ByteBuffer) {
+    override fun write(value: ZcashBlockMetadata, buf: ByteBuffer) {
         // The Rust code always expects pointers written as 8 bytes,
         // and will fail to compile if they don't fit.
         buf.putLong(Pointer.nativeValue(lower(value)))
@@ -6062,6 +6636,125 @@ public object FfiConverterTypeZcashCommitmentTreeRoot : FfiConverter<ZcashCommit
     override fun allocationSize(value: ZcashCommitmentTreeRoot) = 8
 
     override fun write(value: ZcashCommitmentTreeRoot, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
+public interface ZcashDecryptedOutputInterface {
+
+    fun `account`(): ZcashAccountId
+
+    fun `index`(): ULong
+
+    fun `memo`(): ZcashMemoBytes
+
+    fun `note`(): ZcashSaplingNote
+
+    fun `transferType`(): ZcashTransferType
+}
+
+class ZcashDecryptedOutput(
+    pointer: Pointer,
+) : FFIObject(pointer), ZcashDecryptedOutputInterface {
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashdecryptedoutput(this.pointer, status)
+        }
+    }
+
+    override fun `account`(): ZcashAccountId =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashdecryptedoutput_account(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashAccountId.lift(it)
+        }
+
+    override fun `index`(): ULong =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashdecryptedoutput_index(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterULong.lift(it)
+        }
+
+    override fun `memo`(): ZcashMemoBytes =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashdecryptedoutput_memo(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashMemoBytes.lift(it)
+        }
+
+    override fun `note`(): ZcashSaplingNote =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashdecryptedoutput_note(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashSaplingNote.lift(it)
+        }
+
+    override fun `transferType`(): ZcashTransferType =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashdecryptedoutput_transfer_type(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashTransferType.lift(it)
+        }
+}
+
+public object FfiConverterTypeZcashDecryptedOutput : FfiConverter<ZcashDecryptedOutput, Pointer> {
+    override fun lower(value: ZcashDecryptedOutput): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): ZcashDecryptedOutput {
+        return ZcashDecryptedOutput(value)
+    }
+
+    override fun read(buf: ByteBuffer): ZcashDecryptedOutput {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: ZcashDecryptedOutput) = 8
+
+    override fun write(value: ZcashDecryptedOutput, buf: ByteBuffer) {
         // The Rust code always expects pointers written as 8 bytes,
         // and will fail to compile if they don't fit.
         buf.putLong(Pointer.nativeValue(lower(value)))
@@ -10721,6 +11414,153 @@ public object FfiConverterTypeZcashRatio : FfiConverter<ZcashRatio, Pointer> {
     }
 }
 
+public interface ZcashReceivedNoteIdInterface
+
+class ZcashReceivedNoteId(
+    pointer: Pointer,
+) : FFIObject(pointer), ZcashReceivedNoteIdInterface {
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashreceivednoteid(this.pointer, status)
+        }
+    }
+}
+
+public object FfiConverterTypeZcashReceivedNoteId : FfiConverter<ZcashReceivedNoteId, Pointer> {
+    override fun lower(value: ZcashReceivedNoteId): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): ZcashReceivedNoteId {
+        return ZcashReceivedNoteId(value)
+    }
+
+    override fun read(buf: ByteBuffer): ZcashReceivedNoteId {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: ZcashReceivedNoteId) = 8
+
+    override fun write(value: ZcashReceivedNoteId, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
+public interface ZcashReceivedSaplingNoteInterface {
+
+    fun `diversifier`(): ZcashDiversifier
+
+    fun `internalNoteId`(): ZcashReceivedNoteId
+
+    fun `noteCommitmentTreePosition`(): MerkleTreePosition
+
+    fun `value`(): ZcashAmount
+}
+
+class ZcashReceivedSaplingNote(
+    pointer: Pointer,
+) : FFIObject(pointer), ZcashReceivedSaplingNoteInterface {
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashreceivedsaplingnote(this.pointer, status)
+        }
+    }
+
+    override fun `diversifier`(): ZcashDiversifier =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashreceivedsaplingnote_diversifier(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashDiversifier.lift(it)
+        }
+
+    override fun `internalNoteId`(): ZcashReceivedNoteId =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashreceivedsaplingnote_internal_note_id(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashReceivedNoteId.lift(it)
+        }
+
+    override fun `noteCommitmentTreePosition`(): MerkleTreePosition =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashreceivedsaplingnote_note_commitment_tree_position(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeMerkleTreePosition.lift(it)
+        }
+
+    override fun `value`(): ZcashAmount =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashreceivedsaplingnote_value(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashAmount.lift(it)
+        }
+}
+
+public object FfiConverterTypeZcashReceivedSaplingNote : FfiConverter<ZcashReceivedSaplingNote, Pointer> {
+    override fun lower(value: ZcashReceivedSaplingNote): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): ZcashReceivedSaplingNote {
+        return ZcashReceivedSaplingNote(value)
+    }
+
+    override fun read(buf: ByteBuffer): ZcashReceivedSaplingNote {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: ZcashReceivedSaplingNote) = 8
+
+    override fun write(value: ZcashReceivedSaplingNote, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
 public interface ZcashRecipientAddressInterface {
 
     fun `encode`(`params`: ZcashConsensusParameters): String
@@ -11917,6 +12757,165 @@ public object FfiConverterTypeZcashScanRange : FfiConverter<ZcashScanRange, Poin
     }
 }
 
+public interface ZcashScannedBlockInterface {
+
+    fun `blockHash`(): ZcashBlockHash
+
+    fun `blockTime`(): UInt
+
+    fun `height`(): ZcashBlockHeight
+
+    fun `metadata`(): ZcashBlockMetadata
+
+    fun `saplingCommitments`(): List<TupleSaplingCommitments>
+
+    fun `saplingNullifierMap`(): List<TripleSaplingNullifierMap>
+
+    fun `transactions`(): List<ZcashWalletTx>
+}
+
+class ZcashScannedBlock(
+    pointer: Pointer,
+) : FFIObject(pointer), ZcashScannedBlockInterface {
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashscannedblock(this.pointer, status)
+        }
+    }
+
+    override fun `blockHash`(): ZcashBlockHash =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashscannedblock_block_hash(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashBlockHash.lift(it)
+        }
+
+    override fun `blockTime`(): UInt =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashscannedblock_block_time(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterUInt.lift(it)
+        }
+
+    override fun `height`(): ZcashBlockHeight =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashscannedblock_height(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashBlockHeight.lift(it)
+        }
+
+    override fun `metadata`(): ZcashBlockMetadata =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashscannedblock_metadata(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashBlockMetadata.lift(it)
+        }
+
+    override fun `saplingCommitments`(): List<TupleSaplingCommitments> =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashscannedblock_sapling_commitments(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterSequenceTypeTupleSaplingCommitments.lift(it)
+        }
+
+    override fun `saplingNullifierMap`(): List<TripleSaplingNullifierMap> =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashscannedblock_sapling_nullifier_map(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterSequenceTypeTripleSaplingNullifierMap.lift(it)
+        }
+
+    override fun `transactions`(): List<ZcashWalletTx> =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashscannedblock_transactions(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterSequenceTypeZcashWalletTx.lift(it)
+        }
+
+    companion object {
+
+        fun `fromParts`(`metadata`: ZcashBlockMetadata, `blockTime`: UInt, `transactions`: List<ZcashWalletTx>, `saplingNullifierMap`: List<TripleSaplingNullifierMap>, `saplingCommitments`: List<TupleSaplingCommitments>): ZcashScannedBlock =
+            ZcashScannedBlock(
+                rustCall() { _status ->
+                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashscannedblock_from_parts(FfiConverterTypeZcashBlockMetadata.lower(`metadata`), FfiConverterUInt.lower(`blockTime`), FfiConverterSequenceTypeZcashWalletTx.lower(`transactions`), FfiConverterSequenceTypeTripleSaplingNullifierMap.lower(`saplingNullifierMap`), FfiConverterSequenceTypeTupleSaplingCommitments.lower(`saplingCommitments`), _status)
+                },
+            )
+    }
+}
+
+public object FfiConverterTypeZcashScannedBlock : FfiConverter<ZcashScannedBlock, Pointer> {
+    override fun lower(value: ZcashScannedBlock): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): ZcashScannedBlock {
+        return ZcashScannedBlock(value)
+    }
+
+    override fun read(buf: ByteBuffer): ZcashScannedBlock {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: ZcashScannedBlock) = 8
+
+    override fun write(value: ZcashScannedBlock, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
 public interface ZcashScriptInterface {
 
     @Throws(ZcashException::class)
@@ -11984,6 +12983,135 @@ public object FfiConverterTypeZcashScript : FfiConverter<ZcashScript, Pointer> {
     override fun allocationSize(value: ZcashScript) = 8
 
     override fun write(value: ZcashScript, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
+public interface ZcashSentTransactionOutputInterface {
+
+    fun `memo`(): ZcashMemoBytes?
+
+    fun `outputIndex`(): UInt
+
+    fun `recipient`(): ZcashRecipient
+
+    fun `saplingChangeTo`(): TupleAccountIdAndSaplingNote?
+
+    fun `value`(): ZcashAmount
+}
+
+class ZcashSentTransactionOutput(
+    pointer: Pointer,
+) : FFIObject(pointer), ZcashSentTransactionOutputInterface {
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashsenttransactionoutput(this.pointer, status)
+        }
+    }
+
+    override fun `memo`(): ZcashMemoBytes? =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashsenttransactionoutput_memo(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterOptionalTypeZcashMemoBytes.lift(it)
+        }
+
+    override fun `outputIndex`(): UInt =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashsenttransactionoutput_output_index(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterUInt.lift(it)
+        }
+
+    override fun `recipient`(): ZcashRecipient =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashsenttransactionoutput_recipient(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashRecipient.lift(it)
+        }
+
+    override fun `saplingChangeTo`(): TupleAccountIdAndSaplingNote? =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashsenttransactionoutput_sapling_change_to(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterOptionalTypeTupleAccountIdAndSaplingNote.lift(it)
+        }
+
+    override fun `value`(): ZcashAmount =
+        callWithPointer {
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashsenttransactionoutput_value(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashAmount.lift(it)
+        }
+
+    companion object {
+
+        fun `fromParts`(`outputIndex`: UInt, `recipient`: ZcashRecipient, `value`: ZcashAmount, `memo`: ZcashMemoBytes?, `saplingChangeTo`: TupleAccountIdAndSaplingNote?): ZcashSentTransactionOutput =
+            ZcashSentTransactionOutput(
+                rustCall() { _status ->
+                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashsenttransactionoutput_from_parts(FfiConverterUInt.lower(`outputIndex`), FfiConverterTypeZcashRecipient.lower(`recipient`), FfiConverterTypeZcashAmount.lower(`value`), FfiConverterOptionalTypeZcashMemoBytes.lower(`memo`), FfiConverterOptionalTypeTupleAccountIdAndSaplingNote.lower(`saplingChangeTo`), _status)
+                },
+            )
+    }
+}
+
+public object FfiConverterTypeZcashSentTransactionOutput : FfiConverter<ZcashSentTransactionOutput, Pointer> {
+    override fun lower(value: ZcashSentTransactionOutput): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): ZcashSentTransactionOutput {
+        return ZcashSentTransactionOutput(value)
+    }
+
+    override fun read(buf: ByteBuffer): ZcashSentTransactionOutput {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: ZcashSentTransactionOutput) = 8
+
+    override fun write(value: ZcashSentTransactionOutput, buf: ByteBuffer) {
         // The Rust code always expects pointers written as 8 bytes,
         // and will fail to compile if they don't fit.
         buf.putLong(Pointer.nativeValue(lower(value)))
@@ -12689,6 +13817,56 @@ public object FfiConverterTypeZcashTransparentBundle : FfiConverter<ZcashTranspa
     override fun allocationSize(value: ZcashTransparentBundle) = 8
 
     override fun write(value: ZcashTransparentBundle, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
+public interface ZcashTreeStateInterface
+
+class ZcashTreeState(
+    pointer: Pointer,
+) : FFIObject(pointer), ZcashTreeStateInterface {
+
+    constructor(`network`: String, `height`: ULong, `hash`: String, `time`: UInt, `saplingTree`: String, `orchardTree`: String) :
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashtreestate_new(FfiConverterString.lower(`network`), FfiConverterULong.lower(`height`), FfiConverterString.lower(`hash`), FfiConverterUInt.lower(`time`), FfiConverterString.lower(`saplingTree`), FfiConverterString.lower(`orchardTree`), _status)
+            },
+        )
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashtreestate(this.pointer, status)
+        }
+    }
+}
+
+public object FfiConverterTypeZcashTreeState : FfiConverter<ZcashTreeState, Pointer> {
+    override fun lower(value: ZcashTreeState): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): ZcashTreeState {
+        return ZcashTreeState(value)
+    }
+
+    override fun read(buf: ByteBuffer): ZcashTreeState {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: ZcashTreeState) = 8
+
+    override fun write(value: ZcashTreeState, buf: ByteBuffer) {
         // The Rust code always expects pointers written as 8 bytes,
         // and will fail to compile if they don't fit.
         buf.putLong(Pointer.nativeValue(lower(value)))
@@ -13678,118 +14856,88 @@ public object FfiConverterTypeZcashViewingKey : FfiConverter<ZcashViewingKey, Po
     }
 }
 
-public interface ZcashWalletInterface {
-
-    @Throws(ZcashException::class)
-    fun `createAccount`(`zwdb`: ZcashWalletDb, `seed`: List<UByte>, `recoverUntil`: UInt, `treestateBytes`: List<UByte>, `params`: ZcashConsensusParameters): ZcashUnifiedSpendingKey
-
-    @Throws(ZcashException::class)
-    fun `initWalletDb`(`zwdb`: ZcashWalletDb, `seed`: List<UByte>, `params`: ZcashConsensusParameters)
-}
-
-class ZcashWallet(
-    pointer: Pointer,
-) : FFIObject(pointer), ZcashWalletInterface {
-
-    constructor() :
-        this(
-            rustCall() { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashwallet_new(_status)
-            },
-        )
-
-    /**
-     * Disconnect the object from the underlying Rust object.
-     *
-     * It can be called more than once, but once called, interacting with the object
-     * causes an `IllegalStateException`.
-     *
-     * Clients **must** call this method once done with the object, or cause a memory leak.
-     */
-    protected override fun freeRustArcPtr() {
-        rustCall() { status ->
-            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashwallet(this.pointer, status)
-        }
-    }
-
-    @Throws(
-        ZcashException::class,
-        )
-    override fun `createAccount`(`zwdb`: ZcashWalletDb, `seed`: List<UByte>, `recoverUntil`: UInt, `treestateBytes`: List<UByte>, `params`: ZcashConsensusParameters): ZcashUnifiedSpendingKey =
-        callWithPointer {
-            rustCallWithError(ZcashException) { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwallet_create_account(
-                    it,
-                    FfiConverterTypeZcashWalletDb.lower(`zwdb`),
-                    FfiConverterSequenceUByte.lower(`seed`),
-                    FfiConverterUInt.lower(`recoverUntil`),
-                    FfiConverterSequenceUByte.lower(`treestateBytes`),
-                    FfiConverterTypeZcashConsensusParameters.lower(`params`),
-                    _status,
-                )
-            }
-        }.let {
-            FfiConverterTypeZcashUnifiedSpendingKey.lift(it)
-        }
-
-    @Throws(
-        ZcashException::class,
-        )
-    override fun `initWalletDb`(`zwdb`: ZcashWalletDb, `seed`: List<UByte>, `params`: ZcashConsensusParameters) =
-        callWithPointer {
-            rustCallWithError(ZcashException) { _status ->
-                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwallet_init_wallet_db(
-                    it,
-                    FfiConverterTypeZcashWalletDb.lower(`zwdb`),
-                    FfiConverterSequenceUByte.lower(`seed`),
-                    FfiConverterTypeZcashConsensusParameters.lower(`params`),
-                    _status,
-                )
-            }
-        }
-}
-
-public object FfiConverterTypeZcashWallet : FfiConverter<ZcashWallet, Pointer> {
-    override fun lower(value: ZcashWallet): Pointer = value.callWithPointer { it }
-
-    override fun lift(value: Pointer): ZcashWallet {
-        return ZcashWallet(value)
-    }
-
-    override fun read(buf: ByteBuffer): ZcashWallet {
-        // The Rust code always writes pointers as 8 bytes, and will
-        // fail to compile if they don't fit.
-        return lift(Pointer(buf.getLong()))
-    }
-
-    override fun allocationSize(value: ZcashWallet) = 8
-
-    override fun write(value: ZcashWallet, buf: ByteBuffer) {
-        // The Rust code always expects pointers written as 8 bytes,
-        // and will fail to compile if they don't fit.
-        buf.putLong(Pointer.nativeValue(lower(value)))
-    }
-}
-
 public interface ZcashWalletDbInterface {
+
+    @Throws(ZcashException::class)
+    fun `blockFullyScanned`(): ZcashBlockMetadata?
+
+    @Throws(ZcashException::class)
+    fun `blockMaxScanned`(): ZcashBlockMetadata?
+
+    @Throws(ZcashException::class)
+    fun `blockMetadata`(`height`: ZcashBlockHeight): ZcashBlockMetadata?
+
+    @Throws(ZcashException::class)
+    fun `chainHeight`(): ZcashBlockHeight?
+
+    @Throws(ZcashException::class)
+    fun `createAccount`(`seed`: List<UByte>, `birthday`: ZcashAccountBirthday): TupleAccountIdAndUnifiedSpendingKey
+
+    @Throws(ZcashException::class)
+    fun `getAccountBirthday`(`account`: ZcashAccountId): ZcashBlockHeight
 
     @Throws(ZcashException::class)
     fun `getAccountForUfvk`(`zufvk`: ZcashUnifiedFullViewingKey): ZcashAccountId?
 
     @Throws(ZcashException::class)
+    fun `getBlockHash`(`height`: ZcashBlockHeight): ZcashBlockHash?
+
+    @Throws(ZcashException::class)
     fun `getCurrentAddress`(`aid`: ZcashAccountId): ZcashUnifiedAddress?
+
+    @Throws(ZcashException::class)
+    fun `getMaxHeightHash`(): TupleBlockHeightAndHash?
+
+    @Throws(ZcashException::class)
+    fun `getMemo`(`idNote`: ZcashNoteId): ZcashMemo
 
     @Throws(ZcashException::class)
     fun `getMinUnspentHeight`(): ZcashBlockHeight?
 
     @Throws(ZcashException::class)
+    fun `getNextAvailableAddress`(`account`: ZcashAccountId): ZcashUnifiedAddress?
+
+    @Throws(ZcashException::class)
+    fun `getSaplingNullifiers`(`query`: ZcashNullifierQuery): List<TupleAccountIdAndSaplingNullifier>
+
+    @Throws(ZcashException::class)
+    fun `getSpendableSaplingNotes`(`account`: ZcashAccountId, `anchorHeight`: ZcashBlockHeight, `exclude`: List<ZcashReceivedNoteId>): List<ZcashReceivedSaplingNote>
+
+    @Throws(ZcashException::class)
+    fun `getTargetAndAnchorHeights`(`minConfirmations`: UInt): TupleMinAndMaxBlockHeight?
+
+    @Throws(ZcashException::class)
+    fun `getTransaction`(`txid`: ZcashTxId): ZcashTransaction
+
+    @Throws(ZcashException::class)
+    fun `getTransparentBalances`(`account`: ZcashAccountId, `maxHeight`: ZcashBlockHeight): Map<String, ZcashAmount>
+
+    @Throws(ZcashException::class)
     fun `getTransparentReceivers`(`aid`: ZcashAccountId): Map<String, ZcashAddressMetadata>
+
+    @Throws(ZcashException::class)
+    fun `getTxHeight`(`txid`: ZcashTxId): ZcashBlockHeight?
+
+    @Throws(ZcashException::class)
+    fun `getUnifiedFullViewingKeys`(): Map<ZcashAccountId, ZcashUnifiedFullViewingKey>
 
     @Throws(ZcashException::class)
     fun `getUnspentTransparentOutputs`(`zta`: ZcashTransparentAddress, `zbh`: ZcashBlockHeight, `zop`: List<ZcashOutPoint>): List<ZcashWalletTransparentOutput>
 
     @Throws(ZcashException::class)
+    fun `getWalletBirthday`(): ZcashBlockHeight?
+
+    @Throws(ZcashException::class)
     fun `getWalletSummary`(`minConfirmations`: UInt): ZcashWalletSummary?
+
+    @Throws(ZcashException::class)
+    fun `init`(`seed`: List<UByte>)
+
+    @Throws(ZcashException::class)
+    fun `isValidAccountExtfvk`(`account`: ZcashAccountId, `extfvk`: ZcashExtendedFullViewingKey): Boolean
+
+    @Throws(ZcashException::class)
+    fun `putBlocks`(`blocks`: List<ZcashScannedBlock>)
 
     @Throws(ZcashException::class)
     fun `putReceivedTransparentUtxo`(`output`: ZcashWalletTransparentOutput): Long
@@ -13798,7 +14946,13 @@ public interface ZcashWalletDbInterface {
     fun `putSaplingSubtreeRoots`(`startIndex`: ULong, `roots`: List<ZcashCommitmentTreeRoot>)
 
     @Throws(ZcashException::class)
+    fun `selectSpendableSaplingNotes`(`account`: ZcashAccountId, `targetValue`: ZcashAmount, `anchorHeight`: ZcashBlockHeight, `exclude`: List<ZcashReceivedNoteId>): List<ZcashReceivedSaplingNote>
+
+    @Throws(ZcashException::class)
     fun `storeDecryptedTx`(`dTx`: ZcashDecryptedTransaction)
+
+    @Throws(ZcashException::class)
+    fun `storeSentTx`(`sentTx`: ZcashSentTransaction)
 
     @Throws(ZcashException::class)
     fun `suggestScanRanges`(): List<ZcashScanRange>
@@ -13831,6 +14985,103 @@ class ZcashWalletDb(
     @Throws(
         ZcashException::class,
         )
+    override fun `blockFullyScanned`(): ZcashBlockMetadata? =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_block_fully_scanned(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterOptionalTypeZcashBlockMetadata.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `blockMaxScanned`(): ZcashBlockMetadata? =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_block_max_scanned(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterOptionalTypeZcashBlockMetadata.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `blockMetadata`(`height`: ZcashBlockHeight): ZcashBlockMetadata? =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_block_metadata(
+                    it,
+                    FfiConverterTypeZcashBlockHeight.lower(`height`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterOptionalTypeZcashBlockMetadata.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `chainHeight`(): ZcashBlockHeight? =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_chain_height(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterOptionalTypeZcashBlockHeight.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `createAccount`(`seed`: List<UByte>, `birthday`: ZcashAccountBirthday): TupleAccountIdAndUnifiedSpendingKey =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_create_account(
+                    it,
+                    FfiConverterSequenceUByte.lower(`seed`),
+                    FfiConverterTypeZcashAccountBirthday.lower(`birthday`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeTupleAccountIdAndUnifiedSpendingKey.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `getAccountBirthday`(`account`: ZcashAccountId): ZcashBlockHeight =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_account_birthday(
+                    it,
+                    FfiConverterTypeZcashAccountId.lower(`account`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashBlockHeight.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
     override fun `getAccountForUfvk`(`zufvk`: ZcashUnifiedFullViewingKey): ZcashAccountId? =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13842,6 +15093,22 @@ class ZcashWalletDb(
             }
         }.let {
             FfiConverterOptionalTypeZcashAccountId.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `getBlockHash`(`height`: ZcashBlockHeight): ZcashBlockHash? =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_block_hash(
+                    it,
+                    FfiConverterTypeZcashBlockHeight.lower(`height`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterOptionalTypeZcashBlockHash.lift(it)
         }
 
     @Throws(
@@ -13863,6 +15130,38 @@ class ZcashWalletDb(
     @Throws(
         ZcashException::class,
         )
+    override fun `getMaxHeightHash`(): TupleBlockHeightAndHash? =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_max_height_hash(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterOptionalTypeTupleBlockHeightAndHash.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `getMemo`(`idNote`: ZcashNoteId): ZcashMemo =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_memo(
+                    it,
+                    FfiConverterTypeZcashNoteId.lower(`idNote`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashMemo.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
     override fun `getMinUnspentHeight`(): ZcashBlockHeight? =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13879,6 +15178,105 @@ class ZcashWalletDb(
     @Throws(
         ZcashException::class,
         )
+    override fun `getNextAvailableAddress`(`account`: ZcashAccountId): ZcashUnifiedAddress? =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_next_available_address(
+                    it,
+                    FfiConverterTypeZcashAccountId.lower(`account`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterOptionalTypeZcashUnifiedAddress.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `getSaplingNullifiers`(`query`: ZcashNullifierQuery): List<TupleAccountIdAndSaplingNullifier> =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_sapling_nullifiers(
+                    it,
+                    FfiConverterTypeZcashNullifierQuery.lower(`query`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterSequenceTypeTupleAccountIdAndSaplingNullifier.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `getSpendableSaplingNotes`(`account`: ZcashAccountId, `anchorHeight`: ZcashBlockHeight, `exclude`: List<ZcashReceivedNoteId>): List<ZcashReceivedSaplingNote> =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_spendable_sapling_notes(
+                    it,
+                    FfiConverterTypeZcashAccountId.lower(`account`),
+                    FfiConverterTypeZcashBlockHeight.lower(`anchorHeight`),
+                    FfiConverterSequenceTypeZcashReceivedNoteId.lower(`exclude`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterSequenceTypeZcashReceivedSaplingNote.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `getTargetAndAnchorHeights`(`minConfirmations`: UInt): TupleMinAndMaxBlockHeight? =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_target_and_anchor_heights(
+                    it,
+                    FfiConverterUInt.lower(`minConfirmations`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterOptionalTypeTupleMinAndMaxBlockHeight.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `getTransaction`(`txid`: ZcashTxId): ZcashTransaction =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_transaction(
+                    it,
+                    FfiConverterTypeZcashTxId.lower(`txid`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterTypeZcashTransaction.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `getTransparentBalances`(`account`: ZcashAccountId, `maxHeight`: ZcashBlockHeight): Map<String, ZcashAmount> =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_transparent_balances(
+                    it,
+                    FfiConverterTypeZcashAccountId.lower(`account`),
+                    FfiConverterTypeZcashBlockHeight.lower(`maxHeight`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterMapStringTypeZcashAmount.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
     override fun `getTransparentReceivers`(`aid`: ZcashAccountId): Map<String, ZcashAddressMetadata> =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13890,6 +15288,38 @@ class ZcashWalletDb(
             }
         }.let {
             FfiConverterMapStringTypeZcashAddressMetadata.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `getTxHeight`(`txid`: ZcashTxId): ZcashBlockHeight? =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_tx_height(
+                    it,
+                    FfiConverterTypeZcashTxId.lower(`txid`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterOptionalTypeZcashBlockHeight.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `getUnifiedFullViewingKeys`(): Map<ZcashAccountId, ZcashUnifiedFullViewingKey> =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_unified_full_viewing_keys(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterMapTypeZcashAccountIdTypeZcashUnifiedFullViewingKey.lift(it)
         }
 
     @Throws(
@@ -13913,6 +15343,22 @@ class ZcashWalletDb(
     @Throws(
         ZcashException::class,
         )
+    override fun `getWalletBirthday`(): ZcashBlockHeight? =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_wallet_birthday(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterOptionalTypeZcashBlockHeight.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
     override fun `getWalletSummary`(`minConfirmations`: UInt): ZcashWalletSummary? =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
@@ -13924,6 +15370,51 @@ class ZcashWalletDb(
             }
         }.let {
             FfiConverterOptionalTypeZcashWalletSummary.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `init`(`seed`: List<UByte>) =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_init(
+                    it,
+                    FfiConverterSequenceUByte.lower(`seed`),
+                    _status,
+                )
+            }
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `isValidAccountExtfvk`(`account`: ZcashAccountId, `extfvk`: ZcashExtendedFullViewingKey): Boolean =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_is_valid_account_extfvk(
+                    it,
+                    FfiConverterTypeZcashAccountId.lower(`account`),
+                    FfiConverterTypeZcashExtendedFullViewingKey.lower(`extfvk`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterBoolean.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `putBlocks`(`blocks`: List<ZcashScannedBlock>) =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_put_blocks(
+                    it,
+                    FfiConverterSequenceTypeZcashScannedBlock.lower(`blocks`),
+                    _status,
+                )
+            }
         }
 
     @Throws(
@@ -13960,12 +15451,45 @@ class ZcashWalletDb(
     @Throws(
         ZcashException::class,
         )
+    override fun `selectSpendableSaplingNotes`(`account`: ZcashAccountId, `targetValue`: ZcashAmount, `anchorHeight`: ZcashBlockHeight, `exclude`: List<ZcashReceivedNoteId>): List<ZcashReceivedSaplingNote> =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_select_spendable_sapling_notes(
+                    it,
+                    FfiConverterTypeZcashAccountId.lower(`account`),
+                    FfiConverterTypeZcashAmount.lower(`targetValue`),
+                    FfiConverterTypeZcashBlockHeight.lower(`anchorHeight`),
+                    FfiConverterSequenceTypeZcashReceivedNoteId.lower(`exclude`),
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterSequenceTypeZcashReceivedSaplingNote.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
     override fun `storeDecryptedTx`(`dTx`: ZcashDecryptedTransaction) =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
                 _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_store_decrypted_tx(
                     it,
                     FfiConverterTypeZcashDecryptedTransaction.lower(`dTx`),
+                    _status,
+                )
+            }
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `storeSentTx`(`sentTx`: ZcashSentTransaction) =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_store_sent_tx(
+                    it,
+                    FfiConverterTypeZcashSentTransaction.lower(`sentTx`),
                     _status,
                 )
             }
@@ -14042,6 +15566,92 @@ public object FfiConverterTypeZcashWalletDb : FfiConverter<ZcashWalletDb, Pointe
     override fun allocationSize(value: ZcashWalletDb) = 8
 
     override fun write(value: ZcashWalletDb, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
+public interface ZcashWalletSaplingOutputInterface
+
+class ZcashWalletSaplingOutput(
+    pointer: Pointer,
+) : FFIObject(pointer), ZcashWalletSaplingOutputInterface {
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashwalletsaplingoutput(this.pointer, status)
+        }
+    }
+}
+
+public object FfiConverterTypeZcashWalletSaplingOutput : FfiConverter<ZcashWalletSaplingOutput, Pointer> {
+    override fun lower(value: ZcashWalletSaplingOutput): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): ZcashWalletSaplingOutput {
+        return ZcashWalletSaplingOutput(value)
+    }
+
+    override fun read(buf: ByteBuffer): ZcashWalletSaplingOutput {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: ZcashWalletSaplingOutput) = 8
+
+    override fun write(value: ZcashWalletSaplingOutput, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
+public interface ZcashWalletSaplingSpendInterface
+
+class ZcashWalletSaplingSpend(
+    pointer: Pointer,
+) : FFIObject(pointer), ZcashWalletSaplingSpendInterface {
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashwalletsaplingspend(this.pointer, status)
+        }
+    }
+}
+
+public object FfiConverterTypeZcashWalletSaplingSpend : FfiConverter<ZcashWalletSaplingSpend, Pointer> {
+    override fun lower(value: ZcashWalletSaplingSpend): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): ZcashWalletSaplingSpend {
+        return ZcashWalletSaplingSpend(value)
+    }
+
+    override fun read(buf: ByteBuffer): ZcashWalletSaplingSpend {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: ZcashWalletSaplingSpend) = 8
+
+    override fun write(value: ZcashWalletSaplingSpend, buf: ByteBuffer) {
         // The Rust code always expects pointers written as 8 bytes,
         // and will fail to compile if they don't fit.
         buf.putLong(Pointer.nativeValue(lower(value)))
@@ -14303,6 +15913,56 @@ public object FfiConverterTypeZcashWalletTransparentOutput : FfiConverter<ZcashW
     }
 }
 
+public interface ZcashWalletTxInterface
+
+class ZcashWalletTx(
+    pointer: Pointer,
+) : FFIObject(pointer), ZcashWalletTxInterface {
+
+    constructor(`txid`: ZcashTxId, `index`: UInt, `saplingSpends`: List<ZcashWalletSaplingSpend>, `saplingOutputs`: List<ZcashWalletSaplingOutput>) :
+        this(
+            rustCall() { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashwallettx_new(FfiConverterTypeZcashTxId.lower(`txid`), FfiConverterUInt.lower(`index`), FfiConverterSequenceTypeZcashWalletSaplingSpend.lower(`saplingSpends`), FfiConverterSequenceTypeZcashWalletSaplingOutput.lower(`saplingOutputs`), _status)
+            },
+        )
+
+    /**
+     * Disconnect the object from the underlying Rust object.
+     *
+     * It can be called more than once, but once called, interacting with the object
+     * causes an `IllegalStateException`.
+     *
+     * Clients **must** call this method once done with the object, or cause a memory leak.
+     */
+    protected override fun freeRustArcPtr() {
+        rustCall() { status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashwallettx(this.pointer, status)
+        }
+    }
+}
+
+public object FfiConverterTypeZcashWalletTx : FfiConverter<ZcashWalletTx, Pointer> {
+    override fun lower(value: ZcashWalletTx): Pointer = value.callWithPointer { it }
+
+    override fun lift(value: Pointer): ZcashWalletTx {
+        return ZcashWalletTx(value)
+    }
+
+    override fun read(buf: ByteBuffer): ZcashWalletTx {
+        // The Rust code always writes pointers as 8 bytes, and will
+        // fail to compile if they don't fit.
+        return lift(Pointer(buf.getLong()))
+    }
+
+    override fun allocationSize(value: ZcashWalletTx) = 8
+
+    override fun write(value: ZcashWalletTx, buf: ByteBuffer) {
+        // The Rust code always expects pointers written as 8 bytes,
+        // and will fail to compile if they don't fit.
+        buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
 public interface ZcashZip317FeeRuleInterface {
 
     fun `marginalFee`(): ZcashAmount
@@ -14426,6 +16086,242 @@ public object FfiConverterTypeZcashZip317SingleOutputChangeStrategy : FfiConvert
         // The Rust code always expects pointers written as 8 bytes,
         // and will fail to compile if they don't fit.
         buf.putLong(Pointer.nativeValue(lower(value)))
+    }
+}
+
+data class TripleSaplingNullifierMap(
+    var `txid`: ZcashTxId,
+    var `txIdx`: UShort,
+    var `nullifiers`: List<ZcashSaplingNullifier>,
+) : Disposable {
+
+    @Suppress("UNNECESSARY_SAFE_CALL") // codegen is much simpler if we unconditionally emit safe calls here
+    override fun destroy() {
+        Disposable.destroy(
+            this.`txid`,
+            this.`txIdx`,
+            this.`nullifiers`,
+        )
+    }
+}
+
+public object FfiConverterTypeTripleSaplingNullifierMap : FfiConverterRustBuffer<TripleSaplingNullifierMap> {
+    override fun read(buf: ByteBuffer): TripleSaplingNullifierMap {
+        return TripleSaplingNullifierMap(
+            FfiConverterTypeZcashTxId.read(buf),
+            FfiConverterUShort.read(buf),
+            FfiConverterSequenceTypeZcashSaplingNullifier.read(buf),
+        )
+    }
+
+    override fun allocationSize(value: TripleSaplingNullifierMap) = (
+        FfiConverterTypeZcashTxId.allocationSize(value.`txid`) +
+            FfiConverterUShort.allocationSize(value.`txIdx`) +
+            FfiConverterSequenceTypeZcashSaplingNullifier.allocationSize(value.`nullifiers`)
+        )
+
+    override fun write(value: TripleSaplingNullifierMap, buf: ByteBuffer) {
+        FfiConverterTypeZcashTxId.write(value.`txid`, buf)
+        FfiConverterUShort.write(value.`txIdx`, buf)
+        FfiConverterSequenceTypeZcashSaplingNullifier.write(value.`nullifiers`, buf)
+    }
+}
+
+data class TupleAccountIdAndSaplingNote(
+    var `accountId`: ZcashAccountId,
+    var `saplingNote`: ZcashSaplingNote,
+) : Disposable {
+
+    @Suppress("UNNECESSARY_SAFE_CALL") // codegen is much simpler if we unconditionally emit safe calls here
+    override fun destroy() {
+        Disposable.destroy(
+            this.`accountId`,
+            this.`saplingNote`,
+        )
+    }
+}
+
+public object FfiConverterTypeTupleAccountIdAndSaplingNote : FfiConverterRustBuffer<TupleAccountIdAndSaplingNote> {
+    override fun read(buf: ByteBuffer): TupleAccountIdAndSaplingNote {
+        return TupleAccountIdAndSaplingNote(
+            FfiConverterTypeZcashAccountId.read(buf),
+            FfiConverterTypeZcashSaplingNote.read(buf),
+        )
+    }
+
+    override fun allocationSize(value: TupleAccountIdAndSaplingNote) = (
+        FfiConverterTypeZcashAccountId.allocationSize(value.`accountId`) +
+            FfiConverterTypeZcashSaplingNote.allocationSize(value.`saplingNote`)
+        )
+
+    override fun write(value: TupleAccountIdAndSaplingNote, buf: ByteBuffer) {
+        FfiConverterTypeZcashAccountId.write(value.`accountId`, buf)
+        FfiConverterTypeZcashSaplingNote.write(value.`saplingNote`, buf)
+    }
+}
+
+data class TupleAccountIdAndSaplingNullifier(
+    var `accountId`: ZcashAccountId,
+    var `saplingNullifier`: ZcashSaplingNullifier,
+) : Disposable {
+
+    @Suppress("UNNECESSARY_SAFE_CALL") // codegen is much simpler if we unconditionally emit safe calls here
+    override fun destroy() {
+        Disposable.destroy(
+            this.`accountId`,
+            this.`saplingNullifier`,
+        )
+    }
+}
+
+public object FfiConverterTypeTupleAccountIdAndSaplingNullifier : FfiConverterRustBuffer<TupleAccountIdAndSaplingNullifier> {
+    override fun read(buf: ByteBuffer): TupleAccountIdAndSaplingNullifier {
+        return TupleAccountIdAndSaplingNullifier(
+            FfiConverterTypeZcashAccountId.read(buf),
+            FfiConverterTypeZcashSaplingNullifier.read(buf),
+        )
+    }
+
+    override fun allocationSize(value: TupleAccountIdAndSaplingNullifier) = (
+        FfiConverterTypeZcashAccountId.allocationSize(value.`accountId`) +
+            FfiConverterTypeZcashSaplingNullifier.allocationSize(value.`saplingNullifier`)
+        )
+
+    override fun write(value: TupleAccountIdAndSaplingNullifier, buf: ByteBuffer) {
+        FfiConverterTypeZcashAccountId.write(value.`accountId`, buf)
+        FfiConverterTypeZcashSaplingNullifier.write(value.`saplingNullifier`, buf)
+    }
+}
+
+data class TupleAccountIdAndUnifiedSpendingKey(
+    var `accountId`: ZcashAccountId,
+    var `unifiedSpendingKey`: ZcashUnifiedSpendingKey,
+) : Disposable {
+
+    @Suppress("UNNECESSARY_SAFE_CALL") // codegen is much simpler if we unconditionally emit safe calls here
+    override fun destroy() {
+        Disposable.destroy(
+            this.`accountId`,
+            this.`unifiedSpendingKey`,
+        )
+    }
+}
+
+public object FfiConverterTypeTupleAccountIdAndUnifiedSpendingKey : FfiConverterRustBuffer<TupleAccountIdAndUnifiedSpendingKey> {
+    override fun read(buf: ByteBuffer): TupleAccountIdAndUnifiedSpendingKey {
+        return TupleAccountIdAndUnifiedSpendingKey(
+            FfiConverterTypeZcashAccountId.read(buf),
+            FfiConverterTypeZcashUnifiedSpendingKey.read(buf),
+        )
+    }
+
+    override fun allocationSize(value: TupleAccountIdAndUnifiedSpendingKey) = (
+        FfiConverterTypeZcashAccountId.allocationSize(value.`accountId`) +
+            FfiConverterTypeZcashUnifiedSpendingKey.allocationSize(value.`unifiedSpendingKey`)
+        )
+
+    override fun write(value: TupleAccountIdAndUnifiedSpendingKey, buf: ByteBuffer) {
+        FfiConverterTypeZcashAccountId.write(value.`accountId`, buf)
+        FfiConverterTypeZcashUnifiedSpendingKey.write(value.`unifiedSpendingKey`, buf)
+    }
+}
+
+data class TupleBlockHeightAndHash(
+    var `blockHeight`: ZcashBlockHeight,
+    var `blockHash`: ZcashBlockHash,
+) : Disposable {
+
+    @Suppress("UNNECESSARY_SAFE_CALL") // codegen is much simpler if we unconditionally emit safe calls here
+    override fun destroy() {
+        Disposable.destroy(
+            this.`blockHeight`,
+            this.`blockHash`,
+        )
+    }
+}
+
+public object FfiConverterTypeTupleBlockHeightAndHash : FfiConverterRustBuffer<TupleBlockHeightAndHash> {
+    override fun read(buf: ByteBuffer): TupleBlockHeightAndHash {
+        return TupleBlockHeightAndHash(
+            FfiConverterTypeZcashBlockHeight.read(buf),
+            FfiConverterTypeZcashBlockHash.read(buf),
+        )
+    }
+
+    override fun allocationSize(value: TupleBlockHeightAndHash) = (
+        FfiConverterTypeZcashBlockHeight.allocationSize(value.`blockHeight`) +
+            FfiConverterTypeZcashBlockHash.allocationSize(value.`blockHash`)
+        )
+
+    override fun write(value: TupleBlockHeightAndHash, buf: ByteBuffer) {
+        FfiConverterTypeZcashBlockHeight.write(value.`blockHeight`, buf)
+        FfiConverterTypeZcashBlockHash.write(value.`blockHash`, buf)
+    }
+}
+
+data class TupleMinAndMaxBlockHeight(
+    var `min`: ZcashBlockHeight,
+    var `max`: ZcashBlockHeight,
+) : Disposable {
+
+    @Suppress("UNNECESSARY_SAFE_CALL") // codegen is much simpler if we unconditionally emit safe calls here
+    override fun destroy() {
+        Disposable.destroy(
+            this.`min`,
+            this.`max`,
+        )
+    }
+}
+
+public object FfiConverterTypeTupleMinAndMaxBlockHeight : FfiConverterRustBuffer<TupleMinAndMaxBlockHeight> {
+    override fun read(buf: ByteBuffer): TupleMinAndMaxBlockHeight {
+        return TupleMinAndMaxBlockHeight(
+            FfiConverterTypeZcashBlockHeight.read(buf),
+            FfiConverterTypeZcashBlockHeight.read(buf),
+        )
+    }
+
+    override fun allocationSize(value: TupleMinAndMaxBlockHeight) = (
+        FfiConverterTypeZcashBlockHeight.allocationSize(value.`min`) +
+            FfiConverterTypeZcashBlockHeight.allocationSize(value.`max`)
+        )
+
+    override fun write(value: TupleMinAndMaxBlockHeight, buf: ByteBuffer) {
+        FfiConverterTypeZcashBlockHeight.write(value.`min`, buf)
+        FfiConverterTypeZcashBlockHeight.write(value.`max`, buf)
+    }
+}
+
+data class TupleSaplingCommitments(
+    var `node`: ZcashSaplingNode,
+    var `retention`: MerkleTreeRetention,
+) : Disposable {
+
+    @Suppress("UNNECESSARY_SAFE_CALL") // codegen is much simpler if we unconditionally emit safe calls here
+    override fun destroy() {
+        Disposable.destroy(
+            this.`node`,
+            this.`retention`,
+        )
+    }
+}
+
+public object FfiConverterTypeTupleSaplingCommitments : FfiConverterRustBuffer<TupleSaplingCommitments> {
+    override fun read(buf: ByteBuffer): TupleSaplingCommitments {
+        return TupleSaplingCommitments(
+            FfiConverterTypeZcashSaplingNode.read(buf),
+            FfiConverterTypeMerkleTreeRetention.read(buf),
+        )
+    }
+
+    override fun allocationSize(value: TupleSaplingCommitments) = (
+        FfiConverterTypeZcashSaplingNode.allocationSize(value.`node`) +
+            FfiConverterTypeMerkleTreeRetention.allocationSize(value.`retention`)
+        )
+
+    override fun write(value: TupleSaplingCommitments, buf: ByteBuffer) {
+        FfiConverterTypeZcashSaplingNode.write(value.`node`, buf)
+        FfiConverterTypeMerkleTreeRetention.write(value.`retention`, buf)
     }
 }
 
@@ -14812,6 +16708,59 @@ public object FfiConverterTypeZcashPaymentParam : FfiConverterRustBuffer<ZcashPa
     override fun write(value: ZcashPaymentParam, buf: ByteBuffer) {
         FfiConverterString.write(value.`key`, buf)
         FfiConverterString.write(value.`value`, buf)
+    }
+}
+
+data class ZcashSentTransaction(
+    var `tx`: ZcashTransaction,
+    var `created`: TimeOffsetDateTime,
+    var `account`: ZcashAccountId,
+    var `outputs`: List<ZcashSentTransactionOutput>,
+    var `feeAmount`: ZcashAmount,
+    var `utxosSpent`: List<ZcashOutPoint>,
+) : Disposable {
+
+    @Suppress("UNNECESSARY_SAFE_CALL") // codegen is much simpler if we unconditionally emit safe calls here
+    override fun destroy() {
+        Disposable.destroy(
+            this.`tx`,
+            this.`created`,
+            this.`account`,
+            this.`outputs`,
+            this.`feeAmount`,
+            this.`utxosSpent`,
+        )
+    }
+}
+
+public object FfiConverterTypeZcashSentTransaction : FfiConverterRustBuffer<ZcashSentTransaction> {
+    override fun read(buf: ByteBuffer): ZcashSentTransaction {
+        return ZcashSentTransaction(
+            FfiConverterTypeZcashTransaction.read(buf),
+            FfiConverterTypeTimeOffsetDateTime.read(buf),
+            FfiConverterTypeZcashAccountId.read(buf),
+            FfiConverterSequenceTypeZcashSentTransactionOutput.read(buf),
+            FfiConverterTypeZcashAmount.read(buf),
+            FfiConverterSequenceTypeZcashOutPoint.read(buf),
+        )
+    }
+
+    override fun allocationSize(value: ZcashSentTransaction) = (
+        FfiConverterTypeZcashTransaction.allocationSize(value.`tx`) +
+            FfiConverterTypeTimeOffsetDateTime.allocationSize(value.`created`) +
+            FfiConverterTypeZcashAccountId.allocationSize(value.`account`) +
+            FfiConverterSequenceTypeZcashSentTransactionOutput.allocationSize(value.`outputs`) +
+            FfiConverterTypeZcashAmount.allocationSize(value.`feeAmount`) +
+            FfiConverterSequenceTypeZcashOutPoint.allocationSize(value.`utxosSpent`)
+        )
+
+    override fun write(value: ZcashSentTransaction, buf: ByteBuffer) {
+        FfiConverterTypeZcashTransaction.write(value.`tx`, buf)
+        FfiConverterTypeTimeOffsetDateTime.write(value.`created`, buf)
+        FfiConverterTypeZcashAccountId.write(value.`account`, buf)
+        FfiConverterSequenceTypeZcashSentTransactionOutput.write(value.`outputs`, buf)
+        FfiConverterTypeZcashAmount.write(value.`feeAmount`, buf)
+        FfiConverterSequenceTypeZcashOutPoint.write(value.`utxosSpent`, buf)
     }
 }
 
@@ -15326,6 +17275,112 @@ public object FfiConverterTypeZcashKeysEra : FfiConverterRustBuffer<ZcashKeysEra
     }
 }
 
+sealed class ZcashMemo {
+    object Empty : ZcashMemo()
+
+    data class Text(
+        val `v`: String,
+    ) : ZcashMemo()
+    data class Future(
+        val `v`: List<UByte>,
+    ) : ZcashMemo()
+    data class Arbitrary(
+        val `v`: List<UByte>,
+    ) : ZcashMemo()
+}
+
+public object FfiConverterTypeZcashMemo : FfiConverterRustBuffer<ZcashMemo> {
+    override fun read(buf: ByteBuffer): ZcashMemo {
+        return when (buf.getInt()) {
+            1 -> ZcashMemo.Empty
+            2 -> ZcashMemo.Text(
+                FfiConverterString.read(buf),
+            )
+            3 -> ZcashMemo.Future(
+                FfiConverterSequenceUByte.read(buf),
+            )
+            4 -> ZcashMemo.Arbitrary(
+                FfiConverterSequenceUByte.read(buf),
+            )
+            else -> throw RuntimeException("invalid enum value, something is very wrong!!")
+        }
+    }
+
+    override fun allocationSize(value: ZcashMemo) = when (value) {
+        is ZcashMemo.Empty -> {
+            // Add the size for the Int that specifies the variant plus the size needed for all fields
+            (
+                4
+                )
+        }
+        is ZcashMemo.Text -> {
+            // Add the size for the Int that specifies the variant plus the size needed for all fields
+            (
+                4 +
+                    FfiConverterString.allocationSize(value.`v`)
+                )
+        }
+        is ZcashMemo.Future -> {
+            // Add the size for the Int that specifies the variant plus the size needed for all fields
+            (
+                4 +
+                    FfiConverterSequenceUByte.allocationSize(value.`v`)
+                )
+        }
+        is ZcashMemo.Arbitrary -> {
+            // Add the size for the Int that specifies the variant plus the size needed for all fields
+            (
+                4 +
+                    FfiConverterSequenceUByte.allocationSize(value.`v`)
+                )
+        }
+    }
+
+    override fun write(value: ZcashMemo, buf: ByteBuffer) {
+        when (value) {
+            is ZcashMemo.Empty -> {
+                buf.putInt(1)
+                Unit
+            }
+            is ZcashMemo.Text -> {
+                buf.putInt(2)
+                FfiConverterString.write(value.`v`, buf)
+                Unit
+            }
+            is ZcashMemo.Future -> {
+                buf.putInt(3)
+                FfiConverterSequenceUByte.write(value.`v`, buf)
+                Unit
+            }
+            is ZcashMemo.Arbitrary -> {
+                buf.putInt(4)
+                FfiConverterSequenceUByte.write(value.`v`, buf)
+                Unit
+            }
+        }.let { /* this makes the `when` an expression, which ensures it is exhaustive */ }
+    }
+}
+
+enum class ZcashNullifierQuery {
+
+    UNSPENT,
+    ALL,
+}
+
+public object FfiConverterTypeZcashNullifierQuery : FfiConverterRustBuffer<ZcashNullifierQuery> {
+    override fun read(buf: ByteBuffer) = try {
+        ZcashNullifierQuery.values()[buf.getInt() - 1]
+    } catch (e: IndexOutOfBoundsException) {
+        throw RuntimeException("invalid enum value, something is very wrong!!", e)
+    }
+
+    override fun allocationSize(value: ZcashNullifierQuery) = 4
+
+    override fun write(value: ZcashNullifierQuery, buf: ByteBuffer) {
+        buf.putInt(value.ordinal + 1)
+    }
+}
+
 enum class ZcashOrchardScope {
 
     EXTERNAL,
@@ -15402,6 +17457,159 @@ public object FfiConverterTypeZcashOvkPolicy : FfiConverterRustBuffer<ZcashOvkPo
             }
             is ZcashOvkPolicy.Discard -> {
                 buf.putInt(3)
+                Unit
+            }
+        }.let { /* this makes the `when` an expression, which ensures it is exhaustive */ }
+    }
+}
+
+sealed class ZcashPoolType {
+    object Transparent : ZcashPoolType()
+
+    data class Shielded(
+        val `v`: ZcashShieldedProtocol,
+    ) : ZcashPoolType()
+}
+
+public object FfiConverterTypeZcashPoolType : FfiConverterRustBuffer<ZcashPoolType> {
+    override fun read(buf: ByteBuffer): ZcashPoolType {
+        return when (buf.getInt()) {
+            1 -> ZcashPoolType.Transparent
+            2 -> ZcashPoolType.Shielded(
+                FfiConverterTypeZcashShieldedProtocol.read(buf),
+            )
+            else -> throw RuntimeException("invalid enum value, something is very wrong!!")
+        }
+    }
+
+    override fun allocationSize(value: ZcashPoolType) = when (value) {
+        is ZcashPoolType.Transparent -> {
+            // Add the size for the Int that specifies the variant plus the size needed for all fields
+            (
+                4
+                )
+        }
+        is ZcashPoolType.Shielded -> {
+            // Add the size for the Int that specifies the variant plus the size needed for all fields
+            (
+                4 +
+                    FfiConverterTypeZcashShieldedProtocol.allocationSize(value.`v`)
+                )
+        }
+    }
+
+    override fun write(value: ZcashPoolType, buf: ByteBuffer) {
+        when (value) {
+            is ZcashPoolType.Transparent -> {
+                buf.putInt(1)
+                Unit
+            }
+            is ZcashPoolType.Shielded -> {
+                buf.putInt(2)
+                FfiConverterTypeZcashShieldedProtocol.write(value.`v`, buf)
+                Unit
+            }
+        }.let { /* this makes the `when` an expression, which ensures it is exhaustive */ }
+    }
+}
+
+sealed class ZcashRecipient {
+    data class Transparent(
+        val `script`: List<UByte>,
+    ) : ZcashRecipient()
+    data class Sapling(
+        val `paymentAddressBytes`: List<UByte>,
+    ) : ZcashRecipient()
+    data class Unified(
+        val `uae`: String,
+        val `params`: ZcashConsensusParameters,
+        val `zpt`: ZcashPoolType,
+    ) : ZcashRecipient()
+    data class InternalAccount(
+        val `aid`: ZcashAccountId,
+        val `zpt`: ZcashPoolType,
+    ) : ZcashRecipient()
+}
+
+public object FfiConverterTypeZcashRecipient : FfiConverterRustBuffer<ZcashRecipient> {
+    override fun read(buf: ByteBuffer): ZcashRecipient {
+        return when (buf.getInt()) {
+            1 -> ZcashRecipient.Transparent(
+                FfiConverterSequenceUByte.read(buf),
+            )
+            2 -> ZcashRecipient.Sapling(
+                FfiConverterSequenceUByte.read(buf),
+            )
+            3 -> ZcashRecipient.Unified(
+                FfiConverterString.read(buf),
+                FfiConverterTypeZcashConsensusParameters.read(buf),
+                FfiConverterTypeZcashPoolType.read(buf),
+            )
+            4 -> ZcashRecipient.InternalAccount(
+                FfiConverterTypeZcashAccountId.read(buf),
+                FfiConverterTypeZcashPoolType.read(buf),
+            )
+            else -> throw RuntimeException("invalid enum value, something is very wrong!!")
+        }
+    }
+
+    override fun allocationSize(value: ZcashRecipient) = when (value) {
+        is ZcashRecipient.Transparent -> {
+            // Add the size for the Int that specifies the variant plus the size needed for all fields
+            (
+                4 +
+                    FfiConverterSequenceUByte.allocationSize(value.`script`)
+                )
+        }
+        is ZcashRecipient.Sapling -> {
+            // Add the size for the Int that specifies the variant plus the size needed for all fields
+            (
+                4 +
+                    FfiConverterSequenceUByte.allocationSize(value.`paymentAddressBytes`)
+                )
+        }
+        is ZcashRecipient.Unified -> {
+            // Add the size for the Int that specifies the variant plus the size needed for all fields
+            (
+                4 +
+                    FfiConverterString.allocationSize(value.`uae`) +
+                    FfiConverterTypeZcashConsensusParameters.allocationSize(value.`params`) +
+                    FfiConverterTypeZcashPoolType.allocationSize(value.`zpt`)
+                )
+        }
+        is ZcashRecipient.InternalAccount -> {
+            // Add the size for the Int that specifies the variant plus the size needed for all fields
+            (
+                4 +
+                    FfiConverterTypeZcashAccountId.allocationSize(value.`aid`) +
+                    FfiConverterTypeZcashPoolType.allocationSize(value.`zpt`)
+                )
+        }
+    }
+
+    override fun write(value: ZcashRecipient, buf: ByteBuffer) {
+        when (value) {
+            is ZcashRecipient.Transparent -> {
+                buf.putInt(1)
+                FfiConverterSequenceUByte.write(value.`script`, buf)
+                Unit
+            }
+            is ZcashRecipient.Sapling -> {
+                buf.putInt(2)
+                FfiConverterSequenceUByte.write(value.`paymentAddressBytes`, buf)
+                Unit
+            }
+            is ZcashRecipient.Unified -> {
+                buf.putInt(3)
+                FfiConverterString.write(value.`uae`, buf)
+                FfiConverterTypeZcashConsensusParameters.write(value.`params`, buf)
+                FfiConverterTypeZcashPoolType.write(value.`zpt`, buf)
+                Unit
+            }
+            is ZcashRecipient.InternalAccount -> {
+                buf.putInt(4)
+                FfiConverterTypeZcashAccountId.write(value.`aid`, buf)
+                FfiConverterTypeZcashPoolType.write(value.`zpt`, buf)
                 Unit
             }
         }.let { /* this makes the `when` an expression, which ensures it is exhaustive */ }
@@ -15523,6 +17731,27 @@ public object FfiConverterTypeZcashShieldedProtocol : FfiConverterRustBuffer<Zca
     override fun allocationSize(value: ZcashShieldedProtocol) = 4
 
     override fun write(value: ZcashShieldedProtocol, buf: ByteBuffer) {
+        buf.putInt(value.ordinal + 1)
+    }
+}
+
+enum class ZcashTransferType {
+
+    INCOMING,
+    WALLET_INTERNAL,
+    OUTGOING,
+}
+
+public object FfiConverterTypeZcashTransferType : FfiConverterRustBuffer<ZcashTransferType> {
+    override fun read(buf: ByteBuffer) = try {
+        ZcashTransferType.values()[buf.getInt() - 1]
+    } catch (e: IndexOutOfBoundsException) {
+        throw RuntimeException("invalid enum value, something is very wrong!!", e)
+    }
+
+    override fun allocationSize(value: ZcashTransferType) = 4
+
+    override fun write(value: ZcashTransferType, buf: ByteBuffer) {
         buf.putInt(value.ordinal + 1)
     }
 }
@@ -15932,6 +18161,32 @@ public object FfiConverterOptionalTypeZcashAmount : FfiConverterRustBuffer<Zcash
     }
 }
 
+public object FfiConverterOptionalTypeZcashBlockHash : FfiConverterRustBuffer<ZcashBlockHash?> {
+    override fun read(buf: ByteBuffer): ZcashBlockHash? {
+        if (buf.get().toInt() == 0) {
+            return null
+        }
+        return FfiConverterTypeZcashBlockHash.read(buf)
+    }
+
+    override fun allocationSize(value: ZcashBlockHash?): Int {
+        if (value == null) {
+            return 1
+        } else {
+            return 1 + FfiConverterTypeZcashBlockHash.allocationSize(value)
+        }
+    }
+
+    override fun write(value: ZcashBlockHash?, buf: ByteBuffer) {
+        if (value == null) {
+            buf.put(0)
+        } else {
+            buf.put(1)
+            FfiConverterTypeZcashBlockHash.write(value, buf)
+        }
+    }
+}
+
 public object FfiConverterOptionalTypeZcashBlockHeight : FfiConverterRustBuffer<ZcashBlockHeight?> {
     override fun read(buf: ByteBuffer): ZcashBlockHeight? {
         if (buf.get().toInt() == 0) {
@@ -15980,6 +18235,32 @@ public object FfiConverterOptionalTypeZcashBlockMeta : FfiConverterRustBuffer<Zc
         } else {
             buf.put(1)
             FfiConverterTypeZcashBlockMeta.write(value, buf)
+        }
+    }
+}
+
+public object FfiConverterOptionalTypeZcashBlockMetadata : FfiConverterRustBuffer<ZcashBlockMetadata?> {
+    override fun read(buf: ByteBuffer): ZcashBlockMetadata? {
+        if (buf.get().toInt() == 0) {
+            return null
+        }
+        return FfiConverterTypeZcashBlockMetadata.read(buf)
+    }
+
+    override fun allocationSize(value: ZcashBlockMetadata?): Int {
+        if (value == null) {
+            return 1
+        } else {
+            return 1 + FfiConverterTypeZcashBlockMetadata.allocationSize(value)
+        }
+    }
+
+    override fun write(value: ZcashBlockMetadata?, buf: ByteBuffer) {
+        if (value == null) {
+            buf.put(0)
+        } else {
+            buf.put(1)
+            FfiConverterTypeZcashBlockMetadata.write(value, buf)
         }
     }
 }
@@ -16400,6 +18681,84 @@ public object FfiConverterOptionalTypeZcashWalletSummary : FfiConverterRustBuffe
     }
 }
 
+public object FfiConverterOptionalTypeTupleAccountIdAndSaplingNote : FfiConverterRustBuffer<TupleAccountIdAndSaplingNote?> {
+    override fun read(buf: ByteBuffer): TupleAccountIdAndSaplingNote? {
+        if (buf.get().toInt() == 0) {
+            return null
+        }
+        return FfiConverterTypeTupleAccountIdAndSaplingNote.read(buf)
+    }
+
+    override fun allocationSize(value: TupleAccountIdAndSaplingNote?): Int {
+        if (value == null) {
+            return 1
+        } else {
+            return 1 + FfiConverterTypeTupleAccountIdAndSaplingNote.allocationSize(value)
+        }
+    }
+
+    override fun write(value: TupleAccountIdAndSaplingNote?, buf: ByteBuffer) {
+        if (value == null) {
+            buf.put(0)
+        } else {
+            buf.put(1)
+            FfiConverterTypeTupleAccountIdAndSaplingNote.write(value, buf)
+        }
+    }
+}
+
+public object FfiConverterOptionalTypeTupleBlockHeightAndHash : FfiConverterRustBuffer<TupleBlockHeightAndHash?> {
+    override fun read(buf: ByteBuffer): TupleBlockHeightAndHash? {
+        if (buf.get().toInt() == 0) {
+            return null
+        }
+        return FfiConverterTypeTupleBlockHeightAndHash.read(buf)
+    }
+
+    override fun allocationSize(value: TupleBlockHeightAndHash?): Int {
+        if (value == null) {
+            return 1
+        } else {
+            return 1 + FfiConverterTypeTupleBlockHeightAndHash.allocationSize(value)
+        }
+    }
+
+    override fun write(value: TupleBlockHeightAndHash?, buf: ByteBuffer) {
+        if (value == null) {
+            buf.put(0)
+        } else {
+            buf.put(1)
+            FfiConverterTypeTupleBlockHeightAndHash.write(value, buf)
+        }
+    }
+}
+
+public object FfiConverterOptionalTypeTupleMinAndMaxBlockHeight : FfiConverterRustBuffer<TupleMinAndMaxBlockHeight?> {
+    override fun read(buf: ByteBuffer): TupleMinAndMaxBlockHeight? {
+        if (buf.get().toInt() == 0) {
+            return null
+        }
+        return FfiConverterTypeTupleMinAndMaxBlockHeight.read(buf)
+    }
+
+    override fun allocationSize(value: TupleMinAndMaxBlockHeight?): Int {
+        if (value == null) {
+            return 1
+        } else {
+            return 1 + FfiConverterTypeTupleMinAndMaxBlockHeight.allocationSize(value)
+        }
+    }
+
+    override fun write(value: TupleMinAndMaxBlockHeight?, buf: ByteBuffer) {
+        if (value == null) {
+            buf.put(0)
+        } else {
+            buf.put(1)
+            FfiConverterTypeTupleMinAndMaxBlockHeight.write(value, buf)
+        }
+    }
+}
+
 public object FfiConverterOptionalTypeZcashAccountId : FfiConverterRustBuffer<ZcashAccountId?> {
     override fun read(buf: ByteBuffer): ZcashAccountId? {
         if (buf.get().toInt() == 0) {
@@ -16688,6 +19047,28 @@ public object FfiConverterSequenceTypeZcashCommitmentTreeRoot : FfiConverterRust
     }
 }
 
+public object FfiConverterSequenceTypeZcashDecryptedOutput : FfiConverterRustBuffer<List<ZcashDecryptedOutput>> {
+    override fun read(buf: ByteBuffer): List<ZcashDecryptedOutput> {
+        val len = buf.getInt()
+        return List<ZcashDecryptedOutput>(len) {
+            FfiConverterTypeZcashDecryptedOutput.read(buf)
+        }
+    }
+
+    override fun allocationSize(value: List<ZcashDecryptedOutput>): Int {
+        val sizeForLength = 4
+        val sizeForItems = value.map { FfiConverterTypeZcashDecryptedOutput.allocationSize(it) }.sum()
+        return sizeForLength + sizeForItems
+    }
+
+    override fun write(value: List<ZcashDecryptedOutput>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        value.forEach {
+            FfiConverterTypeZcashDecryptedOutput.write(it, buf)
+        }
+    }
+}
+
 public object FfiConverterSequenceTypeZcashOrchardAction : FfiConverterRustBuffer<List<ZcashOrchardAction>> {
     override fun read(buf: ByteBuffer): List<ZcashOrchardAction> {
         val len = buf.getInt()
@@ -16820,6 +19201,72 @@ public object FfiConverterSequenceTypeZcashOutPoint : FfiConverterRustBuffer<Lis
     }
 }
 
+public object FfiConverterSequenceTypeZcashReceivedNoteId : FfiConverterRustBuffer<List<ZcashReceivedNoteId>> {
+    override fun read(buf: ByteBuffer): List<ZcashReceivedNoteId> {
+        val len = buf.getInt()
+        return List<ZcashReceivedNoteId>(len) {
+            FfiConverterTypeZcashReceivedNoteId.read(buf)
+        }
+    }
+
+    override fun allocationSize(value: List<ZcashReceivedNoteId>): Int {
+        val sizeForLength = 4
+        val sizeForItems = value.map { FfiConverterTypeZcashReceivedNoteId.allocationSize(it) }.sum()
+        return sizeForLength + sizeForItems
+    }
+
+    override fun write(value: List<ZcashReceivedNoteId>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        value.forEach {
+            FfiConverterTypeZcashReceivedNoteId.write(it, buf)
+        }
+    }
+}
+
+public object FfiConverterSequenceTypeZcashReceivedSaplingNote : FfiConverterRustBuffer<List<ZcashReceivedSaplingNote>> {
+    override fun read(buf: ByteBuffer): List<ZcashReceivedSaplingNote> {
+        val len = buf.getInt()
+        return List<ZcashReceivedSaplingNote>(len) {
+            FfiConverterTypeZcashReceivedSaplingNote.read(buf)
+        }
+    }
+
+    override fun allocationSize(value: List<ZcashReceivedSaplingNote>): Int {
+        val sizeForLength = 4
+        val sizeForItems = value.map { FfiConverterTypeZcashReceivedSaplingNote.allocationSize(it) }.sum()
+        return sizeForLength + sizeForItems
+    }
+
+    override fun write(value: List<ZcashReceivedSaplingNote>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        value.forEach {
+            FfiConverterTypeZcashReceivedSaplingNote.write(it, buf)
+        }
+    }
+}
+
+public object FfiConverterSequenceTypeZcashSaplingNullifier : FfiConverterRustBuffer<List<ZcashSaplingNullifier>> {
+    override fun read(buf: ByteBuffer): List<ZcashSaplingNullifier> {
+        val len = buf.getInt()
+        return List<ZcashSaplingNullifier>(len) {
+            FfiConverterTypeZcashSaplingNullifier.read(buf)
+        }
+    }
+
+    override fun allocationSize(value: List<ZcashSaplingNullifier>): Int {
+        val sizeForLength = 4
+        val sizeForItems = value.map { FfiConverterTypeZcashSaplingNullifier.allocationSize(it) }.sum()
+        return sizeForLength + sizeForItems
+    }
+
+    override fun write(value: List<ZcashSaplingNullifier>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        value.forEach {
+            FfiConverterTypeZcashSaplingNullifier.write(it, buf)
+        }
+    }
+}
+
 public object FfiConverterSequenceTypeZcashSaplingOutputDescription : FfiConverterRustBuffer<List<ZcashSaplingOutputDescription>> {
     override fun read(buf: ByteBuffer): List<ZcashSaplingOutputDescription> {
         val len = buf.getInt()
@@ -16882,6 +19329,50 @@ public object FfiConverterSequenceTypeZcashScanRange : FfiConverterRustBuffer<Li
         buf.putInt(value.size)
         value.forEach {
             FfiConverterTypeZcashScanRange.write(it, buf)
+        }
+    }
+}
+
+public object FfiConverterSequenceTypeZcashScannedBlock : FfiConverterRustBuffer<List<ZcashScannedBlock>> {
+    override fun read(buf: ByteBuffer): List<ZcashScannedBlock> {
+        val len = buf.getInt()
+        return List<ZcashScannedBlock>(len) {
+            FfiConverterTypeZcashScannedBlock.read(buf)
+        }
+    }
+
+    override fun allocationSize(value: List<ZcashScannedBlock>): Int {
+        val sizeForLength = 4
+        val sizeForItems = value.map { FfiConverterTypeZcashScannedBlock.allocationSize(it) }.sum()
+        return sizeForLength + sizeForItems
+    }
+
+    override fun write(value: List<ZcashScannedBlock>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        value.forEach {
+            FfiConverterTypeZcashScannedBlock.write(it, buf)
+        }
+    }
+}
+
+public object FfiConverterSequenceTypeZcashSentTransactionOutput : FfiConverterRustBuffer<List<ZcashSentTransactionOutput>> {
+    override fun read(buf: ByteBuffer): List<ZcashSentTransactionOutput> {
+        val len = buf.getInt()
+        return List<ZcashSentTransactionOutput>(len) {
+            FfiConverterTypeZcashSentTransactionOutput.read(buf)
+        }
+    }
+
+    override fun allocationSize(value: List<ZcashSentTransactionOutput>): Int {
+        val sizeForLength = 4
+        val sizeForItems = value.map { FfiConverterTypeZcashSentTransactionOutput.allocationSize(it) }.sum()
+        return sizeForLength + sizeForItems
+    }
+
+    override fun write(value: List<ZcashSentTransactionOutput>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        value.forEach {
+            FfiConverterTypeZcashSentTransactionOutput.write(it, buf)
         }
     }
 }
@@ -16952,6 +19443,50 @@ public object FfiConverterSequenceTypeZcashTxOut : FfiConverterRustBuffer<List<Z
     }
 }
 
+public object FfiConverterSequenceTypeZcashWalletSaplingOutput : FfiConverterRustBuffer<List<ZcashWalletSaplingOutput>> {
+    override fun read(buf: ByteBuffer): List<ZcashWalletSaplingOutput> {
+        val len = buf.getInt()
+        return List<ZcashWalletSaplingOutput>(len) {
+            FfiConverterTypeZcashWalletSaplingOutput.read(buf)
+        }
+    }
+
+    override fun allocationSize(value: List<ZcashWalletSaplingOutput>): Int {
+        val sizeForLength = 4
+        val sizeForItems = value.map { FfiConverterTypeZcashWalletSaplingOutput.allocationSize(it) }.sum()
+        return sizeForLength + sizeForItems
+    }
+
+    override fun write(value: List<ZcashWalletSaplingOutput>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        value.forEach {
+            FfiConverterTypeZcashWalletSaplingOutput.write(it, buf)
+        }
+    }
+}
+
+public object FfiConverterSequenceTypeZcashWalletSaplingSpend : FfiConverterRustBuffer<List<ZcashWalletSaplingSpend>> {
+    override fun read(buf: ByteBuffer): List<ZcashWalletSaplingSpend> {
+        val len = buf.getInt()
+        return List<ZcashWalletSaplingSpend>(len) {
+            FfiConverterTypeZcashWalletSaplingSpend.read(buf)
+        }
+    }
+
+    override fun allocationSize(value: List<ZcashWalletSaplingSpend>): Int {
+        val sizeForLength = 4
+        val sizeForItems = value.map { FfiConverterTypeZcashWalletSaplingSpend.allocationSize(it) }.sum()
+        return sizeForLength + sizeForItems
+    }
+
+    override fun write(value: List<ZcashWalletSaplingSpend>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        value.forEach {
+            FfiConverterTypeZcashWalletSaplingSpend.write(it, buf)
+        }
+    }
+}
+
 public object FfiConverterSequenceTypeZcashWalletTransparentOutput : FfiConverterRustBuffer<List<ZcashWalletTransparentOutput>> {
     override fun read(buf: ByteBuffer): List<ZcashWalletTransparentOutput> {
         val len = buf.getInt()
@@ -16970,6 +19505,94 @@ public object FfiConverterSequenceTypeZcashWalletTransparentOutput : FfiConverte
         buf.putInt(value.size)
         value.forEach {
             FfiConverterTypeZcashWalletTransparentOutput.write(it, buf)
+        }
+    }
+}
+
+public object FfiConverterSequenceTypeZcashWalletTx : FfiConverterRustBuffer<List<ZcashWalletTx>> {
+    override fun read(buf: ByteBuffer): List<ZcashWalletTx> {
+        val len = buf.getInt()
+        return List<ZcashWalletTx>(len) {
+            FfiConverterTypeZcashWalletTx.read(buf)
+        }
+    }
+
+    override fun allocationSize(value: List<ZcashWalletTx>): Int {
+        val sizeForLength = 4
+        val sizeForItems = value.map { FfiConverterTypeZcashWalletTx.allocationSize(it) }.sum()
+        return sizeForLength + sizeForItems
+    }
+
+    override fun write(value: List<ZcashWalletTx>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        value.forEach {
+            FfiConverterTypeZcashWalletTx.write(it, buf)
+        }
+    }
+}
+
+public object FfiConverterSequenceTypeTripleSaplingNullifierMap : FfiConverterRustBuffer<List<TripleSaplingNullifierMap>> {
+    override fun read(buf: ByteBuffer): List<TripleSaplingNullifierMap> {
+        val len = buf.getInt()
+        return List<TripleSaplingNullifierMap>(len) {
+            FfiConverterTypeTripleSaplingNullifierMap.read(buf)
+        }
+    }
+
+    override fun allocationSize(value: List<TripleSaplingNullifierMap>): Int {
+        val sizeForLength = 4
+        val sizeForItems = value.map { FfiConverterTypeTripleSaplingNullifierMap.allocationSize(it) }.sum()
+        return sizeForLength + sizeForItems
+    }
+
+    override fun write(value: List<TripleSaplingNullifierMap>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        value.forEach {
+            FfiConverterTypeTripleSaplingNullifierMap.write(it, buf)
+        }
+    }
+}
+
+public object FfiConverterSequenceTypeTupleAccountIdAndSaplingNullifier : FfiConverterRustBuffer<List<TupleAccountIdAndSaplingNullifier>> {
+    override fun read(buf: ByteBuffer): List<TupleAccountIdAndSaplingNullifier> {
+        val len = buf.getInt()
+        return List<TupleAccountIdAndSaplingNullifier>(len) {
+            FfiConverterTypeTupleAccountIdAndSaplingNullifier.read(buf)
+        }
+    }
+
+    override fun allocationSize(value: List<TupleAccountIdAndSaplingNullifier>): Int {
+        val sizeForLength = 4
+        val sizeForItems = value.map { FfiConverterTypeTupleAccountIdAndSaplingNullifier.allocationSize(it) }.sum()
+        return sizeForLength + sizeForItems
+    }
+
+    override fun write(value: List<TupleAccountIdAndSaplingNullifier>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        value.forEach {
+            FfiConverterTypeTupleAccountIdAndSaplingNullifier.write(it, buf)
+        }
+    }
+}
+
+public object FfiConverterSequenceTypeTupleSaplingCommitments : FfiConverterRustBuffer<List<TupleSaplingCommitments>> {
+    override fun read(buf: ByteBuffer): List<TupleSaplingCommitments> {
+        val len = buf.getInt()
+        return List<TupleSaplingCommitments>(len) {
+            FfiConverterTypeTupleSaplingCommitments.read(buf)
+        }
+    }
+
+    override fun allocationSize(value: List<TupleSaplingCommitments>): Int {
+        val sizeForLength = 4
+        val sizeForItems = value.map { FfiConverterTypeTupleSaplingCommitments.allocationSize(it) }.sum()
+        return sizeForLength + sizeForItems
+    }
+
+    override fun write(value: List<TupleSaplingCommitments>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        value.forEach {
+            FfiConverterTypeTupleSaplingCommitments.write(it, buf)
         }
     }
 }
@@ -17174,6 +19797,74 @@ public object FfiConverterMapStringTypeZcashAddressMetadata : FfiConverterRustBu
     }
 }
 
+public object FfiConverterMapStringTypeZcashAmount : FfiConverterRustBuffer<Map<String, ZcashAmount>> {
+    override fun read(buf: ByteBuffer): Map<String, ZcashAmount> {
+        // TODO: Once Kotlin's `buildMap` API is stabilized we should use it here.
+        val items: MutableMap<String, ZcashAmount> = mutableMapOf()
+        val len = buf.getInt()
+        repeat(len) {
+            val k = FfiConverterString.read(buf)
+            val v = FfiConverterTypeZcashAmount.read(buf)
+            items[k] = v
+        }
+        return items
+    }
+
+    override fun allocationSize(value: Map<String, ZcashAmount>): Int {
+        val spaceForMapSize = 4
+        val spaceForChildren = value.map { (k, v) ->
+            FfiConverterString.allocationSize(k) +
+                FfiConverterTypeZcashAmount.allocationSize(v)
+        }.sum()
+        return spaceForMapSize + spaceForChildren
+    }
+
+    override fun write(value: Map<String, ZcashAmount>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        // The parens on `(k, v)` here ensure we're calling the right method,
+        // which is important for compatibility with older android devices.
+        // Ref https://blog.danlew.net/2017/03/16/kotlin-puzzler-whose-line-is-it-anyways/
+        value.forEach { (k, v) ->
+            FfiConverterString.write(k, buf)
+            FfiConverterTypeZcashAmount.write(v, buf)
+        }
+    }
+}
+
+public object FfiConverterMapTypeZcashAccountIdTypeZcashUnifiedFullViewingKey : FfiConverterRustBuffer<Map<ZcashAccountId, ZcashUnifiedFullViewingKey>> {
+    override fun read(buf: ByteBuffer): Map<ZcashAccountId, ZcashUnifiedFullViewingKey> {
+        // TODO: Once Kotlin's `buildMap` API is stabilized we should use it here.
+        val items: MutableMap<ZcashAccountId, ZcashUnifiedFullViewingKey> = mutableMapOf()
+        val len = buf.getInt()
+        repeat(len) {
+            val k = FfiConverterTypeZcashAccountId.read(buf)
+            val v = FfiConverterTypeZcashUnifiedFullViewingKey.read(buf)
+            items[k] = v
+        }
+        return items
+    }
+
+    override fun allocationSize(value: Map<ZcashAccountId, ZcashUnifiedFullViewingKey>): Int {
+        val spaceForMapSize = 4
+        val spaceForChildren = value.map { (k, v) ->
+            FfiConverterTypeZcashAccountId.allocationSize(k) +
+                FfiConverterTypeZcashUnifiedFullViewingKey.allocationSize(v)
+        }.sum()
+        return spaceForMapSize + spaceForChildren
+    }
+
+    override fun write(value: Map<ZcashAccountId, ZcashUnifiedFullViewingKey>, buf: ByteBuffer) {
+        buf.putInt(value.size)
+        // The parens on `(k, v)` here ensure we're calling the right method,
+        // which is important for compatibility with older android devices.
+        // Ref https://blog.danlew.net/2017/03/16/kotlin-puzzler-whose-line-is-it-anyways/
+        value.forEach { (k, v) ->
+            FfiConverterTypeZcashAccountId.write(k, buf)
+            FfiConverterTypeZcashUnifiedFullViewingKey.write(v, buf)
+        }
+    }
+}
+
 @Throws(ZcashException::class)
 fun `decodeExtendedFullViewingKey`(`hrp`: String, `s`: String): ZcashExtendedFullViewingKey {
     return FfiConverterTypeZcashExtendedFullViewingKey.lift(
@@ -17206,6 +19897,21 @@ fun `decodeTransparentAddress`(`pubkeyVersion`: List<UByte>, `scriptVersion`: Li
     return FfiConverterTypeZcashTransparentAddress.lift(
         rustCallWithError(ZcashException) { _status ->
             _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_func_decode_transparent_address(FfiConverterSequenceUByte.lower(`pubkeyVersion`), FfiConverterSequenceUByte.lower(`scriptVersion`), FfiConverterString.lower(`s`), _status)
+        },
+    )
+}
+
+@Throws(ZcashException::class)
+fun `decryptAndStoreTransaction`(`params`: ZcashConsensusParameters, `zDbData`: ZcashWalletDb, `tx`: ZcashTransaction) =
+
+    rustCallWithError(ZcashException) { _status ->
+        _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_func_decrypt_and_store_transaction(FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashTransaction.lower(`tx`), _status)
+    }
+
+fun `decryptTransaction`(`params`: ZcashConsensusParameters, `height`: ZcashBlockHeight, `tx`: ZcashTransaction, `ufvks`: Map<ZcashAccountId, ZcashUnifiedFullViewingKey>): List<ZcashDecryptedOutput> {
+    return FfiConverterSequenceTypeZcashDecryptedOutput.lift(
+        rustCall() { _status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_func_decrypt_transaction(FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashBlockHeight.lower(`height`), FfiConverterTypeZcashTransaction.lower(`tx`), FfiConverterMapTypeZcashAccountIdTypeZcashUnifiedFullViewingKey.lower(`ufvks`), _status)
         },
     )
 }
@@ -17254,6 +19960,49 @@ fun `encodeTransparentAddressP`(`params`: ZcashConsensusParameters, `addr`: Zcas
     return FfiConverterString.lift(
         rustCall() { _status ->
             _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_func_encode_transparent_address_p(FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashTransparentAddress.lower(`addr`), _status)
+        },
+    )
+}
+
+@Throws(ZcashException::class)
+fun `scanCachedBlocks`(`params`: ZcashConsensusParameters, `fsblockdbRoot`: String, `dbDataPath`: String, `height`: ZcashBlockHeight, `limit`: UInt) =
+
+    rustCallWithError(ZcashException) { _status ->
+        _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_func_scan_cached_blocks(FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterString.lower(`fsblockdbRoot`), FfiConverterString.lower(`dbDataPath`), FfiConverterTypeZcashBlockHeight.lower(`height`), FfiConverterUInt.lower(`limit`), _status)
+    }
+
+@Throws(ZcashException::class)
+fun `shieldTransparentFundsMain`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashMainGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId {
+    return FfiConverterTypeZcashTxId.lift(
+        rustCallWithError(ZcashException) { _status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_func_shield_transparent_funds_main(FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashMainGreedyInputSelector.lower(`inputSelector`), FfiConverterULong.lower(`shieldingThreshold`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterSequenceTypeZcashTransparentAddress.lower(`fromAddrs`), FfiConverterTypeZcashMemoBytes.lower(`memo`), FfiConverterUInt.lower(`minConfirmations`), _status)
+        },
+    )
+}
+
+@Throws(ZcashException::class)
+fun `shieldTransparentFundsTest`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashTestGreedyInputSelector, `shieldingThreshold`: ULong, `usk`: ZcashUnifiedSpendingKey, `fromAddrs`: List<ZcashTransparentAddress>, `memo`: ZcashMemoBytes, `minConfirmations`: UInt): ZcashTxId {
+    return FfiConverterTypeZcashTxId.lift(
+        rustCallWithError(ZcashException) { _status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_func_shield_transparent_funds_test(FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashTestGreedyInputSelector.lower(`inputSelector`), FfiConverterULong.lower(`shieldingThreshold`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterSequenceTypeZcashTransparentAddress.lower(`fromAddrs`), FfiConverterTypeZcashMemoBytes.lower(`memo`), FfiConverterUInt.lower(`minConfirmations`), _status)
+        },
+    )
+}
+
+@Throws(ZcashException::class)
+fun `spendMain`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashMainGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId {
+    return FfiConverterTypeZcashTxId.lift(
+        rustCallWithError(ZcashException) { _status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_func_spend_main(FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashMainGreedyInputSelector.lower(`inputSelector`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterTypeZcashTransactionRequest.lower(`request`), FfiConverterTypeZcashOvkPolicy.lower(`ovkPolicy`), FfiConverterUInt.lower(`minConfirmations`), _status)
+        },
+    )
+}
+
+@Throws(ZcashException::class)
+fun `spendTest`(`zDbData`: ZcashWalletDb, `params`: ZcashConsensusParameters, `prover`: ZcashLocalTxProver, `inputSelector`: ZcashTestGreedyInputSelector, `usk`: ZcashUnifiedSpendingKey, `request`: ZcashTransactionRequest, `ovkPolicy`: ZcashOvkPolicy, `minConfirmations`: UInt): ZcashTxId {
+    return FfiConverterTypeZcashTxId.lift(
+        rustCallWithError(ZcashException) { _status ->
+            _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_func_spend_test(FfiConverterTypeZcashWalletDb.lower(`zDbData`), FfiConverterTypeZcashConsensusParameters.lower(`params`), FfiConverterTypeZcashLocalTxProver.lower(`prover`), FfiConverterTypeZcashTestGreedyInputSelector.lower(`inputSelector`), FfiConverterTypeZcashUnifiedSpendingKey.lower(`usk`), FfiConverterTypeZcashTransactionRequest.lower(`request`), FfiConverterTypeZcashOvkPolicy.lower(`ovkPolicy`), FfiConverterUInt.lower(`minConfirmations`), _status)
         },
     )
 }
