@@ -1066,6 +1066,11 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashfsblockdb_init(
+        `ptr`: Pointer,
+        `blocksDir`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): Unit
     fun uniffi_uniffi_zcash_fn_method_zcashfsblockdb_write_block_metadata(
         `ptr`: Pointer,
         `blockMeta`: RustBuffer.ByValue,
@@ -2235,6 +2240,10 @@ internal interface _UniFFILib : Library {
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): Unit
+    fun uniffi_uniffi_zcash_fn_constructor_zcashtreestate_from_bytes(
+        `bytes`: RustBuffer.ByValue,
+        _uniffi_out_err: RustCallStatus,
+    ): Pointer
     fun uniffi_uniffi_zcash_fn_constructor_zcashtreestate_new(
         `network`: RustBuffer.ByValue,
         `height`: Long,
@@ -2253,6 +2262,10 @@ internal interface _UniFFILib : Library {
         _uniffi_out_err: RustCallStatus,
     ): Pointer
     fun uniffi_uniffi_zcash_fn_method_zcashtxid_to_bytes(
+        `ptr`: Pointer,
+        _uniffi_out_err: RustCallStatus,
+    ): RustBuffer.ByValue
+    fun uniffi_uniffi_zcash_fn_method_zcashtxid_to_hex_string(
         `ptr`: Pointer,
         _uniffi_out_err: RustCallStatus,
     ): RustBuffer.ByValue
@@ -2998,6 +3011,7 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_method_zcashfixedfeerule_fixed_fee(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashfsblockdb_find_block(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashfsblockdb_get_max_cached_height(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashfsblockdb_init(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashfsblockdb_write_block_metadata(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashfullviewingkey_ovk(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashfullviewingkey_to_bytes(): Short
@@ -3138,6 +3152,7 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_method_zcashtransparentbundle_vin(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashtransparentbundle_vout(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashtxid_to_bytes(): Short
+    fun uniffi_uniffi_zcash_checksum_method_zcashtxid_to_hex_string(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashtxin_to_bytes(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashtxout_recipient_address(): Short
     fun uniffi_uniffi_zcash_checksum_method_zcashtxout_script_pubkey(): Short
@@ -3325,6 +3340,7 @@ internal interface _UniFFILib : Library {
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtransparentaddress_decode(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtransparentaddress_from_public_key(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtransparentaddress_from_script(): Short
+    fun uniffi_uniffi_zcash_checksum_constructor_zcashtreestate_from_bytes(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtreestate_new(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtxid_from_bytes(): Short
     fun uniffi_uniffi_zcash_checksum_constructor_zcashtxout_new(): Short
@@ -3663,6 +3679,9 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashfsblockdb_get_max_cached_height() != 51557.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashfsblockdb_init() != 26600.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashfsblockdb_write_block_metadata() != 23343.toShort()) {
@@ -4085,6 +4104,9 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashtxid_to_bytes() != 38587.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashtxid_to_hex_string() != 3594.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashtxin_to_bytes() != 4105.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
@@ -4223,7 +4245,7 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_spendable_sapling_notes() != 55091.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
-    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_target_and_anchor_heights() != 32171.toShort()) {
+    if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_target_and_anchor_heights() != 39736.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_method_zcashwalletdb_get_transaction() != 36828.toShort()) {
@@ -4644,6 +4666,9 @@ private fun uniffiCheckApiChecksums(lib: _UniFFILib) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashtransparentaddress_from_script() != 29163.toShort()) {
+        throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
+    }
+    if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashtreestate_from_bytes() != 9245.toShort()) {
         throw RuntimeException("UniFFI API checksum mismatch: try cleaning and rebuilding your project")
     }
     if (lib.uniffi_uniffi_zcash_checksum_constructor_zcashtreestate_new() != 64658.toShort()) {
@@ -8220,6 +8245,9 @@ public interface ZcashFsBlockDbInterface {
     fun `getMaxCachedHeight`(): ZcashBlockHeight?
 
     @Throws(ZcashException::class)
+    fun `init`(`blocksDir`: String)
+
+    @Throws(ZcashException::class)
     fun `writeBlockMetadata`(`blockMeta`: List<ZcashBlockMeta>)
 }
 
@@ -8271,6 +8299,20 @@ class ZcashFsBlockDb(
             }
         }.let {
             FfiConverterOptionalTypeZcashBlockHeight.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `init`(`blocksDir`: String) =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashfsblockdb_init(
+                    it,
+                    FfiConverterString.lower(`blocksDir`),
+                    _status,
+                )
+            }
         }
 
     @Throws(
@@ -13849,6 +13891,16 @@ class ZcashTreeState(
             _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_free_zcashtreestate(this.pointer, status)
         }
     }
+
+    companion object {
+
+        fun `fromBytes`(`bytes`: List<UByte>): ZcashTreeState =
+            ZcashTreeState(
+                rustCallWithError(ZcashException) { _status ->
+                    _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_constructor_zcashtreestate_from_bytes(FfiConverterSequenceUByte.lower(`bytes`), _status)
+                },
+            )
+    }
 }
 
 public object FfiConverterTypeZcashTreeState : FfiConverter<ZcashTreeState, Pointer> {
@@ -13877,6 +13929,9 @@ public interface ZcashTxIdInterface {
 
     @Throws(ZcashException::class)
     fun `toBytes`(): List<UByte>
+
+    @Throws(ZcashException::class)
+    fun `toHexString`(): String
 }
 
 class ZcashTxId(
@@ -13911,6 +13966,22 @@ class ZcashTxId(
             }
         }.let {
             FfiConverterSequenceUByte.lift(it)
+        }
+
+    @Throws(
+        ZcashException::class,
+        )
+    override fun `toHexString`(): String =
+        callWithPointer {
+            rustCallWithError(ZcashException) { _status ->
+                _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashtxid_to_hex_string(
+                    it,
+
+                    _status,
+                )
+            }
+        }.let {
+            FfiConverterString.lift(it)
         }
 
     companion object {
@@ -14904,7 +14975,7 @@ public interface ZcashWalletDbInterface {
     fun `getSpendableSaplingNotes`(`account`: ZcashAccountId, `anchorHeight`: ZcashBlockHeight, `exclude`: List<ZcashReceivedNoteId>): List<ZcashReceivedSaplingNote>
 
     @Throws(ZcashException::class)
-    fun `getTargetAndAnchorHeights`(`minConfirmations`: UInt): TupleMinAndMaxBlockHeight?
+    fun `getTargetAndAnchorHeights`(`minConfirmations`: UInt): TupleTargetAndAnchorHeight?
 
     @Throws(ZcashException::class)
     fun `getTransaction`(`txid`: ZcashTxId): ZcashTransaction
@@ -15228,7 +15299,7 @@ class ZcashWalletDb(
     @Throws(
         ZcashException::class,
         )
-    override fun `getTargetAndAnchorHeights`(`minConfirmations`: UInt): TupleMinAndMaxBlockHeight? =
+    override fun `getTargetAndAnchorHeights`(`minConfirmations`: UInt): TupleTargetAndAnchorHeight? =
         callWithPointer {
             rustCallWithError(ZcashException) { _status ->
                 _UniFFILib.INSTANCE.uniffi_uniffi_zcash_fn_method_zcashwalletdb_get_target_and_anchor_heights(
@@ -15238,7 +15309,7 @@ class ZcashWalletDb(
                 )
             }
         }.let {
-            FfiConverterOptionalTypeTupleMinAndMaxBlockHeight.lift(it)
+            FfiConverterOptionalTypeTupleTargetAndAnchorHeight.lift(it)
         }
 
     @Throws(
@@ -16259,39 +16330,6 @@ public object FfiConverterTypeTupleBlockHeightAndHash : FfiConverterRustBuffer<T
     }
 }
 
-data class TupleMinAndMaxBlockHeight(
-    var `min`: ZcashBlockHeight,
-    var `max`: ZcashBlockHeight,
-) : Disposable {
-
-    @Suppress("UNNECESSARY_SAFE_CALL") // codegen is much simpler if we unconditionally emit safe calls here
-    override fun destroy() {
-        Disposable.destroy(
-            this.`min`,
-            this.`max`,
-        )
-    }
-}
-
-public object FfiConverterTypeTupleMinAndMaxBlockHeight : FfiConverterRustBuffer<TupleMinAndMaxBlockHeight> {
-    override fun read(buf: ByteBuffer): TupleMinAndMaxBlockHeight {
-        return TupleMinAndMaxBlockHeight(
-            FfiConverterTypeZcashBlockHeight.read(buf),
-            FfiConverterTypeZcashBlockHeight.read(buf),
-        )
-    }
-
-    override fun allocationSize(value: TupleMinAndMaxBlockHeight) = (
-        FfiConverterTypeZcashBlockHeight.allocationSize(value.`min`) +
-            FfiConverterTypeZcashBlockHeight.allocationSize(value.`max`)
-        )
-
-    override fun write(value: TupleMinAndMaxBlockHeight, buf: ByteBuffer) {
-        FfiConverterTypeZcashBlockHeight.write(value.`min`, buf)
-        FfiConverterTypeZcashBlockHeight.write(value.`max`, buf)
-    }
-}
-
 data class TupleSaplingCommitments(
     var `node`: ZcashSaplingNode,
     var `retention`: MerkleTreeRetention,
@@ -16322,6 +16360,39 @@ public object FfiConverterTypeTupleSaplingCommitments : FfiConverterRustBuffer<T
     override fun write(value: TupleSaplingCommitments, buf: ByteBuffer) {
         FfiConverterTypeZcashSaplingNode.write(value.`node`, buf)
         FfiConverterTypeMerkleTreeRetention.write(value.`retention`, buf)
+    }
+}
+
+data class TupleTargetAndAnchorHeight(
+    var `targetHeight`: ZcashBlockHeight,
+    var `anchorHeight`: ZcashBlockHeight,
+) : Disposable {
+
+    @Suppress("UNNECESSARY_SAFE_CALL") // codegen is much simpler if we unconditionally emit safe calls here
+    override fun destroy() {
+        Disposable.destroy(
+            this.`targetHeight`,
+            this.`anchorHeight`,
+        )
+    }
+}
+
+public object FfiConverterTypeTupleTargetAndAnchorHeight : FfiConverterRustBuffer<TupleTargetAndAnchorHeight> {
+    override fun read(buf: ByteBuffer): TupleTargetAndAnchorHeight {
+        return TupleTargetAndAnchorHeight(
+            FfiConverterTypeZcashBlockHeight.read(buf),
+            FfiConverterTypeZcashBlockHeight.read(buf),
+        )
+    }
+
+    override fun allocationSize(value: TupleTargetAndAnchorHeight) = (
+        FfiConverterTypeZcashBlockHeight.allocationSize(value.`targetHeight`) +
+            FfiConverterTypeZcashBlockHeight.allocationSize(value.`anchorHeight`)
+        )
+
+    override fun write(value: TupleTargetAndAnchorHeight, buf: ByteBuffer) {
+        FfiConverterTypeZcashBlockHeight.write(value.`targetHeight`, buf)
+        FfiConverterTypeZcashBlockHeight.write(value.`anchorHeight`, buf)
     }
 }
 
@@ -18733,28 +18804,28 @@ public object FfiConverterOptionalTypeTupleBlockHeightAndHash : FfiConverterRust
     }
 }
 
-public object FfiConverterOptionalTypeTupleMinAndMaxBlockHeight : FfiConverterRustBuffer<TupleMinAndMaxBlockHeight?> {
-    override fun read(buf: ByteBuffer): TupleMinAndMaxBlockHeight? {
+public object FfiConverterOptionalTypeTupleTargetAndAnchorHeight : FfiConverterRustBuffer<TupleTargetAndAnchorHeight?> {
+    override fun read(buf: ByteBuffer): TupleTargetAndAnchorHeight? {
         if (buf.get().toInt() == 0) {
             return null
         }
-        return FfiConverterTypeTupleMinAndMaxBlockHeight.read(buf)
+        return FfiConverterTypeTupleTargetAndAnchorHeight.read(buf)
     }
 
-    override fun allocationSize(value: TupleMinAndMaxBlockHeight?): Int {
+    override fun allocationSize(value: TupleTargetAndAnchorHeight?): Int {
         if (value == null) {
             return 1
         } else {
-            return 1 + FfiConverterTypeTupleMinAndMaxBlockHeight.allocationSize(value)
+            return 1 + FfiConverterTypeTupleTargetAndAnchorHeight.allocationSize(value)
         }
     }
 
-    override fun write(value: TupleMinAndMaxBlockHeight?, buf: ByteBuffer) {
+    override fun write(value: TupleTargetAndAnchorHeight?, buf: ByteBuffer) {
         if (value == null) {
             buf.put(0)
         } else {
             buf.put(1)
-            FfiConverterTypeTupleMinAndMaxBlockHeight.write(value, buf)
+            FfiConverterTypeTupleTargetAndAnchorHeight.write(value, buf)
         }
     }
 }
