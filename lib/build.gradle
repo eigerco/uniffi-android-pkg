@@ -69,7 +69,7 @@ publishing {
             pom {
                 groupId = "uniffi.android"
                 artifactId = "zcash"
-                version = "0.6.0"
+                version = "1.0.0"
                 description = "The librustzcash Android FFI binding"
                 url = "https://github.com/eigerco/uniffi-android-pkg"
                 licenses {
